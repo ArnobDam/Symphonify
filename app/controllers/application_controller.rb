@@ -39,8 +39,6 @@ class ApplicationController < ActionController::API
         @current_user = nil
     end
 
-
-
     private
 
     def snake_case_params
