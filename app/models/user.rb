@@ -24,6 +24,11 @@ class User < ApplicationRecord
         nil 
     end
 
+    # user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+    # return nil if user.nil?
+
+    # user.authenticate(password) ? user : nil
+
   end
 
   def reset_session_token!
