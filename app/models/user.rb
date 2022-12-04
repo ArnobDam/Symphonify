@@ -15,19 +15,19 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username) #finds by username not email
-    # has_secure_password gives us the authenticate method
-    if user&.authenticate(password) 
-        return user
-    else
-        nil 
-    end
+  def self.find_by_credentials(credential, password)
+    # user = User.find_by(username: credential) #finds by username not email
+    # # has_secure_password gives us the authenticate method
+    # if user&.authenticate(password) 
+    #     return user
+    # else
+    #     nil 
+    # end
 
-    # user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
-    # return nil if user.nil?
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+    return nil if user.nil?
 
-    # user.authenticate(password) ? user : nil
+    user&.authenticate(password) ? user : nil
 
   end
 
