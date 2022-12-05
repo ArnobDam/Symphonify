@@ -1,1 +1,9 @@
+@import './reset.css';
+
 /* TODO Add site wide styles */
+
+body {
+    background-image: linear-gradient(red, yellow);
+    /* background: black; */
+    
+}

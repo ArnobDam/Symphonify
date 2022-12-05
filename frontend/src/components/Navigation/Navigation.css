@@ -1,0 +1,16 @@
+ul {
+    background-color: rgba(0, 0, 0, 0.9);
+    /* top: 0; */
+    /* overflow: hidden; */
+    position: fixed;
+    width: 100%;
+
+    /* display: flex;
+    justify-content: right; */
+
+}
+
+.nav-item {
+    color: gray;
+    text-decoration: none;
+}
