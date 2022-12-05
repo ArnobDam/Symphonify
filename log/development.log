@@ -1225,3 +1225,201 @@ Started POST "/api/test?login" for 127.0.0.1 at 2022-12-04 21:00:59 -0500
   
 ActionController::RoutingError (No route matches [POST] "/api/test"):
   
+Started DELETE "/api/session" for 127.0.0.1 at 2022-12-04 21:06:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45:in `generate_unique_session_token'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "cooluser4"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "coolemail4@hotmail.net"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "[FILTERED]"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "[FILTERED]"], ["updated_at", "2022-12-05 02:06:27.938330"], ["id", 15]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+Completed 200 OK in 57ms (Views: 0.4ms | ActiveRecord: 16.4ms | Allocations: 16584)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:07:57 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"Demo-lition", "password"=>"[FILTERED]", "session"=>{"credential"=>"Demo-lition", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1741)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:19:in `create'
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Demo-lition"], ["LIMIT", 1]]
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:10:59 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"Demo-lition", "password"=>"[FILTERED]", "session"=>{"credential"=>"Demo-lition", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1563)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:19:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:12:40 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"Demo-lition", "password"=>"[FILTERED]", "session"=>{"credential"=>"Demo-lition", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (Allocations: 2791)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:20:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:12:59 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"password"=>"[FILTERED]", "session"=>{"password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (Allocations: 1624)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:20:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:13:31 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"demo@user.io", "password"=>"[FILTERED]", "session"=>{"credential"=>"demo@user.io", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 5ms (Allocations: 1558)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:20:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:13:48 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"demo@user.io", "password"=>"[FILTERED]", "session"=>{"credential"=>"demo@user.io", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (Allocations: 2792)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:20:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:14:15 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"demo@user.io", "password"=>"[FILTERED]", "session"=>{"credential"=>"demo@user.io", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (Allocations: 2451)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:20:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:14:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"Demo-lition", "password"=>"[FILTERED]", "session"=>{"credential"=>"Demo-lition", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (Allocations: 2792)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:20:in `create'
+
+Started GET "/" for ::1 at 2022-12-04 21:14:36 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 468)
+Completed 200 OK in 13ms (Views: 3.1ms | Allocations: 3037)
+
+
+Started GET "/main.dd774244096dd31ce4ed.hot-update.json" for 127.0.0.1 at 2022-12-04 21:15:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/main.dd774244096dd31ce4ed.hot-update.json"):
+  
+Started GET "/" for ::1 at 2022-12-04 21:15:26 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.7ms | Allocations: 472)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3142)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:15:31 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"Demo-lition", "password"=>"[FILTERED]", "session"=>{"credential"=>"Demo-lition", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3192)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:20:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:19:22 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"Demo-lition", "password"=>"[FILTERED]", "session"=>{"credential"=>"Demo-lition", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 76528ms (ActiveRecord: 0.0ms | Allocations: 56363)
+
+
+
+NoMethodError - undefined method `match?' for nil:NilClass
+    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+                     ^^^^^^^:
+  app/models/user.rb:27:in `find_by_credentials'
+  app/controllers/api/sessions_controller.rb:21:in `create'
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-04 21:21:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"credential"=>"Demo-lition", "password"=>"[FILTERED]", "session"=>{"credential"=>"Demo-lition", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Demo-lition"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27:in `find_by_credentials'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45:in `generate_unique_session_token'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Demo-lition"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@user.io"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "[FILTERED]"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "[FILTERED]"], ["updated_at", "2022-12-05 02:21:01.720324"], ["id", 1]]
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36:in `reset_session_token!'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 1.6ms | Allocations: 529)
+Completed 200 OK in 276ms (Views: 7.4ms | ActiveRecord: 13.8ms | Allocations: 18445)
+
+
