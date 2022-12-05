@@ -15,8 +15,8 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <NavLink className="nav-item" to="/login">Log In</NavLink>
         <NavLink className="nav-item" to="/signup">Sign Up</NavLink>
+        <NavLink className="nav-item" to="/login"><button>Log In</button></NavLink>
       </>
     );
   }
@@ -24,7 +24,7 @@ function Navigation() {
   return (
     <nav>
       <li>
-        <NavLink className="nav-item" exact to="/">Home</NavLink>
+        {/* <NavLink className="nav-item" exact to="/">Home</NavLink> */}
         {sessionLinks}
       </li>
     </nav>
