@@ -3821,3 +3821,15 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 333ms (Views: 2.7ms | ActiveRecord: 46.3ms | Allocations: 8612)
 
 
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-05 17:39:34 -0500
+Started GET "/api/session" for 127.0.0.1 at 2022-12-05 17:39:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 95ms (Views: 0.8ms | ActiveRecord: 62.3ms | Allocations: 27526)
+
+
