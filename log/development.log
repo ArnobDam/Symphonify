@@ -1200,3 +1200,28 @@ Processing by Api::UsersController#create as JSON
 Completed 200 OK in 278ms (Views: 3.2ms | ActiveRecord: 18.6ms | Allocations: 20183)
 
 
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-04 20:56:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2022-12-04 20:56:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 285)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2021)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-04 21:00:31 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 1.0ms | Allocations: 505)
+Completed 200 OK in 43ms (Views: 3.1ms | ActiveRecord: 12.0ms | Allocations: 10582)
+
+
+Started POST "/api/test?login" for 127.0.0.1 at 2022-12-04 21:00:59 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/test"):
+  
