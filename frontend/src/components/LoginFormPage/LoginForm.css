@@ -1,4 +1,9 @@
+body {
+    background-image: none;
+    background-color: white;
+}
+
 form {
-    padding-top: 100px;
     color: white;
 }
+
