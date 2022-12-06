@@ -6976,3 +6976,170 @@ Processing by StaticPagesController#frontend_index as */*
 Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 286)
 
 
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:06:03 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 898)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:06:03 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.3ms | Allocations: 6)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:07:00 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1061)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:07:00 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:07:19 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 907)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:07:19 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:07:40 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 905)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:07:40 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 287)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:07:47 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 922)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:07:47 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:08:52 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 880)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:08:52 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:09:16 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 901)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:09:16 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:14:01 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 904)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:14:02 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 10:15:54 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 898)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:15:54 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:17:32 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:17:33 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:20:35 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 10:20:36 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+

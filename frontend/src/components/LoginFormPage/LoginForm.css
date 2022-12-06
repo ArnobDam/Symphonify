@@ -5,6 +5,12 @@
 
 .loginForm {
     color: black;
+    border: 1px solid black;
+
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #body {
@@ -16,4 +22,6 @@
     height: 100vh;
     width: 100%;
     background-color: white;
+    display: flex;
+    justify-content: center;
 }
