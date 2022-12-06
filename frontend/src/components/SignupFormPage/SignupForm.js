@@ -9,16 +9,17 @@ const SignupForm = () => {
     const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [confirmEmail, setConfirmEmail] = useState("");
+
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (password === confirmPassword) {
+        if (email === confirmEmail) {
         setErrors([]);
         return dispatch(sessionActions.signup({ email, username, password }))
             .catch(async (res) => {
@@ -34,7 +35,7 @@ const SignupForm = () => {
             else setErrors([res.statusText]);
         });
         }
-        return setErrors(['Confirm Password field must be the same as the Password field']);
+        return setErrors([`The email addresses don't match.`]);
     };
 
     return (
@@ -43,7 +44,7 @@ const SignupForm = () => {
             {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
 
-        <h1 className="signupFormHeader">Sign up with your email address</h1>
+        <h1 className="loginFormHeader">Sign up with your email address</h1>
 
         <label id="signupLabel">
             What's your email?
@@ -62,9 +63,9 @@ const SignupForm = () => {
         </label>
             <input
             id ="signupInput"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            type="text"
+            value={confirmEmail}
+            onChange={(e) => setConfirmEmail(e.target.value)}
             required
             placeholder="Enter your email again."
             />
@@ -92,8 +93,8 @@ const SignupForm = () => {
             required
             placeholder="Enter a profile name."
             />
-        
-        <button type="submit">Sign Up</button>
+        <p className="signupComment">This appears on your profile.</p>
+        <button className ="signupButton" type="submit">Sign Up</button>
     </form>
     )
 };

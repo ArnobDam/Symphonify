@@ -37,6 +37,9 @@ const LoginForm = () => {
             <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
+
+            <h1 className="loginFormHeader">To continue, log in to Symphonify.</h1>
+
             <label id="loginLabel">
                 Email Address or Username
             </label>
@@ -61,7 +64,11 @@ const LoginForm = () => {
                 placeholder='Password'
                 />
             
-            <button type="submit">Log In</button>
+            <div className='loginButtonsDiv'>
+              <button className="demoUserButton" type="submit">Demo User</button>
+              <button className="loginButton" type="submit">Log In</button>
+            </div>
+            
         </form>
     )
     
