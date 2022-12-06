@@ -42,8 +42,11 @@ const SignupForm = () => {
         <ul>
             {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
+
+        <h1 className="signupFormHeader">Sign up with your email address</h1>
+
         <label id="signupLabel">
-            Email
+            What's your email?
         </label>
             <input
             id ="signupInput"
@@ -51,19 +54,21 @@ const SignupForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            placeholder="Enter your email."
             />
         
         <label id="signupLabel">
-            Username
+            Confirm your Email
         </label>
             <input
             id ="signupInput"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
+            placeholder="Enter your email again."
             />
-        
+
         <label id="signupLabel">
             Password
         </label>
@@ -73,17 +78,19 @@ const SignupForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder="Create a password."
             />
-        
+
         <label id="signupLabel">
-            Confirm Password
+            What should we call you?
         </label>
             <input
             id ="signupInput"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
+            placeholder="Enter a profile name."
             />
         
         <button type="submit">Sign Up</button>

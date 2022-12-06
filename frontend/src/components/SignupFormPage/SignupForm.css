@@ -9,6 +9,13 @@
     flex-direction: column;
 }
 
+.signupFormHeader {
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+}
+
+
 #signupLabel {
     font-weight: bold;
 }
@@ -16,7 +23,7 @@
 #signupInput {
     width: 450px;
     height: 40px;
-    text-indent: 10px;
+    text-indent: 5px;
 }
 
 

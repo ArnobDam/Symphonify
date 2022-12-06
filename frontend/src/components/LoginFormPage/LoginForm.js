@@ -46,6 +46,7 @@ const LoginForm = () => {
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
                 required
+                placeholder='Email Address or Username'
                 />
             
             <label id="loginLabel">
@@ -57,6 +58,7 @@ const LoginForm = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                placeholder='Password'
                 />
             
             <button type="submit">Log In</button>
