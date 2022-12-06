@@ -6,7 +6,7 @@ import './Navigation.css';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
-
+  
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -22,7 +22,7 @@ function Navigation() {
   }
 
   return (
-    <nav>
+    <nav id='topNavBar'>
       <li>
         {/* <NavLink className="nav-item" exact to="/">Home</NavLink> */}
         {sessionLinks}

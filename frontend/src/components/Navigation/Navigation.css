@@ -4,7 +4,7 @@
     max-width: 100%;
 }
 
-nav {
+#topNavBar {
     background-color: rgba(0, 0, 0, 0.5);
     /* top: 0; */
     /* overflow: hidden; */
@@ -19,7 +19,7 @@ nav {
     align-items: center;
 }
 
-nav li {
+#topNavBar li {
     color: white;
     /* position: absolute; */
     list-style: none;
@@ -29,7 +29,6 @@ nav li {
     color: gray;
     text-decoration: none;
     font-weight: bold;
-    
 }
 
 .nav-item:first-child:hover {
@@ -63,3 +62,77 @@ nav li {
     margin-right: 27.5px;
     margin-left: 27.5px;
 }
+
+
+.profileButton {
+    /* font-family: "Helvetica"; */
+    display: flex;
+    align-items: center;
+
+    background-color: #282828;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    height: 32px;
+    width: fit-content;
+
+    border-radius: 40px;
+    border: none;
+    
+    margin-right: 30px;
+
+    /* row-gap: 20px; */
+}
+
+.fa-user {
+    background-color: #535353;
+    padding: 7px;
+    border-radius: 50%;
+    /* text-align: center; */
+    line-height: 14px;
+    /* vertical-align: middle; */
+    margin-right: 10px;
+    margin-left: -3px;
+    
+}
+
+.fa-caret-down {
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.profile-dropdown {
+    display: flex;
+    position: absolute;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* align-items: flex-start; */
+    text-indent: 5px;
+
+    right: 0;
+    
+    background-color: #282828;
+    border-radius: 4px;
+    box-shadow: 0 16px 24px rgb(0 0 0 / 30%);
+
+    margin-top: 10px;
+    margin-right: 30px;
+    padding: 4px;
+
+    font-family: CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif),sans-serif;
+       
+}
+
+.profile-dropdown li {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logout {
+    background-color: transparent;
+    border: 0px;
+    color: white;
+}
+
