@@ -1,9 +1,19 @@
-body {
+/* body {
     background-image: none;
     background-color: white;
+} */
+
+.loginForm {
+    color: black;
 }
 
-form {
-    color: white;
+#body {
+    background-image: none;
+    background-color: green;
 }
 
+.loginPage {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+}

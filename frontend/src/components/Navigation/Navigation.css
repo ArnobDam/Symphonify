@@ -1,4 +1,4 @@
-body {
+#body {
     /* background-repeat: no-repeat; */
     background-image: linear-gradient(rgb(35, 35, 35), black);
     max-width: 100%;
