@@ -7,15 +7,21 @@
     color: black;
     border: 1px solid black;
 
-    margin-top: 25px;
+    margin-top: 50px;
+    /* margin-bottom: 50px; */
 
     display: flex;
     flex-direction: column;
 }
 
-#body {
-    background-image: none;
-    background-color: green;
+#loginLabel {
+    font-weight: bold;
+}
+
+#loginInput {
+    width: 450px;
+    height: 40px;
+    text-indent: 10px;
 }
 
 .loginPage {

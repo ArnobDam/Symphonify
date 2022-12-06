@@ -37,24 +37,28 @@ const LoginForm = () => {
             <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
-            <label>
-                Username or Email
+            <label id="loginLabel">
+                Email Address or Username
+            </label>
                 <input
+                id ="loginInput"
                 type="text"
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
                 required
                 />
-            </label>
-            <label>
+            
+            <label id="loginLabel">
                 Password
+            </label>
                 <input
+                id ="loginInput"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />
-            </label>
+            
             <button type="submit">Log In</button>
         </form>
     )
