@@ -94,7 +94,7 @@ const SignupForm = () => {
             placeholder="Enter a profile name."
             />
         <p className="signupComment">This appears on your profile.</p>
-        <button className ="signupButton" type="submit">Sign Up</button>
+        <button className="signupButton" type="submit">Sign Up</button>
     </form>
     )
 };

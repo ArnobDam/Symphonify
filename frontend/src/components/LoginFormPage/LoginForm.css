@@ -70,10 +70,24 @@
     border-radius: 40px;
     border: none;
     
+    margin-right: 2.5px;
     /* margin: 0 auto; */
 
     margin-top: 30px;
     margin-bottom: 20px;
+}
+
+.loginButton:hover {
+    background-color: #1ee060;
+
+    height: 57px;
+    width: 145px;
+    font-size: 15px;
+
+    margin-right: 0px;
+
+    margin-top: 29px;
+    margin-bottom: 19px;
 }
 
 .demoUserButton {
@@ -86,8 +100,22 @@
     border-radius: 40px;
     border: none;
     
+    margin-left: 2.5px;
     /* margin: 0 auto; */
 
     margin-top: 30px;
     margin-bottom: 20px;
+}
+
+.demoUserButton:hover {
+    background-color: #1ee060;
+
+    height: 57px;
+    width: 145px;
+    font-size: 15px;
+
+    margin-left: 0px;
+
+    margin-top: 29px;
+    margin-bottom: 19px;
 }

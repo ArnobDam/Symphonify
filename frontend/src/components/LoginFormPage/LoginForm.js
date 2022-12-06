@@ -32,6 +32,11 @@ const LoginForm = () => {
       });
   }
 
+  const handleDemoUser = (e) => {
+    setCredential('guest@guest.com');
+    setPassword('password');
+  }
+
     return (
         <form className='loginForm' onSubmit={handleSubmit}>
             <ul>
@@ -65,7 +70,7 @@ const LoginForm = () => {
                 />
             
             <div className='loginButtonsDiv'>
-              <button className="demoUserButton" type="submit">Demo User</button>
+              <button onClick={handleDemoUser} className="demoUserButton" type="submit">Demo User</button>
               <button className="loginButton" type="submit">Log In</button>
             </div>
             
