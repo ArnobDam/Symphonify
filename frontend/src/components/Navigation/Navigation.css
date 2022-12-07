@@ -139,7 +139,7 @@
     background-color: #404040;
 }
 
-.dropdownButton {
+.logoutButton {
     background-color: transparent;
     border: 0px;
     color: rgb(255, 255, 255, 0.8);
@@ -147,4 +147,7 @@
 
     font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
     font-weight: bold;
+
+    width: 100%;
+    text-align: left;
 }
