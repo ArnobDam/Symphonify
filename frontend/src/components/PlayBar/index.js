@@ -7,7 +7,7 @@ function PlayBar() {
 
     return (
         <>
-            <AudioBar/>
+            <AudioBar  />
         </>
     )
 

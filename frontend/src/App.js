@@ -12,6 +12,7 @@ function App() {
         <Route exact path="/">
           <PlayBar />
           <Navigation />
+          
         </Route>
         <Route path="/login">
           <LoginFormPage />
