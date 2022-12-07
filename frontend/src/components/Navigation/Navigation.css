@@ -106,6 +106,12 @@
     font-size: 16px;
 }
 
+.fa-caret-up {
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
 .profile-dropdown {
     display: flex;
     position: absolute;

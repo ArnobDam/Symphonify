@@ -5,6 +5,18 @@ import * as sessionActions from '../../store/session';
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const [caretClass, setCaretClass] = useState('fa-sharp fa-solid fa-caret-down')
+
+  const profileButtonClick = () => {
+    openMenu();
+    changeCaret();
+  }
+
+  const changeCaret = () => {
+    caretClass === 'fa-sharp fa-solid fa-caret-down' ? 
+    setCaretClass('fa-sharp fa-solid fa-caret-up') :
+    setCaretClass('fa-sharp fa-solid fa-caret-down')
+  }
   
   const openMenu = () => {
     if (showMenu) return;
@@ -30,11 +42,12 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button className="profileButton" onClick={openMenu}>
+      <button className="profileButton" onClick={profileButtonClick}>
         {/* <i className="fa-solid fa-user-circle" /> */}
         <i className="fa-regular fa-user"></i>
         {` ${user.username}`}
-        <i className="fa-sharp fa-solid fa-caret-down"></i>
+        {/* <i className="fa-sharp fa-solid fa-caret-down"></i> */}
+        <i className={caretClass}></i>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
