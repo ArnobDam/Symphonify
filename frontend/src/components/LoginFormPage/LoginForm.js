@@ -16,6 +16,7 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {
@@ -70,8 +71,9 @@ const LoginForm = () => {
                 />
             
             <div className='loginButtonsDiv'>
+            <button className="loginButton" type="submit">Log In</button>
               <button onClick={handleDemoUser} className="demoUserButton" type="submit">Demo User</button>
-              <button className="loginButton" type="submit">Log In</button>
+              
             </div>
             
         </form>

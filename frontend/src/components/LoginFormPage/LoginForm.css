@@ -70,7 +70,7 @@
     border-radius: 40px;
     border: none;
     
-    margin-right: 2.5px;
+    margin-left: 2.5px;
     /* margin: 0 auto; */
 
     margin-top: 30px;
@@ -84,7 +84,7 @@
     width: 145px;
     font-size: 15px;
 
-    margin-right: 0px;
+    margin-left: 0px;
 
     margin-top: 29px;
     margin-bottom: 19px;
@@ -100,7 +100,7 @@
     border-radius: 40px;
     border: none;
     
-    margin-left: 2.5px;
+    margin-right: 2.5px;
     /* margin: 0 auto; */
 
     margin-top: 30px;
@@ -114,7 +114,7 @@
     width: 145px;
     font-size: 15px;
 
-    margin-left: 0px;
+    margin-right: 0px;
 
     margin-top: 29px;
     margin-bottom: 19px;
