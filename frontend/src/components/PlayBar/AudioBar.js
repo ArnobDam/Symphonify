@@ -8,7 +8,7 @@ const AudioBar = () => {
     return (
     <AudioPlayer
         className='bar'
-        autoPlay
+        // autoPlay
         src="https://download.samplelib.com/mp3/sample-12s.mp3"
         // src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
         onPlay={e => console.log("onPlay")}
