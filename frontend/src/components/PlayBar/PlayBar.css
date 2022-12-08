@@ -3,20 +3,21 @@
   } */
 
 .rhap_container {
-    background-color: black;
-    height: 90px;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  height: 90px;
 }
 
 .rhap_main-controls-button {
   color: white;
 }
 
-.rhap_download-progress {
-  background-color: #727272;
-}
 
-.rhap_progress-filled {
-  background-color: white;
+
+.rhap_progress-section {
+  /* background-color: #1db954; */
+  margin-left: 32.5%;
+  margin-right: 32.5%;
 }
 
 .rhap_progress-container:hover .rhap_progress-filled {
@@ -27,14 +28,41 @@
   visibility: visible;
 }
 
-/* .rhap_progress-filled:hover {
-  background-color: #1db954;
-  
-} */
+.rhap_download-progress {
+  background-color: #505050;
+  height: 4px;
+}
+
+.rhap_progress-filled {
+  background-color: white;
+  height: 4px;
+}
+
+.rhap_progress-bar-show-download {
+  background-color: #505050;
+  height: 2px;
+}
 
 .rhap_progress-indicator {
   visibility: hidden;
   background-color: white;
+  height: 12px;
+  width: 12px;
+  margin-top: 4px;
 }
 
-/* .rhap */
+.rhap_time {
+  /* color: var(#a7a7a7, #6a6a6a); */
+  color: #a7a7a7;
+  font-size: 11px;
+}
+
+.rhap_current-time.rhap_time.rhap_current-time {
+  margin-top: 1.5px;
+  margin-right: -5px;
+}
+
+.rhap_time.rhap_total-time {
+  margin-top: 1.5px;
+  margin-left: -5px;
+}
