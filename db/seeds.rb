@@ -42,3 +42,7 @@ ApplicationRecord.transaction do
   end
 
   # comment2
+
+# require 'open-uri'
+# post = Post.create(title: "hello world")
+# post.photo.attach(io: URI.open("https://www.computerhope.com/jargon/j/jpg.png%22"), filename: 'jpeg_image.png')
