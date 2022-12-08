@@ -4,4 +4,37 @@
 
 .rhap_container {
     background-color: black;
+    height: 90px;
 }
+
+.rhap_main-controls-button {
+  color: white;
+}
+
+.rhap_download-progress {
+  background-color: #727272;
+}
+
+.rhap_progress-filled {
+  background-color: white;
+}
+
+.rhap_progress-container:hover .rhap_progress-filled {
+  background-color: #1db954;
+}
+
+.rhap_progress-container:hover .rhap_progress-indicator {
+  visibility: visible;
+}
+
+/* .rhap_progress-filled:hover {
+  background-color: #1db954;
+  
+} */
+
+.rhap_progress-indicator {
+  visibility: hidden;
+  background-color: white;
+}
+
+/* .rhap */
