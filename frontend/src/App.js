@@ -10,8 +10,11 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          <PlayBar />
-          <Navigation />
+          <div className="homeControls">
+            <Navigation />
+            <PlayBar />
+          </div>
+          
           
         </Route>
         <Route path="/login">

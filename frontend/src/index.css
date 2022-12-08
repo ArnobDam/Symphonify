@@ -10,3 +10,11 @@ html {
 #body {
     height: 100%;
 }
+
+.homeControls {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
