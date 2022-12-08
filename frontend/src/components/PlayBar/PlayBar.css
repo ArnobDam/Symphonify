@@ -95,3 +95,17 @@
   margin-top: 1.5px;
   margin-left: -5px;
 }
+
+.rhap_volume-bar {
+  background-color: #505050;
+  height: 4px;
+}
+
+.rhap_volume-controls {
+
+  margin-right: 50px;
+  margin-left: -50px;
+
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
