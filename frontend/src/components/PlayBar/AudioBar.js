@@ -56,7 +56,8 @@ const AudioBar = () => {
         onClickPrevious={handleClickPrevious}
         onEnded={handleEnd}
         showFilledVolume
-
+        // customAdditionalControls={["LOOP"]}
+        customAdditionalControls={[]}
         // other props here
     />
     )

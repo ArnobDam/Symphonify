@@ -14,8 +14,6 @@ function App() {
             <Navigation />
             <PlayBar />
           </div>
-          
-          
         </Route>
         <Route path="/login">
           <LoginFormPage />

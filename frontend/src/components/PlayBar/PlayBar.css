@@ -12,6 +12,10 @@
   margin-bottom: 100px;
 }
 
+.rhap_controls-section {
+  margin-left: 5px;
+}
+
 .rhap_main.rhap_stacked > .rhap_progress-section {
   order: 2;
 
@@ -36,6 +40,14 @@ button[aria-label="Previous"]:hover {
 }
 
 button[aria-label="Skip"]:hover {
+  color: white;
+}
+
+button[aria-label="Forward"]:hover {
+  color: white;
+}
+
+button[aria-label="Rewind"]:hover {
   color: white;
 }
 
@@ -118,7 +130,7 @@ button[aria-label="Skip"]:hover {
 }
 
 .rhap_volume-controls {
-  margin-right: 50px;
+  margin-right: 25px;
   margin-left: -150px;
 
   margin-top: 12px;
