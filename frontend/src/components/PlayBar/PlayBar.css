@@ -2,6 +2,10 @@
     width: 500px;
   } */
 
+.bar {
+  z-index: 2;
+}
+
 .rhap_container {
   background-color: #181818;
   border-top: 1px solid #282828;

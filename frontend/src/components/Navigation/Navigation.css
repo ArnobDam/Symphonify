@@ -32,6 +32,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    z-index: 0;
 }
 
 #topNavBar li {
