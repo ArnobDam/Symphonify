@@ -14,15 +14,20 @@ const playlist = [
 const AudioBar = () => {
 
     const [currentTrack, setTrackIndex] = useState(0);
+
     const handleClickNext = () => {
-        console.log('click next')
         setTrackIndex((currentTrack) =>
             currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
         );
     };
+
+    const handleClickPrevious = () => {
+        setTrackIndex((currentTrack) =>
+            currentTrack > 0 ? currentTrack - 1 : playlist.length - 1
+        );
+    };
   
     const handleEnd = () => {
-        console.log('end')
         setTrackIndex((currentTrack) =>
             currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
         );
@@ -45,8 +50,9 @@ const AudioBar = () => {
         showSkipControls
         src={playlist[currentTrack].src}
         // src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
-        onPlay={e => console.log("onPlay")}
+        // onPlay={e => console.log("onPlay")}
         onClickNext={handleClickNext}
+        onClickPrevious={handleClickPrevious}
         onEnded={handleEnd}
 
         // other props here

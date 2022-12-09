@@ -69,7 +69,7 @@
 
 .rhap_progress-bar-show-download {
   background-color: #505050;
-  height: 2px;
+  height: 4px;
 }
 
 .rhap_progress-indicator {
@@ -109,3 +109,4 @@
   margin-top: 20px;
   margin-bottom: -10px;
 }
+
