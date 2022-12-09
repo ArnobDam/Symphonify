@@ -1,0 +1,7 @@
+.sideBar {
+    position: absolute;
+    z-index: 1;
+    background-color: pink;
+    width: 250px;
+    height: 100vh;
+}
