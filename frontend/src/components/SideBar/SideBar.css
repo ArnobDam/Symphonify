@@ -1,7 +1,35 @@
 .sideBar {
     position: absolute;
     z-index: 1;
-    background-color: pink;
+    background-color: black;
     width: 250px;
     height: 100vh;
+}
+
+.logoDiv {
+    /* border: 1px solid pink; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* overflow: hidden; */
+    width: fit-content;
+    height: 40px;
+
+    margin-top: 25px;
+    
+    margin-left: 25px;
+}
+
+.logoIcon {
+    height: 40px;
+}
+
+.logoName {
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    /* font-family: Helvetica, Arial, sans-serif; */
+    letter-spacing: -0.05em;
+    margin-left: 5px;
+
 }
