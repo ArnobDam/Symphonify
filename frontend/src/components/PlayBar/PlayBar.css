@@ -31,6 +31,14 @@
   color: #a7a7a7;
 }
 
+button[aria-label="Previous"]:hover {
+  color: white;
+}
+
+button[aria-label="Skip"]:hover {
+  color: white;
+}
+
 .rhap_play-pause-button {
   color: white;
   height: 37px;
@@ -40,6 +48,14 @@
 
   margin-left: 12.5px;
   margin-right: 12.5px;
+}
+
+.rhap_button-clear:hover {
+  opacity: 1;
+}
+
+.rhap_play-pause-button:hover {
+  transform: scale(1.06);
 }
 
 
@@ -117,9 +133,12 @@
 }
 
 .rhap_volume-button {
-
   font-size: 22px;
   margin-bottom: -5px;
+}
+
+.rhap_volume-button:hover {
+  color: white;
 }
 
 .rhap_volume-filled {
