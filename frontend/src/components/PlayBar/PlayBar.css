@@ -102,11 +102,41 @@
 }
 
 .rhap_volume-controls {
-
   margin-right: 50px;
-  margin-left: -50px;
+  margin-left: -150px;
 
-  margin-top: 20px;
-  margin-bottom: -10px;
+  margin-top: 12px;
+  margin-bottom: -12px;
+  
 }
 
+.rhap_volume-bar-area {
+  /* background-color: blue; */
+  width: 100px;
+  /* margin-left: -50px; */
+}
+
+.rhap_volume-button {
+
+  font-size: 22px;
+  margin-bottom: -5px;
+}
+
+.rhap_volume-filled {
+  background-color: white;
+}
+
+.rhap_volume-container:hover .rhap_volume-filled {
+  background-color: #1db954;
+}
+
+.rhap_volume-indicator {
+  background-color: white;
+  visibility: hidden;
+  /* order: 1; */
+  z-index: 3;
+}
+
+.rhap_volume-container:hover .rhap_volume-indicator {
+  visibility: visible;
+}
