@@ -18974,3 +18974,102 @@ Processing by StaticPagesController#frontend_index as */*
 Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 360)
 
 
+Started GET "/api/users" for ::1 at 2022-12-11 13:50:36 -0500
+Processing by StaticPagesController#frontend_index as HTML
+  Parameters: {"path"=>"api/users"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.3ms | Allocations: 6)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 284)
+
+
+Started GET "/api/session" for ::1 at 2022-12-11 13:50:36 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1085)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:50:36 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 287)
+
+
+Started GET "/api/users/1" for ::1 at 2022-12-11 13:50:42 -0500
+Processing by StaticPagesController#frontend_index as HTML
+  Parameters: {"path"=>"api/users/1"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 284)
+
+
+Started GET "/api/session" for ::1 at 2022-12-11 13:50:42 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 916)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:50:42 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:50:48 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 3.2ms | Allocations: 750)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1154)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:50:48 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/albums/1" for ::1 at 2022-12-11 13:52:04 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.4ms | Allocations: 102)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 988)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:52:04 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.4ms | Allocations: 6)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/albums/2" for ::1 at 2022-12-11 13:52:07 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.5ms | Allocations: 102)
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 995)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:52:07 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
