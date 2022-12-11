@@ -18603,3 +18603,374 @@ FOREIGN KEY ("artist_id")
   [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
   [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+Started GET "/api/session" for 127.0.0.1 at 2022-12-11 13:39:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 1.7ms | Allocations: 4805)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-11 13:39:16 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 984)
+
+
+Started GET "/api/favicon.ico" for 127.0.0.1 at 2022-12-11 13:39:16 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"api/favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.3ms | Allocations: 15)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 2347)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-11 13:39:25 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1112)
+
+
+Started GET "/api/favicon.ico" for 127.0.0.1 at 2022-12-11 13:39:25 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"api/favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 319)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-11 13:41:02 -0500
+Processing by Api::SessionsController#show as JSON
+Started GET "/api/albums/favicon.ico" for 127.0.0.1 at 2022-12-11 13:41:02 -0500
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 1.0ms | Allocations: 1266)
+
+
+Processing by Api::AlbumsController#show as */*
+  Parameters: {"id"=>"favicon"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 5.7ms | Allocations: 3344)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.5ms | Allocations: 8867)
+
+
+
+ActionView::MissingTemplate - Missing partial api/albums/_album, application/_album with {:locale=>[:en], :formats=>[:json, :html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:jbuilder]}.
+Searched in:
+  * "/home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views"
+  * "/home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4/app/views"
+  * "/home/arnobdam/wsl-desktop/projects/symphonify/app/views"
+Did you mean?  active_storage/blobs/blob
+               action_text/attachment_galleries/attachment_gallery
+               action_text/attachables/remote_image
+               action_text/contents/content
+               layouts/action_text/contents/content
+               action_text/attachables/missing_attachable:
+  app/views/api/albums/show.json.jbuilder:1
+  app/controllers/api/albums_controller.rb:10:in `show'
+
+Started GET "/api/albums/1" for ::1 at 2022-12-11 13:41:36 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 5.7ms | Allocations: 2006)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 11.4ms | Allocations: 11737)
+
+
+
+ActionView::MissingTemplate - Missing partial api/albums/_album, application/_album with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:jbuilder]}.
+Searched in:
+  * "/home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views"
+  * "/home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4/app/views"
+  * "/home/arnobdam/wsl-desktop/projects/symphonify/app/views"
+Did you mean?  active_storage/blobs/blob
+               action_text/attachment_galleries/attachment_gallery
+               action_text/attachables/remote_image
+               action_text/contents/content
+               layouts/action_text/contents/content
+               action_text/attachables/missing_attachable:
+  app/views/api/albums/show.json.jbuilder:1
+  app/controllers/api/albums_controller.rb:10:in `show'
+
+Started POST "/__better_errors/be5b32307ce72207/variables" for ::1 at 2022-12-11 13:41:37 -0500
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:41:37 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 363)
+
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:41:46 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 6.6ms | Allocations: 2882)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms | Allocations: 3465)
+
+
+
+ActionView::MissingTemplate - Missing partial api/albums/_album, application/_album with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:jbuilder]}.
+Searched in:
+  * "/home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views"
+  * "/home/arnobdam/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4/app/views"
+  * "/home/arnobdam/wsl-desktop/projects/symphonify/app/views"
+Did you mean?  active_storage/blobs/blob
+               action_text/attachment_galleries/attachment_gallery
+               action_text/attachables/remote_image
+               action_text/contents/content
+               layouts/action_text/contents/content
+               action_text/attachables/missing_attachable:
+  app/views/api/albums/index.json.jbuilder:3
+  app/views/api/albums/index.json.jbuilder:2
+  app/views/api/albums/index.json.jbuilder:1
+  app/controllers/api/albums_controller.rb:5:in `index'
+
+Started POST "/__better_errors/f81ad46ee412350b/variables" for ::1 at 2022-12-11 13:41:46 -0500
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:41:46 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:44:05 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (2.0ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 19.9ms | Allocations: 6670)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.0ms | Allocations: 7570)
+
+
+
+NoMethodError - undefined method `name' for #<Album id: 1, title: "Eternal Atake", artist_id: 1, year: 2020, album_photo_url: "/home/arnobdam/wsl-desktop/projects/symphonify/fro...", created_at: "2022-12-11 18:10:45.076633000 +0000", updated_at: "2022-12-11 18:10:45.076633000 +0000">:
+  app/views/api/albums/index.json.jbuilder:3
+  app/views/api/albums/index.json.jbuilder:2
+  app/views/api/albums/index.json.jbuilder:1
+  app/controllers/api/albums_controller.rb:5:in `index'
+
+Started POST "/__better_errors/ac5e94a2d59e54db/variables" for ::1 at 2022-12-11 13:44:05 -0500
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:44:06 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 706)
+
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:44:18 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 6.2ms | Allocations: 966)
+Completed 200 OK in 19ms (Views: 11.8ms | ActiveRecord: 0.4ms | Allocations: 1920)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:44:18 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.3ms | Allocations: 10)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 699)
+
+
+Started GET "/api/albums/1" for ::1 at 2022-12-11 13:44:27 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 1.0ms | Allocations: 194)
+Completed 200 OK in 16ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 1322)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:44:27 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/api/albums/2" for ::1 at 2022-12-11 13:44:31 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.4ms | Allocations: 103)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 971)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:44:31 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-11 13:44:36 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 1.7ms | Allocations: 964)
+
+
+Started GET "/api/albums/favicon.ico" for 127.0.0.1 at 2022-12-11 13:44:36 -0500
+Processing by Api::AlbumsController#show as */*
+  Parameters: {"id"=>"favicon"}
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 5.8ms | Allocations: 3288)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.0ms | Allocations: 4218)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/albums/show.json.jbuilder:1
+  app/controllers/api/albums_controller.rb:10:in `show'
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:44:56 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 3.1ms | Allocations: 954)
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 1814)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:44:56 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.2ms | Allocations: 10)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 698)
+
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:44:59 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 6.8ms | Allocations: 837)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 1341)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:44:59 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:45:09 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (1.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 13.5ms | Allocations: 933)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 1.4ms | Allocations: 1784)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:45:09 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 700)
+
+
+Started GET "/api/albums/" for ::1 at 2022-12-11 13:45:14 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 3.3ms | Allocations: 953)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 1896)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:45:14 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 10)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 699)
+
+
+Started GET "/api/albums/1" for ::1 at 2022-12-11 13:45:31 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.6ms | Allocations: 194)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 1331)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:45:31 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/api/albums/2" for ::1 at 2022-12-11 13:45:35 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.6ms | Allocations: 102)
+Completed 200 OK in 14ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 974)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:45:35 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/albums/3" for ::1 at 2022-12-11 13:45:37 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 7.3ms | Allocations: 3269)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 4111)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass
+    attributes.each{ |key| _set_value key, _format_keys(object.public_send(key)) }
+                                                              ^^^^^^^^^^^^:
+  app/views/api/albums/show.json.jbuilder:1
+  app/controllers/api/albums_controller.rb:10:in `show'
+
+Started POST "/__better_errors/6c7138322a1ee58b/variables" for ::1 at 2022-12-11 13:45:37 -0500
+Started GET "/favicon.ico" for ::1 at 2022-12-11 13:45:37 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 360)
+
+
