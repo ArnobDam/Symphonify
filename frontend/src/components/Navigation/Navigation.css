@@ -17,6 +17,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    /* box-sizing: border-box; */
 }
 
 #topNavBarLoggedIn {
@@ -34,6 +35,7 @@
     align-items: center;
 
     z-index: 0;
+    
 }
 
 #topNavBar li {
@@ -73,7 +75,9 @@
 
     margin-right: 30px;
     margin-left: 30px;
+    /* box-sizing: content-box; */
 }
+
 
 .nav-item button:hover {
 

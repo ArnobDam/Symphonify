@@ -7,7 +7,10 @@ function AlbumListItem({ album, isHighlighted, setHighlightedBench }) {
 
     return (
         <div>
-            
+            <div className="list-item-info">
+                {albumPhotoUrl && <img src={albumPhotoUrl} alt='Album'/>}
+                <h5>{album.title}</h5>
+            </div>
         </div>
     )
 };

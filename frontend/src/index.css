@@ -18,3 +18,10 @@ html {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.middle {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+}

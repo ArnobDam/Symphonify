@@ -16,8 +16,8 @@ function App() {
           {/* <SideBar/> */}
           {/* <img src={require("/home/arnobdam/wsl-desktop/projects/symphonify/frontend/src/images/eternal_atake_lil_uzi_vert.jpg")}/> */}
           <div className="homeControls">
-            {/* <Navigation />
-            <SideBar/> */}
+            <Navigation />            
+            <SideBar/>
             <AlbumIndexPage/>
             <PlayBar />
           </div>

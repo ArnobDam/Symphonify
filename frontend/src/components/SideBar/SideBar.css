@@ -4,6 +4,9 @@
     background-color: black;
     width: 250px;
     height: 100vh;
+    /* margin-top: -65px; */
+    /* padding-top: 65px; */
+    /* overflow: visible; */
 }
 
 .logoDiv {
