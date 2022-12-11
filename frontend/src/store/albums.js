@@ -33,3 +33,33 @@ Each function should call `fetch` to perform the desired database operation and
 dispatch the appropriate action upon a successful response. (You do not need to
 do anything if the `fetch` response is unsuccessful.) 
 */
+
+export const fetchAlbums = () => async dispatch => {
+    const response = await fetch(`/api/albums`);
+    const data = await response.json();
+    return dispatch(receiveAlbums(data));
+}
+
+export const fetchAlbum = (albumId) => async dispatch => {
+    const response = await fetch(`/api/albums/${albumId}`);
+    const data = await response.json();
+    return dispatch(receiveAlbum(data)); //potentially need data.album
+}
+
+//reducer
+
+const albumsReducer = (state = {}, action) => {
+    const nextState ={ ...state }
+
+    switch (action.type) {
+        case RECEIVE_ALBUMS:
+            return { ...nextState, ...action.albums };
+        case RECEIVE_ALBUM:
+            nextState[action.album.id] = action.album;
+            return nextState;
+        default:
+            return state;
+    }
+}
+
+export default albumsReducer;
