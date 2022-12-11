@@ -52,7 +52,7 @@ ApplicationRecord.transaction do
       # albums: [2]
     )
 
-    # puts "Creating albums..."
+    puts "Creating albums..."
 
     Album.create!(
       title: "Eternal Atake",
