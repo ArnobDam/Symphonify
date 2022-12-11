@@ -3,6 +3,7 @@ import AlbumList from "./AlbumList";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchAlbums } from "../../store/albums";
+import './AlbumIndexPage.css'
 
 function AlbumIndexPage() {
     const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function AlbumIndexPage() {
 
     return (
         <div>
-            <h1>Albums</h1>
+            {/* <h1>Albums</h1> */}
             <AlbumList
                 albums={albums}
                 highlightedAlbum={highlightedAlbum}
