@@ -5,6 +5,8 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import PlayBar from "./components/PlayBar";
 import SideBar from "./components/SideBar";
+import AlbumIndexPage from "./components/AlbumIndexPage";
+import AlbumShowPage from "./components/AlbumShowPage";
 
 function App() {
   return (
@@ -16,8 +18,12 @@ function App() {
           <div className="homeControls">
             <Navigation />
             <SideBar/>
+            <AlbumIndexPage/>
             <PlayBar />
           </div>
+        </Route>
+        <Route path="/albums/:albumId">
+          <AlbumShowPage/>
         </Route>
         <Route path="/login">
           <LoginFormPage />
