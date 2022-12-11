@@ -1,18 +1,19 @@
 class CreateAlbums < ActiveRecord::Migration[7.0]
   def change
     create_table :albums do |t|
-      t.string :title, null: false
-      t.integer :artist_id, null: false
+      t.string :title, null: false, index: true
+      # t.integer :artist_id, null: false
+      t.references :artist, index: true, foreign_key: true
       t.integer :year, null: false
       t.string :album_photo_url
 
       t.timestamps
     end
 
-    add_index :albums, :title
-    add_index :albums, :artist_id
+    # add_index :albums, :title
+    # add_index :albums, :artist_id
 
-    add_foreign_key :albums, :artists,
-    column: :artist_id, primary_key: :id
+    # add_foreign_key :albums, :artists,
+    # column: :artist_id, primary_key: :id
   end
 end

@@ -9,6 +9,8 @@ ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
+    Artist.destroy_all
+    Album.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -37,7 +39,39 @@ ApplicationRecord.transaction do
         password: 'password'
       }) 
     end
-  
+
+    puts "Creating artists..."
+
+    Artist.create!(
+      name: "Lil Uzi Vert"
+      # albums: [1]
+    )
+
+    Artist.create!(
+      name: "Logic"
+      # albums: [2]
+    )
+
+    # puts "Creating albums..."
+
+    Album.create!(
+      title: "Eternal Atake",
+      artist_id: 1,
+      year: 2020,
+      # album_photo_url: image_url('eternal_atake_lil_uzi_vert.jpg', )
+      album_photo_url: '/home/arnobdam/wsl-desktop/projects/symphonify/frontend/src/images/eternal_atake_lil_uzi_vert.jpg'
+    )
+
+    Album.create!(
+      title: "Confessions of a Dangerous Mind",
+      artist_id: 2,
+      year: 2019,
+      # album_photo_url: image_url('confessions_of_a_dangerous_mind_logic.jpg')
+      album_photo_url: '/home/arnobdam/wsl-desktop/projects/symphonify/frontend/src/images/confessions_of_a_dangerous_mind_logic.jpg'
+    )
+    
+
+
     puts "Done!"
   end
 

@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_11_002850) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "artist_id", null: false
+    t.bigint "artist_id"
     t.integer "year", null: false
     t.string "album_photo_url"
     t.datetime "created_at", null: false

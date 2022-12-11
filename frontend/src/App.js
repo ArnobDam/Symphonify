@@ -12,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           {/* <SideBar/> */}
+          {/* <img src={require("/home/arnobdam/wsl-desktop/projects/symphonify/frontend/src/images/eternal_atake_lil_uzi_vert.jpg")}/> */}
           <div className="homeControls">
             <Navigation />
             <SideBar/>
