@@ -36,8 +36,16 @@
 
 .album-photo {
     width: 225px;
+
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 .album-text {
     border: 1px solid cyan;
+}
+
+.name-and-year {
+    display: flex;
+    flex-direction: row;
 }

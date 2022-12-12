@@ -9,31 +9,33 @@ import csrfFetch from '../../store/csrf';
 function AlbumShowPage() {
     const dispatch = useDispatch();
     const { albumId } = useParams();
+    // console.log(albumId)
 
-    const album = useSelector(state => state.albums[albumId])
-
+    
+    const album = useSelector(state => state.albums[albumId] ? state.albums[albumId] : {})
+    
+    // console.log(album)
+    
     const [artistName, setArtistName] = useState("");
 
-    useEffect(() => {
-        csrfFetch(`/api/artists/${artistId}`)
-        .then(res => res.json())
-        .then(data => setArtistName(data.name))
-    },[])
+    const { artistId, title, year, albumPhotoUrl } = album;
+    // console.log(artistId)
 
     useEffect(() => {
-        dispatch(fetchAlbum(albumId));
-    }, [albumId, dispatch])
+        console.log("hi2")
+        dispatch(fetchAlbum(albumId))
 
+        if (artistId) {
+            csrfFetch(`/api/artists/${artistId}`)
+            .then(res => res.json())
+            .then(data => setArtistName(data.name))
+        }
+    }, [artistId, albumId, dispatch])
+    
 
     if (!album) {
         return null;
     }
-
-    const { artistId, title, year, albumPhotoUrl } = album;
-
-    
-    
-
 
     return (
         <div className='album-show-page'>
@@ -43,9 +45,11 @@ function AlbumShowPage() {
                 alt='Album'/>
 
                 <div className='album-text'>
-                    <p>{title}</p>
-                    <p>{artistName}</p>
-                    <p>{year}</p>
+                    <p className='album-title'>{title}</p>
+                    <div className='name-and-year'>
+                        <p className='artist-name'>{artistName}</p>
+                        <p className='year'>{year}</p>
+                    </div>
                 </div>
                 
             </div>

@@ -7,19 +7,13 @@ function AlbumListItem({ album, isHighlighted, setHighlightedBench }) {
     const { title, albumPhotoUrl, artistId } = album;
     const history = useHistory(); 
 
-    // console.log(baseUrl+albumPhotoUrl)
-
-    // const artists = useSelector(state => Object.values(state.artists))
-    // console.log(artists)
-    // const artist = Artist.find_by(id: artistId);
-
     const [artistName, setArtistName] = useState("");
 
     useEffect(() => {
         csrfFetch(`/api/artists/${artistId}`)
         .then(res => res.json())
         .then(data => setArtistName(data.name))
-    },[])
+    },[artistId])
 
 
     return (
