@@ -13,27 +13,36 @@ function AlbumShowPage() {
     const { albumId } = useParams();
     // console.log(albumId)
 
-    
+
     const album = useSelector(state => state.albums[albumId] ? state.albums[albumId] : {})
-    
+
     // console.log(album)
-    
+
     const [artistName, setArtistName] = useState("");
 
     const { artistId, title, year, albumPhotoUrl } = album;
     // console.log(artistId)
 
     useEffect(() => {
-        console.log("hi2")
+        // console.log("hi2")
         dispatch(fetchAlbum(albumId))
 
         if (artistId) {
             csrfFetch(`/api/artists/${artistId}`)
-            .then(res => res.json())
-            .then(data => setArtistName(data.name))
+                .then(res => res.json())
+                .then(data => setArtistName(data.name))
         }
     }, [artistId, albumId, dispatch])
-    
+
+
+    // console.log(album)
+    // if (album.songs) {
+    //     console.log("hi")
+    //     album.songs.forEach((song) => {
+    //         console.log(song)
+    //     })
+    // }
+
 
     if (!album) {
         return null;
@@ -42,9 +51,9 @@ function AlbumShowPage() {
     return (
         <div className='album-show-page'>
             <div className='album-details'>
-                <img className="album-photo" 
-                src={`https://symphonify-dev.s3.amazonaws.com/48fqqfpepeixxxfyn7i4h1xqdyrg`} 
-                alt='Album'/>
+                <img className="album-photo"
+                    src={`https://symphonify-dev.s3.amazonaws.com/48fqqfpepeixxxfyn7i4h1xqdyrg`}
+                    alt='Album' />
 
                 <div className='album-text'>
                     <p className='album-title'>{title}</p>
@@ -54,13 +63,13 @@ function AlbumShowPage() {
                         <p className='year'>{year}</p>
                     </div>
                 </div>
-                
-            </div>
-            <div className='albums-songs'>
 
             </div>
-            
-            
+            <div className='album-songs'>
+
+            </div>
+
+
         </div>
     )
 };
