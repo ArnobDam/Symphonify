@@ -29113,3 +29113,1575 @@ Processing by StaticPagesController#frontend_index as */*
 Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 286)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (127.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "symphonify_development"[0m
+  [1m[35m (222.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "symphonify_test"[0m
+  [1m[35m (388.2ms)[0m  [1m[35mCREATE DATABASE "symphonify_development" ENCODING = 'unicode'[0m
+  [1m[35m (274.2ms)[0m  [1m[35mCREATE DATABASE "symphonify_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (23.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "title" character varying NOT NULL, "artist_id" bigint, "year" integer NOT NULL, "album_photo_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE INDEX "index_albums_on_artist_id" ON "albums" ("artist_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE INDEX "index_albums_on_title" ON "albums" ("title")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying NOT NULL, "artist_photo_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE INDEX "index_artists_on_name" ON "artists" ("name")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_124a79559a"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221211002850)[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221204045616),
+(20221208211824),
+(20221208211958),
+(20221211002831);
+
+[0m
+  [1m[35m (24.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-12 16:49:46.554307"], ["updated_at", "2022-12-12 16:49:46.554307"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "6d9bee126b879f9f67e773c26688f6351fd0b18c"], ["created_at", "2022-12-12 16:49:46.566120"], ["updated_at", "2022-12-12 16:49:46.566120"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "title" character varying NOT NULL, "artist_id" bigint, "year" integer NOT NULL, "album_photo_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE INDEX "index_albums_on_artist_id" ON "albums" ("artist_id")[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE INDEX "index_albums_on_title" ON "albums" ("title")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying NOT NULL, "artist_photo_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE INDEX "index_artists_on_name" ON "artists" ("name")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "albums" ADD CONSTRAINT "fk_rails_124a79559a"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221211002850)[0m
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221204045616),
+(20221208211824),
+(20221208211958),
+(20221211002831);
+
+[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-12 16:49:46.837377"], ["updated_at", "2022-12-12 16:49:46.837377"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-12 16:49:46.845414"], ["key", "environment"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "6d9bee126b879f9f67e773c26688f6351fd0b18c"], ["created_at", "2022-12-12 16:49:46.852623"], ["updated_at", "2022-12-12 16:49:46.852623"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Demo-lition"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@user.io"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "demo@user.io"], ["username", "Demo-lition"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:47.160921"], ["updated_at", "2022-12-12 16:49:47.160921"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Guest"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@guest.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "guest@guest.com"], ["username", "Guest"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:47.383084"], ["updated_at", "2022-12-12 16:49:47.383084"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "timothy"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mimi_klein@quitzon.co"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "mimi_klein@quitzon.co"], ["username", "timothy"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:47.947374"], ["updated_at", "2022-12-12 16:49:47.947374"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "isaiah.macgyver"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "drew_lebsack@ledner.biz"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "drew_lebsack@ledner.biz"], ["username", "isaiah.macgyver"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:48.169259"], ["updated_at", "2022-12-12 16:49:48.169259"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "steven_schuster"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kraig@baumbach-medhurst.io"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kraig@baumbach-medhurst.io"], ["username", "steven_schuster"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:48.391285"], ["updated_at", "2022-12-12 16:49:48.391285"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "trinidad"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pedro.cassin@koelpin-mosciski.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "pedro.cassin@koelpin-mosciski.com"], ["username", "trinidad"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:48.613618"], ["updated_at", "2022-12-12 16:49:48.613618"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dwayne.quitzon"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "refugio@spencer.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "refugio@spencer.com"], ["username", "dwayne.quitzon"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:48.836431"], ["updated_at", "2022-12-12 16:49:48.836431"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "clarisa_blick"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "twanna_monahan@erdman-anderson.net"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "twanna_monahan@erdman-anderson.net"], ["username", "clarisa_blick"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:49.058145"], ["updated_at", "2022-12-12 16:49:49.058145"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "archie"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sherie_gislason@jakubowski-smitham.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "sherie_gislason@jakubowski-smitham.com"], ["username", "archie"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:49.280100"], ["updated_at", "2022-12-12 16:49:49.280100"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "glenna.lebsack"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "elliot@davis.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "elliot@davis.com"], ["username", "glenna.lebsack"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:49.502239"], ["updated_at", "2022-12-12 16:49:49.502239"]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "phoebe_spencer"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kevin.friesen@kovacek.net"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kevin.friesen@kovacek.net"], ["username", "phoebe_spencer"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:49.734809"], ["updated_at", "2022-12-12 16:49:49.734809"]]
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "samual_hudson"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jim.tremblay@abshire-prosacco.co"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "jim.tremblay@abshire-prosacco.co"], ["username", "samual_hudson"], ["password_digest", "[FILTERED]"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-12 16:49:49.957929"], ["updated_at", "2022-12-12 16:49:49.957929"]]
+  [1m[36mArtist Create (0.7ms)[0m  [1m[32mINSERT INTO "artists" ("name", "artist_photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lil Uzi Vert"], ["artist_photo_url", nil], ["created_at", "2022-12-12 16:49:49.968157"], ["updated_at", "2022-12-12 16:49:49.968157"]]
+  [1m[36mArtist Create (0.8ms)[0m  [1m[32mINSERT INTO "artists" ("name", "artist_photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Logic"], ["artist_photo_url", nil], ["created_at", "2022-12-12 16:49:49.972767"], ["updated_at", "2022-12-12 16:49:49.972767"]]
+  [1m[36mArtist Load (1.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAlbum Create (1.0ms)[0m  [1m[32mINSERT INTO "albums" ("title", "artist_id", "year", "album_photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Eternal Atake"], ["artist_id", 1], ["year", 2020], ["album_photo_url", "eternal_atake_lil_uzi_vert.jpg"], ["created_at", "2022-12-12 16:49:50.009385"], ["updated_at", "2022-12-12 16:49:50.009385"]]
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAlbum Create (0.4ms)[0m  [1m[32mINSERT INTO "albums" ("title", "artist_id", "year", "album_photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Confessions of a Dangerous Mind"], ["artist_id", 2], ["year", 2019], ["album_photo_url", "confessions_of_a_dangerous_mind_logic.jpg"], ["created_at", "2022-12-12 16:49:50.015124"], ["updated_at", "2022-12-12 16:49:50.015124"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/albums/1" for 127.0.0.1 at 2022-12-12 11:50:10 -0500
+Started GET "/albums/favicon.ico" for 127.0.0.1 at 2022-12-12 11:50:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#frontend_index as */*
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"path"=>"albums/favicon"}
+  Parameters: {"id"=>"1"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.4ms | Allocations: 71)
+Completed 200 OK in 44ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 7988)
+
+
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 1.1ms | Allocations: 461)
+Completed 200 OK in 64ms (Views: 3.6ms | ActiveRecord: 10.8ms | Allocations: 14395)
+
+
+Started GET "/api/albums/1" for 127.0.0.1 at 2022-12-12 11:50:10 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 2.4ms | Allocations: 141)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 1225)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:50:11 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 1.0ms | Allocations: 169)
+Completed 200 OK in 25ms (Views: 3.3ms | ActiveRecord: 7.6ms | Allocations: 5823)
+
+
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 11:50:17 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 9.9ms | Allocations: 976)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.6ms | Allocations: 1569)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:50:17 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 971)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:50:17 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 11ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:50:17 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 927)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:50:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:50:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 928)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:50:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:50:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 9.8ms | Allocations: 59)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:50:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:50:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 13ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:50:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.9ms | Allocations: 59)
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 927)
+
+
+Started GET "/api/albums/2" for 127.0.0.1 at 2022-12-12 11:50:26 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 2.7ms | Allocations: 142)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 1037)
+
+
+Started GET "/api/albums/2" for 127.0.0.1 at 2022-12-12 11:50:26 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.4ms | Allocations: 141)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 1029)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:50:27 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 13ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 942)
+
+
+Started GET "/albums/favicon.ico" for 127.0.0.1 at 2022-12-12 11:50:27 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"albums/favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 314)
+
+
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 11:51:04 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 3.3ms | Allocations: 782)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 1203)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:51:04 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 13ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 927)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:51:04 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:51:04 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:51:04 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:51:04 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 1.0ms | Allocations: 59)
+Completed 200 OK in 12ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 927)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:51:05 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (6.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 15ms (Views: 1.9ms | ActiveRecord: 6.2ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:51:05 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 1.3ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:51:05 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 927)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 11:51:05 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 960)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 11:51:05 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 960)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:25 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:25 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  [1m[36mArtist Load (2.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/artists/show.json.jbuilder
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendered api/artists/show.json.jbuilder (Duration: 0.4ms | Allocations: 59)
+  Rendering api/artists/show.json.jbuilder
+Completed 200 OK in 63ms (Views: 8.0ms | ActiveRecord: 27.6ms | Allocations: 6235)
+
+
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 71ms (Views: 3.9ms | ActiveRecord: 17.3ms | Allocations: 8369)
+
+
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 12:01:25 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 3.9ms | Allocations: 803)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 1230)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:25 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.4ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 954)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:25 -0500
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:25 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 993)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 956)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 954)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1059)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 954)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 954)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.3ms | Allocations: 1300)
+
+
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 2050)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 955)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/artists/show.json.jbuilder
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 1.2ms | Allocations: 1804)
+
+
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 9ms (Views: 3.1ms | ActiveRecord: 1.2ms | Allocations: 2044)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:27 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.8ms | Allocations: 59)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 954)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:27 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:27 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/artists/show.json.jbuilder
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 1.3ms | Allocations: 2090)
+
+
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 1.2ms | Allocations: 1651)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:27 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 954)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:27 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.8ms | Allocations: 59)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 954)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:27 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 954)
+
+
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 12:01:31 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (1.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 4.6ms | Allocations: 805)
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 1.8ms | Allocations: 1217)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:31 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:31 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.5ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 952)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:31 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.6ms | Allocations: 59)
+Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:32 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:32 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:32 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:32 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:32 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:01:32 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 2.6ms | Allocations: 59)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:01:32 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:02:52 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:02:52 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 945)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 945)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:02:53 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 945)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:02:53 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 945)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:02:53 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.6ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 945)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:02:53 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 945)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:02:53 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 945)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:02:53 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 945)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:02:54 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 945)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:02:54 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 945)
+
+
+Started GET "/api/albums/1" for 127.0.0.1 at 2022-12-12 12:03:02 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:02 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.3ms | Allocations: 142)
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 0.4ms | Allocations: 1101)
+
+
+Started GET "/albums/favicon.ico" for 127.0.0.1 at 2022-12-12 12:03:02 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"albums/favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.2ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 1.0ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 935)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:06 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 933)
+
+
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 12:03:06 -0500
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:06 -0500
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 3.9ms | Allocations: 882)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 1306)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:06 -0500
+  [1m[36mArtist Load (2.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 2.6ms | Allocations: 1224)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 933)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:06 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 933)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:06 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 934)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:07 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.8ms | Allocations: 59)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 933)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:07 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.6ms | Allocations: 59)
+Completed 200 OK in 14ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 933)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:07 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 933)
+
+
+Started GET "/albums/favicon.ico" for 127.0.0.1 at 2022-12-12 12:03:07 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:07 -0500
+Started GET "/api/albums/2" for 127.0.0.1 at 2022-12-12 12:03:07 -0500
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"albums/favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::AlbumsController#show as JSON
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Parameters: {"id"=>"2"}
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.4ms | Allocations: 59)
+  [1m[36mAlbum Load (1.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+Completed 200 OK in 13ms (Views: 4.7ms | ActiveRecord: 0.7ms | Allocations: 1595)
+
+
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.3ms | Allocations: 141)
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 1.5ms | Allocations: 1586)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:07 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 933)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:08 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 948)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:09 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.4ms | Allocations: 59)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mArtist Load (2.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+  [1m[36mAlbum Load (5.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 14.6ms | Allocations: 1880)
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 5.1ms | Allocations: 2391)
+
+
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 2.3ms | Allocations: 2178)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 958)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 1.1ms | Allocations: 59)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/albums/favicon.ico" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Started GET "/api/albums/1" for 127.0.0.1 at 2022-12-12 12:03:10 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.4ms | Allocations: 140)
+Processing by StaticPagesController#frontend_index as */*
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 1486)
+
+
+  Parameters: {"path"=>"albums/favicon"}
+  Rendering public/index.html
+  Rendered public/index.html (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:11 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:11 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:11 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:11 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 936)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.4ms | Allocations: 59)
+Completed 200 OK in 17ms (Views: 4.7ms | ActiveRecord: 0.8ms | Allocations: 1316)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 13ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1095)
+
+
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 15.3ms | Allocations: 783)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.7ms | Allocations: 1195)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 939)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 939)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (1.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 1.7ms | Allocations: 939)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 939)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 939)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:14 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 943)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:15 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 943)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:15 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 941)
+
+
+Started GET "/api/albums/1" for 127.0.0.1 at 2022-12-12 12:03:15 -0500
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:9:in `show'
+  Rendering api/albums/show.json.jbuilder
+  Rendered api/albums/show.json.jbuilder (Duration: 0.6ms | Allocations: 142)
+Completed 200 OK in 14ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 1030)
+
+
+Started GET "/albums/favicon.ico" for 127.0.0.1 at 2022-12-12 12:03:15 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:15 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by StaticPagesController#frontend_index as */*
+  Parameters: {"path"=>"albums/favicon"}
+  Rendering public/index.html
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendered public/index.html (Duration: 1.1ms | Allocations: 358)
+  Rendering api/artists/show.json.jbuilder
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 812)
+
+
+  Rendered api/artists/show.json.jbuilder (Duration: 0.4ms | Allocations: 60)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 1.2ms | Allocations: 1486)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:17 -0500
+Started GET "/api/albums" for 127.0.0.1 at 2022-12-12 12:03:17 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:17 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+  Rendering api/artists/show.json.jbuilder
+Completed 200 OK in 17ms (Views: 3.4ms | ActiveRecord: 1.1ms | Allocations: 1517)
+
+
+  Rendered api/artists/show.json.jbuilder (Duration: 0.8ms | Allocations: 59)
+Completed 200 OK in 34ms (Views: 19.9ms | ActiveRecord: 0.6ms | Allocations: 3225)
+
+
+Processing by Api::AlbumsController#index as JSON
+  Rendering api/albums/index.json.jbuilder
+  [1m[36mAlbum Load (1.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/api/albums/index.json.jbuilder:1
+  Rendered api/albums/index.json.jbuilder (Duration: 7.0ms | Allocations: 782)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 1.5ms | Allocations: 1213)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:17 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:17 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1174)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:17 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.5ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 957)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:18 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 957)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:24 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:24 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by Api::ArtistsController#show as JSON
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Parameters: {"id"=>"1"}
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 1661)
+
+
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.4ms | Allocations: 59)
+Completed 200 OK in 14ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 1492)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:25 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:25 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1024)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 952)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:25 -0500
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:25 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1079)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:25 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:25 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 951)
+
+
+Started GET "/api/artists/2" for 127.0.0.1 at 2022-12-12 12:03:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
+Started GET "/api/artists/1" for 127.0.0.1 at 2022-12-12 12:03:26 -0500
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:4:in `show'
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (Duration: 0.2ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 951)
+
+
