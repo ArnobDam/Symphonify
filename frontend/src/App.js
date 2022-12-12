@@ -23,7 +23,12 @@ function App() {
           </div>
         </Route>
         <Route path="/albums/:albumId">
-          <AlbumShowPage/>
+          <div className="homeControls">
+            <Navigation />            
+            <SideBar/>
+            <AlbumShowPage/>
+            <PlayBar />
+          </div>
         </Route>
         <Route path="/login">
           <LoginFormPage />
