@@ -8,7 +8,7 @@ import './AlbumIndexPage.css'
 function AlbumIndexPage() {
     const dispatch = useDispatch();
     const history = useHistory(); 
-    const albums = useSelector(state => Object.values(state.albums));
+    const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
 
     const [highlightedAlbum, setHighlightedAlbum] = useState(null);
     
