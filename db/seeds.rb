@@ -58,16 +58,14 @@ ApplicationRecord.transaction do
       title: "Eternal Atake",
       artist_id: 1,
       year: 2020,
-      # album_photo_url: image_url('eternal_atake_lil_uzi_vert.jpg', )
-      album_photo_url: '/home/arnobdam/wsl-desktop/projects/symphonify/frontend/src/images/eternal_atake_lil_uzi_vert.jpg'
+      album_photo_url: 'eternal_atake_lil_uzi_vert.jpg'
     )
 
     Album.create!(
       title: "Confessions of a Dangerous Mind",
       artist_id: 2,
       year: 2019,
-      # album_photo_url: image_url('confessions_of_a_dangerous_mind_logic.jpg')
-      album_photo_url: '/home/arnobdam/wsl-desktop/projects/symphonify/frontend/src/images/confessions_of_a_dangerous_mind_logic.jpg'
+      album_photo_url: 'confessions_of_a_dangerous_mind_logic.jpg'
     )
     
 

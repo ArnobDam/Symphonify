@@ -5,11 +5,14 @@ function AlbumListItem({ album, isHighlighted, setHighlightedBench }) {
     const { title, albumPhotoUrl, artistId } = album;
     const history = useHistory(); 
 
+    // console.log(baseUrl+albumPhotoUrl)
+
     return (
+        
         <div>
             <div className="list-item-info">
-                {albumPhotoUrl && <img src={albumPhotoUrl} alt='Album'/>}
-                <h5>{album.title}</h5>
+                <img src={`https://symphonify-dev.s3.amazonaws.com/48fqqfpepeixxxfyn7i4h1xqdyrg`} alt='Album'/>
+                <h5>{title}</h5>
             </div>
         </div>
     )
