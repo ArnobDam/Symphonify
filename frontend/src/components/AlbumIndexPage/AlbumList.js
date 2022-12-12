@@ -3,8 +3,9 @@ import AlbumListItem from "./AlbumListItem";
 
 function AlbumList({ albums, highlightedAlbum, setHighlightedAlbum }) {
     return (
-        <div className="album-list">
-          <h1>Albums </h1>
+        <div className="album-list-w-header">
+          <h1>Albums</h1>
+          <div className="album-list">
           {albums.map((album) => (
             <AlbumListItem
               key={album.id}
@@ -13,7 +14,9 @@ function AlbumList({ albums, highlightedAlbum, setHighlightedAlbum }) {
             //   setHighlightedAlbum={setHighlightedAlbum}
             />
           ))}
+          </div>
         </div>
+        
       );
 };
 

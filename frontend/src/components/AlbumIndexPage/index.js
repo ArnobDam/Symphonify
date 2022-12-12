@@ -17,14 +17,14 @@ function AlbumIndexPage() {
     }, [dispatch]);
 
     return (
-        <>
-            {/* <h1>Albums</h1> */}
+        <div className="albumIndexPage">
+            {/* <p>Albums</p> */}
             <AlbumList
                 albums={albums}
                 highlightedAlbum={highlightedAlbum}
                 setHighlightedAlbum={setHighlightedAlbum}
             />
-        </>
+        </div>
     )
 
 };
