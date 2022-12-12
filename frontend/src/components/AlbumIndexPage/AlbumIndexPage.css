@@ -18,7 +18,8 @@
 .album-list {
     display: flex;
     flex-direction: row;
-    padding: 0px 20px;
+    padding: 0px 20px; /* first value top bottom, second value left right*/
+    
 }
 
 .albumPhoto {
@@ -37,5 +38,24 @@
     border: 1px solid greenyellow;
     border-radius: 5px;
 
-    margin: 10px 10px;
+    margin: 10px 10px; /* first value top bottom, second value left right*/
+
+    
+}
+
+.albumTitle {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+    white-space: nowrap;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.artistName {
+    color: #a7a7a7;
+
 }
