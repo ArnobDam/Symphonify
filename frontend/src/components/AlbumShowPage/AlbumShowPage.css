@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     
-    border: 1px solid plum;
+    /* border: 1px solid plum; */
     color: white;
 
     margin-left: 250px;
@@ -10,6 +10,9 @@
     height: 460px;
 
     overflow: scroll;
+
+    
+    
 
 }
 
@@ -25,27 +28,64 @@
 }
 
 .album-details {
-    border: 1px solid greenyellow;
+    /* border: 1px solid greenyellow; */
     
     display: flex;
     flex-direction: row;
     align-items: flex-end;
 
+    
     height: 60%;
+
+
+    /* width: 600px; */
+
+    
+
+    /* margin-bottom: 20px; */
 }
 
 .album-photo {
     width: 225px;
 
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-left: 30px;
 }
 
 .album-text {
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
+    padding: 1px;
+    margin-bottom: 30px;
+    margin-left: 25px;
+    
+    font-weight: bold;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    
+}
+
+.album-title {
+    font-size: 45px;
+
+    white-space: nowrap;
+
+    margin-bottom: 20px;    
+    letter-spacing: -0.03em;
+    
 }
 
 .name-and-year {
     display: flex;
     flex-direction: row;
+}
+
+.bullet-point {
+    margin: 0px 5px;
+}
+
+.year {
+    font-weight: normal;
 }

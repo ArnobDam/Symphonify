@@ -6,6 +6,8 @@ import './AlbumShowPage.css'
 import { useDispatch, useSelector } from 'react-redux';
 import csrfFetch from '../../store/csrf';
 
+import { Redirect } from 'react-router-dom';
+
 function AlbumShowPage() {
     const dispatch = useDispatch();
     const { albumId } = useParams();
@@ -48,6 +50,7 @@ function AlbumShowPage() {
                     <p className='album-title'>{title}</p>
                     <div className='name-and-year'>
                         <p className='artist-name'>{artistName}</p>
+                        <p className='bullet-point'>•</p>
                         <p className='year'>{year}</p>
                     </div>
                 </div>
