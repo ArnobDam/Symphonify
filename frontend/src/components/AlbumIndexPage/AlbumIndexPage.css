@@ -1,12 +1,29 @@
 .album-list-w-header {
     display: flex;
     flex-direction: column;
-    border: 1px solid plum;
+    /* border: 1px solid plum; */
     margin-left: 250px;
 
     height: 460px;
+    
     color: white;
+
+    /* width: 1000px; */
+    
+    overflow: scroll;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.album-list-w-header::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.album-list-w-header {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 .album-list-w-header > h1 {
     font-size: 22px;
     font-weight: bold;
@@ -18,29 +35,37 @@
 .album-list {
     display: flex;
     flex-direction: row;
-    padding: 0px 20px; /* first value top bottom, second value left right*/
-    
+    padding: 0px 22px; /* first value top bottom, second value left right*/
+    flex-wrap: wrap;
 }
 
-.albumPhoto {
-    border-radius: 7px;
-}
+
 
 .list-item-info {
     display: flex;
     flex-direction: column;
 
-    width: 175px;
+    width: 180px;
 
     padding: 20px;
     padding-bottom: 40px;
 
-    border: 1px solid greenyellow;
+    /* border: 1px solid greenyellow; */
     border-radius: 5px;
 
-    margin: 10px 10px; /* first value top bottom, second value left right*/
+    margin: 10px 12px; /* first value top bottom, second value left right*/
 
-    
+    background-color: #151515;
+}
+
+.list-item-info:hover {
+    background-color: #292929;
+    transition: background .5s;
+}
+
+.albumPhoto {
+    border-radius: 7px;
+    box-shadow: 0px 2px 20px black;
 }
 
 .albumTitle {
