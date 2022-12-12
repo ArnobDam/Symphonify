@@ -68,7 +68,25 @@ ApplicationRecord.transaction do
       album_photo_url: 'confessions_of_a_dangerous_mind_logic.jpg'
     )
     
+    puts "Creating songs..."
 
+    Song.create!(
+      title: "Song1",
+      album_id: 1,
+      song_url: 'https://hanzluo.s3-us-west-1.amazonaws.com/music/ziyounvshen.mp3'
+    )
+
+    Song.create!(
+      title: "Song2",
+      album_id: 1,
+      song_url: 'https://hanzluo.s3-us-west-1.amazonaws.com/music/wuyuwuqing.mp3'
+    )
+
+    Song.create!(
+      title: "Song3",
+      album_id: 1,
+      song_url: 'https://hanzluo.s3-us-west-1.amazonaws.com/music/suipian.mp3'
+    )
 
     puts "Done!"
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_11_002850) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_183903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_11_002850) do
 
   create_table "albums", force: :cascade do |t|
     t.string "title", null: false
-    t.bigint "artist_id"
+    t.bigint "artist_id", null: false
     t.integer "year", null: false
     t.string "album_photo_url"
     t.datetime "created_at", null: false
@@ -67,6 +67,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_11_002850) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "songs", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "album_id", null: false
+    t.string "song_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_songs_on_album_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "username", null: false
@@ -82,4 +91,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_11_002850) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "albums", "artists"
+  add_foreign_key "songs", "albums"
 end
