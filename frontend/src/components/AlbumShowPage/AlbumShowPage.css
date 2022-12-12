@@ -1,0 +1,43 @@
+.album-show-page {
+    display: flex;
+    flex-direction: column;
+    
+    border: 1px solid plum;
+    color: white;
+
+    margin-left: 250px;
+
+    height: 460px;
+
+    overflow: scroll;
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.album-show-page::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.album-show-page {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.album-details {
+    border: 1px solid greenyellow;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    height: 60%;
+}
+
+.album-photo {
+    width: 225px;
+}
+
+.album-text {
+    border: 1px solid cyan;
+}
