@@ -117,7 +117,7 @@ function AlbumShowPage() {
                 {songsArr.map((song, idx) => {
                     // {console.log(song.title)}
                     // return (<p>{song.title}</p>)
-                    {console.log(idx)}
+                    // {console.log(idx)}
                     return (<Track
                         id={idx} 
                         songTitle={song.title} 

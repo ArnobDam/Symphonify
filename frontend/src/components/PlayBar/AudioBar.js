@@ -24,6 +24,8 @@ const AudioBar = ({ trackUrl , autoPlayBool }) => {
 
 
     // const [currentPlaylistObj, setCurrentPlaylistObj] = useState({});
+    const currentTrackId = useSelector((state) => state.currentTrack)
+    
     const [currentPlaylistArr, setCurrentPlaylistArr] = useState([])
 
     const currentPlaylistSliceOfState = useSelector((state) => JSON.stringify(state.currentPlaylist) !== '{}' ? state.currentPlaylist : null)
@@ -40,8 +42,8 @@ const AudioBar = ({ trackUrl , autoPlayBool }) => {
 
     useEffect(() => {
         if (currentPlaylistSliceOfState) {
-            console.log(currentPlaylistSliceOfState)
-            for (const [key, value] of Object.entries(currentPlaylistSliceOfState[1].album.songs)) {
+            // console.log(currentPlaylistSliceOfState)
+            for (const [key, value] of Object.entries(currentPlaylistSliceOfState[1].album.songs)) { //!!!
                 if (!currentPlaylistArr.includes(value.songUrl)) {
                     setCurrentPlaylistArr((currentPlaylistArr) => [...currentPlaylistArr, value.songUrl]) //later maybe get song name too
                     // console.log(value.songUrl)
@@ -55,8 +57,12 @@ const AudioBar = ({ trackUrl , autoPlayBool }) => {
     // console.log(currentPlaylistObj)
     // console.log(currentPlaylistArr)
     
-
+    console.log(currentTrackId)
     const [currentTrack, setTrackIndex] = useState(0);
+
+    useEffect(() => {
+        setTrackIndex(currentTrackId)
+    }, [currentTrackId]);
 
     const handleClickNext = () => {
         setTrackIndex((currentTrack) =>
@@ -90,7 +96,7 @@ const AudioBar = ({ trackUrl , autoPlayBool }) => {
     // />
     <AudioPlayer
         className='bar'
-        // autoPlay
+        autoPlay
         // autoPlay={autoPlayBool ? false : autoPlayBool}
         showSkipControls
         // src={playlist[currentTrack].src}

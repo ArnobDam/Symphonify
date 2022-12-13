@@ -12,16 +12,17 @@ export const setCurrentTrack = (songId) => ({
 })
 
 export const setTheCurrentTrack = (songId) => async dispatch => {
-    return dispatch(setCurrentTrack(songId))
+    return dispatch(setCurrentTrack(songId));
 }
 
 const currentTrackReducer = (state = {}, action) => {
-    const nextState = { ...state }
+    // const nextState = { ...state }
 
     switch (action.type) {
         case SET_CURRENT_TRACK:
-            nextState["currentTrack"] = action.songId;
-            return nextState;
+            // nextState["currentTrack"] = action.songId;
+            // debugger
+            return action.songId;
         default:
             return state;
     }
