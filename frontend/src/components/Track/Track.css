@@ -1,15 +1,30 @@
 .track {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
     border: .2px solid hotpink;
-    height: 50px;
+    border-radius: 5px;
+    height: 55px;
+}
+
+.play-pause-and-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.play-pause-button {
+    background-color: transparent;
+    color: white;
+    font-size: large;
+    transform: scale(1.6, 1);
 }
 
 .track-text {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-left: 10px;
 }
 
 .song-title {
@@ -18,7 +33,13 @@
 
 }
 
-.artist-name {
+.artist-name-track {
     font-size: 14px;
     color: #a7a7a7;
+}
+
+.options-button {
+    background-color: transparent;
+    color: white;
+    letter-spacing: 2px;
 }

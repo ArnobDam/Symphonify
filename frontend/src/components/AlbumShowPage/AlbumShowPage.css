@@ -99,6 +99,7 @@
     color: white;
     height: fit-content;
     /* z-index: 4; */
+    padding: 0px 30px;
 }
 
 .hashtag-and-title {
