@@ -25,29 +25,57 @@ function AlbumShowPage() {
     // console.log(songIds)
 
     const [songsArr, setSongsArr] = useState([]);
+    const [songTitlesArr, setSongTitlesArr] = useState([]);
 
     useEffect(() => {
         // console.log("hi2")
-        dispatch(fetchAlbum(albumId))
+        dispatch(fetchAlbum(albumId)).then(res => {
 
-        if (artistId) {
-            csrfFetch(`/api/artists/${artistId}`)
-                .then(res => res.json())
-                .then(data => setArtistName(data.name))
-        }
+            // console.log(res.payload.album)
 
-        // console.log(songIds)
-        if (songIds) {
-            songIds.forEach(songId => {
-                csrfFetch(`/api/songs/${songId}`)
-                .then(res => res.json())
-                .then(data => setSongsArr((songsArr) => [...songsArr, data]))
-            });
-        }
+            let data = res.payload.album;
 
-    }, [artistId, albumId, dispatch])
+            if (data.artist.name) {
+                setArtistName(data.artist.name)
+            }
 
-        // console.log(songsArr)
+            if (data.songs) {
+                console.log(data.songs)
+                for (const [key, value] of Object.entries(data.songs)) {
+                    console.log(value.title)
+                    console.log(songTitlesArr)
+                    console.log(songsArr)
+                    // console.log(songTitlesArr.includes(value.title))
+                    if (!songTitlesArr.includes(value.title)) {
+                        setSongsArr((songsArr) => [...songsArr, value])
+                        setSongTitlesArr((songTitlesArr) => [...songTitlesArr, value.title])
+                    }
+                }
+
+            }
+        })
+
+        // if (artistId) {
+        //     csrfFetch(`/api/artists/${artistId}`)
+        //         .then(res => res.json())
+        //         .then(data => setArtistName(data.name))
+        // }
+
+
+
+        // // console.log(songIds)
+        // if (songIds) {
+        //     songIds.forEach(songId => {
+        //         csrfFetch(`/api/songs/${songId}`)
+        //         .then(res => res.json())
+        //         .then(data => setSongsArr((songsArr) => [...songsArr, data]))
+        //     });
+        // }
+
+    }, [albumId, dispatch])
+
+    // console.log(songsArr)
+    // console.log(songTitlesArr)
 
     // console.log(album)
     // if (album.songs) {
@@ -62,6 +90,7 @@ function AlbumShowPage() {
         return null;
     }
 
+    console.log(songsArr)
     return (
         <div className='album-show-page'>
             <div className='album-details'>
@@ -84,11 +113,11 @@ function AlbumShowPage() {
                     <p className='hashtag'>#</p>
                     <p className='title-text'>TITLE</p>
                 </div>
-                
+
                 {songsArr.map((song) => {
                     // {console.log(song.title)}
                     // return (<p>{song.title}</p>)
-                    return (<Track songTitle={song.title} artistName={artistName} songUrl={song.songUrl}/>)
+                    return (<Track songTitle={song.title} artistName={artistName} songUrl={song.songUrl} />)
                 })}
             </div>
 
