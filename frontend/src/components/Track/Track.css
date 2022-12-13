@@ -3,21 +3,36 @@
     flex-direction: row;
     justify-content: space-between;
 
-    border: .2px solid hotpink;
+    /* border: .2px solid hotpink; */
     border-radius: 5px;
     height: 55px;
+    padding: 2px;
+}
+
+.track:hover {
+    background-color: rgba(72,72,72,0.3);
+}
+
+.track:hover > .options-button {
+    visibility: visible;
+}
+
+.track:hover .artist-name-track {
+    color: white;
 }
 
 .play-pause-and-text {
     display: flex;
     flex-direction: row;
+    margin-left: 8px;
 }
 
 .play-pause-button {
     background-color: transparent;
     color: white;
     font-size: large;
-    transform: scale(1.6, 1);
+    transform: scale(1.7, 1);
+    border: 0px;
 }
 
 .track-text {
@@ -42,4 +57,8 @@
     background-color: transparent;
     color: white;
     letter-spacing: 2px;
+    border: 0px;
+    margin-right: 8px;
+
+    visibility: hidden;
 }
