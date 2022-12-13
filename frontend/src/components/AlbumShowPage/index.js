@@ -20,8 +20,10 @@ function AlbumShowPage() {
 
     const [artistName, setArtistName] = useState("");
 
-    const { artistId, title, year, albumPhotoUrl } = album;
-    // console.log(artistId)
+    const { artistId, title, year, albumPhotoUrl, songIds } = album;
+    // console.log(songIds)
+
+    const [songsArr, setSongsArr] = useState([]);
 
     useEffect(() => {
         // console.log("hi2")
@@ -32,8 +34,19 @@ function AlbumShowPage() {
                 .then(res => res.json())
                 .then(data => setArtistName(data.name))
         }
+
+        // console.log(songIds)
+        if (songIds) {
+            songIds.forEach(songId => {
+                csrfFetch(`/api/songs/${songId}`)
+                .then(res => res.json())
+                .then(data => setSongsArr((songsArr) => [...songsArr, data]))
+            });
+        }
+
     }, [artistId, albumId, dispatch])
 
+        // console.log(songsArr)
 
     // console.log(album)
     // if (album.songs) {
@@ -66,7 +79,10 @@ function AlbumShowPage() {
 
             </div>
             <div className='album-songs'>
-
+                {songsArr.map((song) => {
+                    {console.log(song.title)}
+                    return (<p>{song.title}</p>)
+                })}
             </div>
 
 

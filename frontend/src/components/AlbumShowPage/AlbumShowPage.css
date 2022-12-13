@@ -93,3 +93,10 @@
 .year {
     font-weight: normal;
 }
+
+.album-songs {
+    border: 1px solid yellow;
+    color: white;
+    height: fit-content;
+    /* z-index: 4; */
+}

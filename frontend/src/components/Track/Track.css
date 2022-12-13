@@ -1,0 +1,9 @@
+.track {
+    display: flex;
+    flex-direction: row;
+}
+
+.track-text {
+    display: flex;
+    flex-direction: column;
+}

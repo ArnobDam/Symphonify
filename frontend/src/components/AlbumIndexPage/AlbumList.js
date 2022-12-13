@@ -3,7 +3,7 @@ import AlbumListItem from "./AlbumListItem";
 
 function AlbumList({ albums, highlightedAlbum, setHighlightedAlbum }) {
 
-  console.log(albums)
+  // console.log(albums)
 
     return (
         <div className="album-list-w-header">
