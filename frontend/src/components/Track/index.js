@@ -1,13 +1,23 @@
 
 import { useState } from 'react';
+import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
-function Track({ songTitle, artistName }) {
+function Track({ songTitle, artistName, songUrl }) {
 
-    const [playPauseSymbol, setPlayPauseSymbol] = useState("⏵︎"); //"⏸︎"
+    // console.log(songUrl)
+
+    const [playPauseSymbol, setPlayPauseSymbol] = useState("⏵︎"); // pause symbol: "⏸︎"
+
+    // <AudioBar 
+
+    const handleClick = (e) => {
+        console.log("track clicked")
+        return (<AudioBar trackUrl={songUrl} autoPlayBool={true} />)
+    };
 
     return (
-        <div className='track'>
+        <div className='track' onClick={handleClick}>
             <div className='play-pause-and-text'>
                 <button className='play-pause-button'>{playPauseSymbol}</button>
                 <div className='track-text'>

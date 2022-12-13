@@ -11,7 +11,7 @@ const playlist = [
   { src: 'https://hanzluo.s3-us-west-1.amazonaws.com/music/suipian.mp3' },
 ]
 
-const AudioBar = () => {
+const AudioBar = ({ trackUrl , autoPlayBool }) => {
 
     const [currentTrack, setTrackIndex] = useState(0);
 
@@ -48,8 +48,10 @@ const AudioBar = () => {
     <AudioPlayer
         className='bar'
         // autoPlay
+        // autoPlay={autoPlayBool ? false : autoPlayBool}
         showSkipControls
         src={playlist[currentTrack].src}
+        // src={trackUrl}
         // src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
         // onPlay={e => console.log("onPlay")}
         onClickNext={handleClickNext}
