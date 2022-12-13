@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import csrfFetch from '../../store/csrf';
 
 import { Redirect } from 'react-router-dom';
+import Track from '../Track';
 
 function AlbumShowPage() {
     const dispatch = useDispatch();
@@ -79,9 +80,15 @@ function AlbumShowPage() {
 
             </div>
             <div className='album-songs'>
+                <div className='hashtag-and-title'>
+                    <p className='hashtag'>#</p>
+                    <p className='title-text'>TITLE</p>
+                </div>
+                
                 {songsArr.map((song) => {
-                    {console.log(song.title)}
-                    return (<p>{song.title}</p>)
+                    // {console.log(song.title)}
+                    // return (<p>{song.title}</p>)
+                    return (<Track songTitle={song.title} artistName={artistName} />)
                 })}
             </div>
 

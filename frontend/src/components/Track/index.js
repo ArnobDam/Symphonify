@@ -8,12 +8,12 @@ function Track({ songTitle, artistName }) {
 
     return (
         <div className='track'>
-            <button>{playPauseSymbol}</button>
+            <button className='play-pause-button'>{playPauseSymbol}</button>
             <div className='track-text'>
-                <p>{songTitle}</p>
-                <p>{artistName}</p>
+                <p className='song-title'>{songTitle}</p>
+                <p className='artist-name'>{artistName}</p>
             </div>
-            <button>•••</button>
+            <button className='options-button'>•••</button>
         </div>
     )
 };
