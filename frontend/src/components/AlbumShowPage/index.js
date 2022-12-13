@@ -113,11 +113,13 @@ function AlbumShowPage() {
                     <p className='hashtag'>#</p>
                     <p className='title-text'>TITLE</p>
                 </div>
-
-                {songsArr.map((song) => {
+                {/* {console.log(songsArr)} */}
+                {songsArr.map((song, idx) => {
                     // {console.log(song.title)}
                     // return (<p>{song.title}</p>)
-                    return (<Track 
+                    {console.log(idx)}
+                    return (<Track
+                        id={idx} 
                         songTitle={song.title} 
                         artistName={artistName} 
                         songUrl={song.songUrl}

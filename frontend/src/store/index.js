@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import albumsReducer from './albums';
 import sessionReducer from './session';
 import currentPlaylistReducer from './currentPlaylist';
+import currentTrackReducer from './currentTrack';
 
 export const rootReducer = combineReducers({
     session: sessionReducer,
     albums: albumsReducer,
-    currentPlaylist: currentPlaylistReducer
+    currentPlaylist: currentPlaylistReducer,
+    currentTrack: currentTrackReducer
 })
 
 let enhancer;

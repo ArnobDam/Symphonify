@@ -5,7 +5,7 @@ import { makeCurrentPlaylist } from '../../store/currentPlaylist';
 import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
-function Track({ songTitle, artistName, songUrl, albumId }) {
+function Track({ id, songTitle, artistName, songUrl, albumId }) {
     const dispatch = useDispatch();
     // console.log(songUrl)
 
@@ -20,7 +20,7 @@ function Track({ songTitle, artistName, songUrl, albumId }) {
     };
 
     return (
-        <div className='track' onClick={handleClick}>
+        <div id={id} className='track' onClick={handleClick}>
             <div className='play-pause-and-text'>
                 <button className='play-pause-button'>{playPauseSymbol}</button>
                 <div className='track-text'>
