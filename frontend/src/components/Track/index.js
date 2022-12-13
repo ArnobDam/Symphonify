@@ -1,10 +1,12 @@
 
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { makeCurrentPlaylist } from '../../store/currentPlaylist';
 import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
-function Track({ songTitle, artistName, songUrl }) {
-
+function Track({ songTitle, artistName, songUrl, albumId }) {
+    const dispatch = useDispatch();
     // console.log(songUrl)
 
     const [playPauseSymbol, setPlayPauseSymbol] = useState("⏵︎"); // pause symbol: "⏸︎"
@@ -13,7 +15,8 @@ function Track({ songTitle, artistName, songUrl }) {
 
     const handleClick = (e) => {
         console.log("track clicked")
-        return (<AudioBar trackUrl={songUrl} autoPlayBool={true} />)
+
+        return dispatch(makeCurrentPlaylist(albumId))
     };
 
     return (
