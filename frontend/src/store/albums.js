@@ -43,6 +43,7 @@ export const fetchAlbums = () => async dispatch => {
 export const fetchAlbum = (albumId) => async dispatch => {
     const response = await fetch(`/api/albums/${albumId}`);
     const data = await response.json();
+    
     return dispatch(receiveAlbum(data)); //potentially need data.album
 }
 
