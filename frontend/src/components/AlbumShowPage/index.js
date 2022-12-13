@@ -40,11 +40,11 @@ function AlbumShowPage() {
             }
 
             if (data.songs) {
-                console.log(data.songs)
+                // console.log(data.songs)
                 for (const [key, value] of Object.entries(data.songs)) {
-                    console.log(value.title)
-                    console.log(songTitlesArr)
-                    console.log(songsArr)
+                    // console.log(value.title)
+                    // console.log(songTitlesArr)
+                    // console.log(songsArr)
                     // console.log(songTitlesArr.includes(value.title))
                     if (!songTitlesArr.includes(value.title)) {
                         setSongsArr((songsArr) => [...songsArr, value])
@@ -90,7 +90,7 @@ function AlbumShowPage() {
         return null;
     }
 
-    console.log(songsArr)
+    // console.log(songsArr)
     return (
         <div className='album-show-page'>
             <div className='album-details'>
