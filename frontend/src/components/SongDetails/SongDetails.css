@@ -12,6 +12,7 @@
     width: 325px;
     height: 90px;
 
+    margin-left: 10px;
     
 
     /* border: 1px solid yellow; */
@@ -29,11 +30,12 @@
     justify-content: space-around;
 
     padding: 25px 0px;
+    /* margin-left: 10px; */
 }
 
 .details-song-title {
     font-size: 14px;
-    /* font-weight: bold; */
+    font-weight: bold;
 
     white-space: nowrap;
 }
