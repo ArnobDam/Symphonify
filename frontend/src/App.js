@@ -7,6 +7,7 @@ import PlayBar from "./components/PlayBar";
 import SideBar from "./components/SideBar";
 import AlbumIndexPage from "./components/AlbumIndexPage";
 import AlbumShowPage from "./components/AlbumShowPage";
+import SongDetails from "./components/SongDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <AlbumIndexPage/>
             <PlayBar />
           </div>
+          <SongDetails/>
         </Route>
         <Route path="/albums/:albumId">
           <div className="homeControls">
@@ -29,6 +31,7 @@ function App() {
             <AlbumShowPage/>
             <PlayBar />
           </div>
+          <SongDetails/>
         </Route>
         <Route path="/login">
           <LoginFormPage />
