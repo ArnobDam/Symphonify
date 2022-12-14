@@ -43,7 +43,8 @@ const AudioBar = ({ trackUrl , autoPlayBool }) => {
     useEffect(() => {
         if (currentPlaylistSliceOfState) {
             // console.log(currentPlaylistSliceOfState)
-            for (const [key, value] of Object.entries(currentPlaylistSliceOfState[1].album.songs)) { //!!!
+            for (const [key, value] of Object.entries(currentPlaylistSliceOfState[albumId].album.songs)) { //!!!
+                console.log(albumId)
                 if (!currentPlaylistArr.includes(value.songUrl)) {
                     setCurrentPlaylistArr((currentPlaylistArr) => [...currentPlaylistArr, value.songUrl]) //later maybe get song name too
                     // console.log(value.songUrl)
@@ -57,7 +58,7 @@ const AudioBar = ({ trackUrl , autoPlayBool }) => {
     // console.log(currentPlaylistObj)
     // console.log(currentPlaylistArr)
     
-    console.log(currentTrackId)
+    // console.log(currentTrackId)
     const [currentTrack, setTrackIndex] = useState(0);
 
     useEffect(() => {

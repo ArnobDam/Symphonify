@@ -52,6 +52,41 @@ ApplicationRecord.transaction do
       # albums: [2]
     )
 
+    Artist.create!(
+      name: "Metro Boomin"
+      # albums: [2]
+    )
+
+    Artist.create!(
+      name: "Kelly Clarkson"
+      # albums: [2]
+    )
+
+    Artist.create!(
+      name: "Lady Gaga"
+      # albums: [2]
+    )
+
+    Artist.create!(
+      name: "Travis Scott"
+    )
+
+    Artist.create!(
+      name: "Ariana Grande"
+    )
+
+    Artist.create!(
+      name: "Thouxanbanfauni"
+    )
+
+    Artist.create!(
+      name: "Zedd"
+    )
+
+    Artist.create!(
+      name: "Ed Sheeran"
+    )
+
     puts "Creating albums..."
 
     Album.create!(
@@ -67,8 +102,66 @@ ApplicationRecord.transaction do
       year: 2019,
       album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/48fqqfpepeixxxfyn7i4h1xqdyrg'
     )
+
+    Album.create!(
+      title: "NOT ALL HEROES WEAR CAPES",
+      artist_id: 3,
+      year: 2018,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Metro_Boomin_%E2%80%93_Not_All_Heroes_Wear_Capes.png'
+    )
+
+    Album.create!(
+      title: "Breakway",
+      artist_id: 4,
+      year: 2004,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Breakaway_Album.png'
+    )
+
+    Album.create!(
+      title: "The Fame",
+      artist_id: 5,
+      year: 2008,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Lady_Gaga_%E2%80%93_The_Fame_album_cover.png'
+    )
+
+    Album.create!(
+      title: "ASTROWORLD",
+      artist_id: 6,
+      year: 2018,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/travis-scott-astroworld-cover-art-full.jpg'
+    )
+
+    Album.create!(
+      title: "thank u, next",
+      artist_id: 7,
+      year: 2019,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Thank_U%2C_Next_album_cover.png'
+    )
+
+    Album.create!(
+      title: "CLAIRVOYANCE",
+      artist_id: 8,
+      year: 2020,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/CLAIRVOYANCE+Thouxanbanfauni.jfif'
+    )
+
+    Album.create!(
+      title: "Clarity",
+      artist_id: 9,
+      year: 2012,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Zedd_-_Clarity_(album).png'
+    )
+
+    Album.create!(
+      title: "=",
+      artist_id: 10,
+      year: 2021,
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Ed_Sheeran_-_Equals.png'
+    )
     
     puts "Creating songs..."
+
+    # Eternal Atake
 
     Song.create!(
       title: "Baby Pluto",
@@ -143,7 +236,7 @@ ApplicationRecord.transaction do
     )
 
     Song.create!(
-      title: "Urgency feat. SYD",
+      title: "Urgency (feat. Syd)",
       album_id: 1,
       song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Urgency+feat.+SYD+%5BOfficial+Audio%5D.mp3"
     )
@@ -166,6 +259,26 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+P2+%5BOfficial+Audio%5D.mp3"
     )
 
+    #Confessions of a Dangerous Mind
+
+    Song.create!(
+      title: "Confessions of a Dangerious Mind",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Confessions+of+a+Dangerous+Mind.mp3"
+    )
+
+    Song.create!(
+      title: "Homicide (feat. Eminem)",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Homicide+ft.+Eminem+(Official+Video).mp3"
+    )
+
+    Song.create!(
+      title: "Wannabe",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Wannabe.mp3"
+    )
+    
     puts "Done!"
   end
 

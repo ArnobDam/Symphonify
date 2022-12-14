@@ -18,7 +18,7 @@ function AlbumList({ albums, highlightedAlbum, setHighlightedAlbum }) {
             //   setHighlightedAlbum={setHighlightedAlbum}
             />
           ))}
-          {albums.map((album) => (
+          {/* {albums.map((album) => (
             <AlbumListItem
               key={album.id}
               album={album}
@@ -49,7 +49,7 @@ function AlbumList({ albums, highlightedAlbum, setHighlightedAlbum }) {
             //   isHighlighted={highlightedAlbum === album.id}
             //   setHighlightedAlbum={setHighlightedAlbum}
             />
-          ))}
+          ))} */}
           </>
           </div>
         </div>
