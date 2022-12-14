@@ -20,7 +20,7 @@ function App() {
             <Navigation />            
             <SideBar/>
             <AlbumIndexPage/>
-          <SongDetails/>
+            <SongDetails/>
             <PlayBar />
           </div>
         </Route>
@@ -29,7 +29,7 @@ function App() {
             <Navigation />            
             <SideBar/>
             <AlbumShowPage/>
-          <SongDetails/>
+            <SongDetails/>
             <PlayBar />
           </div>
         </Route>
