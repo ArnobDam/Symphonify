@@ -119,6 +119,7 @@ function AlbumShowPage() {
                     // return (<p>{song.title}</p>)
                     // {console.log(idx)}
                     return (<Track
+                        key={idx}
                         id={idx} 
                         songTitle={song.title} 
                         artistName={artistName} 
