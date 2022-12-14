@@ -20,18 +20,18 @@ function App() {
             <Navigation />            
             <SideBar/>
             <AlbumIndexPage/>
+          <SongDetails/>
             <PlayBar />
           </div>
-          <SongDetails/>
         </Route>
         <Route path="/albums/:albumId">
           <div className="homeControls">
             <Navigation />            
             <SideBar/>
             <AlbumShowPage/>
+          <SongDetails/>
             <PlayBar />
           </div>
-          <SongDetails/>
         </Route>
         <Route path="/login">
           <LoginFormPage />

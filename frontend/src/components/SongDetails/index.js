@@ -27,10 +27,13 @@ function SongDetails() {
 
 
     return (
-        <div className="song-details-container">
-            <img src={albumPhotoUrl}></img>
-            <p>{songTitle}</p>
-            <p>{artistName}</p>
+        <div className='song-details-container'>
+            <img className='details-album-photo' src={albumPhotoUrl}></img>
+            <div className='details-song-title-and-artist-name'>
+                <p className='details-song-title'>{songTitle}</p>
+                <p className='details-artist-name'>{artistName}</p>
+            </div>
+            
         </div>
     )
 };
