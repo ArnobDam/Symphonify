@@ -106,7 +106,7 @@ const AudioBar = ({ trackUrl, autoPlayBool }) => {
         // />
         <AudioPlayer
             className='bar'
-            autoPlay
+            // autoPlay
             // autoPlay={autoPlayBool ? false : autoPlayBool}
             showSkipControls
             // src={playlist[currentTrack].src}

@@ -38,3 +38,42 @@
     margin-left: 5px;
 
 }
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-right: 120px;
+
+    color: #a7a7a7;
+    margin-top: 30px;
+}
+
+.home-div {
+    display: flex;
+    flex-direction: row;
+
+    transition: color .5s;
+}
+
+.home-div:hover {
+    color: white;
+    cursor: pointer;
+    transition: color .5s;
+}
+
+.home-icon {
+    font-size: 25px;
+
+    /* fill: white; */
+    margin-top: 3px;
+}
+
+.home-text {
+    margin-left: 15px;
+    margin-top: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
