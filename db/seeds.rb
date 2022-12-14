@@ -279,83 +279,83 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Wannabe.mp3"
     )
 
-    # Song.create!(
-    #   title: "clickbait",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+clickbait+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "clickbait",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+clickbait+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Mama/Show Love (feat. YBN Cordae)",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Mama++Show+Love+(feat.+YBN+Cordae)+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Mama/Show Love (feat. YBN Cordae)",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Mama++Show+Love+(feat.+YBN+Cordae)+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Out Of Sight",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Out+Of+Sight+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Out Of Sight",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Out+Of+Sight+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Pardon My Ego",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Pardon+My+Ego+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Pardon My Ego",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Pardon+My+Ego+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "COMMANDO (feat. G-Eazy)",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+COMMANDO+(feat.+G-Eazy)+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "COMMANDO (feat. G-Eazy)",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+COMMANDO+(feat.+G-Eazy)+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Icy (feat. Gucci Mane)",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Icy+ft.+Gucci+Mane+(Official+Video).mp3"
-    # )
+    Song.create!(
+      title: "Icy (feat. Gucci Mane)",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Icy+ft.+Gucci+Mane+(Official+Video).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Still Ballin (feat. Wiz Khalifa)",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Still+Ballin'+(feat.+Wiz+Khalifa)+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Still Ballin (feat. Wiz Khalifa)",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Still+Ballin'+(feat.+Wiz+Khalifa)+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Cocaine",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Cocaine+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Cocaine",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Cocaine+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Limitless",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Limitless+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Limitless",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Limitless+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Keanu Reeves",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Keanu+Reeves+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Keanu Reeves",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Keanu+Reeves+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Don't Be Afraid To Be Different (feat. Will Smith)",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Don't+Be+Afraid+To+Be+Different+(feat.+Will+Smith)+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Don't Be Afraid To Be Different (feat. Will Smith)",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Don't+Be+Afraid+To+Be+Different+(feat.+Will+Smith)+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "BOBBY (feat. My Dad)",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+BOBBY+(feat.+My+Dad)+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "BOBBY (feat. My Dad)",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+BOBBY+(feat.+My+Dad)+(Official+Audio).mp3"
+    )
 
-    # Song.create!(
-    #   title: "Lost In Translation",
-    #   album_id: 2,
-    #   song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Lost+In+Translation+(Official+Audio).mp3"
-    # )
+    Song.create!(
+      title: "Lost In Translation",
+      album_id: 2,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Lost+In+Translation+(Official+Audio).mp3"
+    )
     
     puts "Done!"
   end
