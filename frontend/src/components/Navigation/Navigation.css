@@ -113,6 +113,7 @@
 
 .profileButton:hover {
     background-color: #181818;
+    cursor: pointer;
 }
 
 .fa-user {

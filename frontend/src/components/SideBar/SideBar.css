@@ -60,6 +60,7 @@
 .home-div:hover {
     color: white;
     cursor: pointer;
+    
     transition: color .5s;
 }
 

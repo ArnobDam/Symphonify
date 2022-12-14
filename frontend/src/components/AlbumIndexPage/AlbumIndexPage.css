@@ -56,6 +56,8 @@
     margin: 10px 12px; /* first value top bottom, second value left right*/
 
     background-color: #151515;
+
+    cursor: pointer;
 }
 
 .list-item-info:hover {
