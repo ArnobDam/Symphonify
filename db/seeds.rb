@@ -58,34 +58,112 @@ ApplicationRecord.transaction do
       title: "Eternal Atake",
       artist_id: 1,
       year: 2020,
-      album_photo_url: 'eternal_atake_lil_uzi_vert.jpg'
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Eternal_Atake_Lil_Uzi_Vert.jpg'
     )
 
     Album.create!(
       title: "Confessions of a Dangerous Mind",
       artist_id: 2,
       year: 2019,
-      album_photo_url: 'confessions_of_a_dangerous_mind_logic.jpg'
+      album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/48fqqfpepeixxxfyn7i4h1xqdyrg'
     )
     
     puts "Creating songs..."
 
     Song.create!(
-      title: "Song1",
+      title: "Baby Pluto",
       album_id: 1,
-      song_url: 'https://hanzluo.s3-us-west-1.amazonaws.com/music/ziyounvshen.mp3'
+      song_url: 'https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Baby+Pluto+%5BOfficial+Audio%5D.mp3'
     )
 
     Song.create!(
-      title: "Song2",
+      title: "Lo Mein",
       album_id: 1,
-      song_url: 'https://hanzluo.s3-us-west-1.amazonaws.com/music/wuyuwuqing.mp3'
+      song_url: 'https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Lo+Mein+%5BOfficial+Audio%5D.mp3'
     )
 
     Song.create!(
-      title: "Song3",
+      title: "Silly Watch",
       album_id: 1,
-      song_url: 'https://hanzluo.s3-us-west-1.amazonaws.com/music/suipian.mp3'
+      song_url: 'https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Silly+Watch+%5BOfficial+Audio%5D.mp3'
+    )
+
+    Song.create!(
+      title: "POP",
+      album_id: 1,
+      song_url: 'https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+POP+%5BOfficial+Audio%5D.mp3'
+    )
+
+    Song.create!(
+      title: "You Better Move",
+      album_id: 1,
+      song_url: 'https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+You+Better+Move+%5BOfficial+Audio%5D.mp3'
+    )
+
+    Song.create!(
+      title: "Homecoming",
+      album_id: 1,
+      song_url: 'https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Homecoming+%5BOfficial+Audio%5D.mp3'
+    )
+
+    Song.create!(
+      title: "I'm Sorry",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+I'm+Sorry+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Celebration Station",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Celebration+Station+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Bigger Than Life",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Bigger+Than+Life+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Chrome Heart Tags",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Chrome+Heart+Tags+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Bust Me",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Bust+Me+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Prices",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Prices+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Urgency feat. SYD",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Urgency+feat.+SYD+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Venetia",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Venetia+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "Secure The Bag",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+Secure+The+Bag+%5BOfficial+Audio%5D.mp3"
+    )
+
+    Song.create!(
+      title: "P2",
+      album_id: 1,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Lil+Uzi+Vert+-+P2+%5BOfficial+Audio%5D.mp3"
     )
 
     puts "Done!"

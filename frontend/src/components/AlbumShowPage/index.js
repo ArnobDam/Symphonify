@@ -95,7 +95,7 @@ function AlbumShowPage() {
         <div className='album-show-page'>
             <div className='album-details'>
                 <img className="album-photo"
-                    src={`https://symphonify-dev.s3.amazonaws.com/48fqqfpepeixxxfyn7i4h1xqdyrg`}
+                    src={albumPhotoUrl}
                     alt='Album' />
 
                 <div className='album-text'>

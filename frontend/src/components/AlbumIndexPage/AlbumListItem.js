@@ -21,7 +21,7 @@ function AlbumListItem({ album, isHighlighted, setHighlightedBench }) {
         <div onClick={(e) => history.push(`/albums/${album.id}`)}>
             <div className="list-item-info">
                 <img className="albumPhoto" 
-                src={`https://symphonify-dev.s3.amazonaws.com/48fqqfpepeixxxfyn7i4h1xqdyrg`} 
+                src={albumPhotoUrl} 
                 alt='Album'/>
                 <p className="albumTitle">{title}</p>
                 {/* <p>{artistId.name}</p> */}
