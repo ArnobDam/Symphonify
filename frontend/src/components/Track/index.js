@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { makeCurrentPlaylist } from '../../store/currentPlaylist';
-import { setTheCurrentTrack } from '../../store/currentTrack';
+import { setTheCurrentTrack, setCurrentTrack } from '../../store/currentTrack';
 import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
@@ -17,7 +17,9 @@ function Track({ id, songTitle, artistName, songUrl, albumId }) {
     const handleClick = (e) => {
         console.log("track clicked")
         console.log(id)
-        dispatch(setTheCurrentTrack(id))
+        // console.log(songTitle);
+        dispatch(setCurrentTrack(id))
+        // debugger;
         return dispatch(makeCurrentPlaylist(albumId))
     };
 
@@ -30,7 +32,7 @@ function Track({ id, songTitle, artistName, songUrl, albumId }) {
                     <p className='artist-name-track'>{artistName}</p>
                 </div>
             </div>
-            
+
             <button className='options-button'>•••</button>
         </div>
     )

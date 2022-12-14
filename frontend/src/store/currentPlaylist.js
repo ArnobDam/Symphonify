@@ -7,19 +7,25 @@ export const CREATE_CURRENT_PLAYLIST = 'currentPlaylist/CREATE_CURRENT_PLAYLIST'
 //     currentPlaylist
 // })
 
-export const createCurrentPlaylist = (songsArr) => ({
+export const createCurrentPlaylist = (album) => ({
     type: CREATE_CURRENT_PLAYLIST,
-    songsArr
+    album
 })
 
 // export const destroyCurrentPlaylist = ()
 
-export const makeCurrentPlaylist = (albumId) => async dispatch => {
-    let response = await fetch(`/api/albums/${albumId}`);
-    const data = await response.json();
-    dispatch(createCurrentPlaylist(data));
-    return data;
-}
+// export const makeCurrentPlaylist = (albumId) => async dispatch => {
+//     let response = await fetch(`/api/albums/${albumId}`);
+//     const data = await response.json();
+//     dispatch(createCurrentPlaylist(data));
+//     return data;
+// }
+
+export const makeCurrentPlaylist = (albumId) => (dispatch, getState) => {
+    const { albums } = getState();
+    const album = albums[albumId];
+    dispatch(createCurrentPlaylist(album));
+};
 
 const currentPlaylistReducer = (state = {}, action) => {
     const nextState = { ...state }
@@ -30,8 +36,9 @@ const currentPlaylistReducer = (state = {}, action) => {
         //     return nextState;
         case CREATE_CURRENT_PLAYLIST:
             // delete nextState[action];
-            nextState[action.songsArr.album.id] = action.songsArr;
-            return nextState;
+            // nextState[action.songsArr.album.id] = action.songsArr;
+            // debugger;
+            return action.album;
         default:
             return state;
     }

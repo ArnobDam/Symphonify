@@ -11,9 +11,9 @@ export const setCurrentTrack = (songId) => ({
     songId
 })
 
-export const setTheCurrentTrack = (songId) => async dispatch => {
-    return dispatch(setCurrentTrack(songId));
-}
+// export const setTheCurrentTrack = (songId) => async dispatch => {
+//     return dispatch(setCurrentTrack(songId));
+// }
 
 const currentTrackReducer = (state = {}, action) => {
     // const nextState = { ...state }
