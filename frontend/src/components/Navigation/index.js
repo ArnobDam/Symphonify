@@ -18,7 +18,12 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <div className='logged-in-links'>
+        <a href="https://www.linkedin.com/in/arnobdam/" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/ArnobDam" target="_blank"><i className="fa-brands fa-github"></i></a>
+        <ProfileButton user={sessionUser} />
+      </div>
+      
     );
   } else {
     sessionLinks = (
