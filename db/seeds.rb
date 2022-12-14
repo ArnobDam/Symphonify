@@ -111,7 +111,7 @@ ApplicationRecord.transaction do
     )
 
     Album.create!(
-      title: "Breakway",
+      title: "Breakaway",
       artist_id: 4,
       year: 2004,
       album_photo_url: 'https://symphonify-dev.s3.amazonaws.com/Breakaway_Album.png'

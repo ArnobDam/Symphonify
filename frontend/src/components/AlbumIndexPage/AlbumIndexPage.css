@@ -58,11 +58,13 @@
     background-color: #151515;
 
     cursor: pointer;
+
+    transition: background-color .5s;
 }
 
 .list-item-info:hover {
     background-color: #292929;
-    transition: background .5s;
+    transition: background-color .5s;
 }
 
 .albumPhoto {
