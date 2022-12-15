@@ -20,7 +20,7 @@ function Navigation() {
   if (sessionUser) {
     sessionLinks = (
       <div className='logged-in-links'>
-        <SearchBar/>
+        <SearchBar />
         <a href="https://www.linkedin.com/in/arnobdam/" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
         <a href="https://github.com/ArnobDam" target="_blank"><i className="fa-brands fa-github"></i></a>
         <ProfileButton user={sessionUser} />
