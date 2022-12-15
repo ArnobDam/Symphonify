@@ -1,11 +1,14 @@
 import './SearchBar.css'
 import { FiSearch } from 'react-icons/fi';
-import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { receiveSearchedAlbums } from '../../store/searchedAlbums';
 
 
 
 function SearchBar() {
+
+    const dispatch = useDispatch();
 
     const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
 
@@ -22,7 +25,7 @@ function SearchBar() {
         if (e.target.value !== "") {
             albums.forEach((album) => {
                 if (album.title.includes(e.target.value)) {
-                    console.log("hi")
+                    // console.log("hi")
                     // if (!dupAlbums(searchedAlbums, album)) {
                         setSearchedAlbums((searchedAlbums) => [...searchedAlbums, album])
                     // }
@@ -35,16 +38,20 @@ function SearchBar() {
 
     console.log(searchedAlbums)
 
-    const dupAlbums = (searchedAlbums, album) => {
-        searchedAlbums.forEach((searchedAlbum) => {
-                    
-            if (JSON.stringify(searchedAlbum) === JSON.stringify(album)) {
-                return true;
-            }
-        })
+    // useEffect(() => {
+        dispatch(receiveSearchedAlbums(searchedAlbums))
+    // }, [dispatch])
 
-        return false;
-    }
+    // const dupAlbums = (searchedAlbums, album) => {
+    //     searchedAlbums.forEach((searchedAlbum) => {
+                    
+    //         if (JSON.stringify(searchedAlbum) === JSON.stringify(album)) {
+    //             return true;
+    //         }
+    //     })
+
+    //     return false;
+    // }
 
     // console.log(searchedAlbums)
 

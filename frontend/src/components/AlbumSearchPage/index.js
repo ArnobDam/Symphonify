@@ -9,6 +9,15 @@ function AlbumSearchPage() {
     const dispatch = useDispatch();
     const history = useHistory(); 
     const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
+    // const searchedAlbums = useSelector
+
+    // const renderedAlbums = () => {
+    //     if (searchedAlbums.length === 0) {
+    //         return albums;
+    //     } else {
+    //         return searchedAlbums;
+    //     }
+    // }
 
     const [highlightedAlbum, setHighlightedAlbum] = useState(null);
     
