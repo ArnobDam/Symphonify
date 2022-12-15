@@ -13,5 +13,11 @@ class Api::AlbumsController < ApplicationController
         render :show
     end
 
+    def search
+        # @albums = Album.select('title').from.('albums').where()
+        @albums = Album.all
+        render :search
+    end
+
 
 end
