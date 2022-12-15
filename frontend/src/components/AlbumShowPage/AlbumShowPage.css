@@ -30,7 +30,7 @@
 .album-details {
     /* border: 1px solid greenyellow; */
     
-    background-color: rgba(35, 35, 35, 0.5);
+    /* background-color: rgba(35, 35, 35, 0.5); */
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -49,6 +49,7 @@
 .album-photo {
     width: 225px;
 
+    margin-top: 20px;
     margin-bottom: 30px;
     margin-left: 30px;
 
