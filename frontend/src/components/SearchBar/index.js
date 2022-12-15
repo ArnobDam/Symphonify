@@ -1,7 +1,7 @@
 import './SearchBar.css'
 import { FiSearch } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { receiveSearchedAlbums } from '../../store/searchedAlbums';
 
 
@@ -24,7 +24,8 @@ function SearchBar() {
         // console.log(e.target.value)
         if (e.target.value !== "") {
             albums.forEach((album) => {
-                if (album.title.toLowerCase().includes(e.target.value.toLowerCase())) {
+                if (album.title.toLowerCase().includes(e.target.value.toLowerCase()) || 
+                album.artist.name.toLowerCase().includes(e.target.value.toLowerCase())) {
                     // console.log("hi")
                     // if (!dupAlbums(searchedAlbums, album)) {
                         setSearchedAlbums((searchedAlbums) => [...searchedAlbums, album])
