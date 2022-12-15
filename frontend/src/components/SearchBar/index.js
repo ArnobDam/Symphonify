@@ -24,7 +24,7 @@ function SearchBar() {
         // console.log(e.target.value)
         if (e.target.value !== "") {
             albums.forEach((album) => {
-                if (album.title.includes(e.target.value)) {
+                if (album.title.toLowerCase().includes(e.target.value.toLowerCase())) {
                     // console.log("hi")
                     // if (!dupAlbums(searchedAlbums, album)) {
                         setSearchedAlbums((searchedAlbums) => [...searchedAlbums, album])
