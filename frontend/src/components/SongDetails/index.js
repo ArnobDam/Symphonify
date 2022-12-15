@@ -13,7 +13,7 @@ function SongDetails() {
     const firstSongId = useSelector((state) => state.currentPlaylist.songIds ? 
     state.currentPlaylist.songIds[0] :
     NaN)
-    console.log(firstSongId)
+    // console.log(firstSongId)
 
     const songTitle = useSelector((state) => state.currentPlaylist.songs ?
     state.currentPlaylist.songs[firstSongId + currentTrackId].title :
