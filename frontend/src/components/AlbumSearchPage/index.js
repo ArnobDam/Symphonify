@@ -9,15 +9,19 @@ function AlbumSearchPage() {
     const dispatch = useDispatch();
     const history = useHistory(); 
     const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
-    // const searchedAlbums = useSelector
+    const searchedAlbums = useSelector(state => state.searchedAlbums)
 
-    // const renderedAlbums = () => {
-    //     if (searchedAlbums.length === 0) {
-    //         return albums;
-    //     } else {
-    //         return searchedAlbums;
-    //     }
-    // }
+    // console.log(searchedAlbums)
+
+    const renderedAlbums = () => {
+        if (searchedAlbums.length === 0) {
+            return albums;
+        } else {
+            return searchedAlbums;
+        }
+    }
+
+    console.log(renderedAlbums())
 
     const [highlightedAlbum, setHighlightedAlbum] = useState(null);
     
@@ -29,7 +33,7 @@ function AlbumSearchPage() {
         <div className="albumIndexPage">
             {/* <p>Albums</p> */}
             <AlbumList
-                albums={albums}
+                albums={renderedAlbums()}
                 highlightedAlbum={highlightedAlbum}
                 setHighlightedAlbum={setHighlightedAlbum}
             />

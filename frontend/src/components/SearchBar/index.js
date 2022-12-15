@@ -21,7 +21,7 @@ function SearchBar() {
         setSearchValue(e.target.value)
         
         setSearchedAlbums([])
-        console.log(e.target.value)
+        // console.log(e.target.value)
         if (e.target.value !== "") {
             albums.forEach((album) => {
                 if (album.title.includes(e.target.value)) {
@@ -36,7 +36,7 @@ function SearchBar() {
         
     }
 
-    console.log(searchedAlbums)
+    // console.log(searchedAlbums)
 
     // useEffect(() => {
         dispatch(receiveSearchedAlbums(searchedAlbums))

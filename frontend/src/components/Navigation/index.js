@@ -10,7 +10,7 @@ function Navigation() {
   const location = useLocation();
 
 
-  console.log(location.pathname === '/')
+  // console.log(location.pathname === '/')
 
   const sessionUser = useSelector(state => state.session.user);
   
