@@ -28,7 +28,7 @@ function Navigation() {
 
   let sessionLinks;
   if (sessionUser) {
-    if (location.pathname === '/') {
+    if (location.pathname === '/search') {
       sessionLinks = (
         <div className='logged-in-links'>
           <SearchBar />

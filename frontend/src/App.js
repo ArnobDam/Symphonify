@@ -8,11 +8,21 @@ import SideBar from "./components/SideBar";
 import AlbumIndexPage from "./components/AlbumIndexPage";
 import AlbumShowPage from "./components/AlbumShowPage";
 import SongDetails from "./components/SongDetails";
+import AlbumSearchPage from "./components/AlbumSearchPage";
 
 function App() {
   return (
     <>
       <Switch>
+        <Route path="/search">
+        <div className="homeControls">
+            <Navigation />            
+            <SideBar/>
+            <AlbumSearchPage/>
+            <SongDetails/>
+            <PlayBar />
+          </div>
+        </Route>
         <Route exact path="/">
           {/* <SideBar/> */}
           {/* <img src={require("/home/arnobdam/wsl-desktop/projects/symphonify/frontend/src/images/eternal_atake_lil_uzi_vert.jpg")}/> */}
