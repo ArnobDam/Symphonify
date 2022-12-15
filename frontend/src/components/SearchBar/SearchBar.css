@@ -1,0 +1,32 @@
+.search {
+    height: 35px;
+    width: 260px;
+    
+    text-indent: 10px;
+
+    padding-left: 40px;
+    border-radius: 20px;
+
+    border: none;
+
+    /* position: relative; */
+}
+
+.magnifying-glass {
+    position: absolute;
+    color: rgb(35,35,35);
+    transform: scale(1.1);
+    padding-left: 10px;
+}
+
+
+.search:focus {
+    /* border: 1px solid orange; */
+    outline: none;
+}
+
+.search::placeholder {
+    /* text-align: left; */
+    /* padding-left: 40px; */
+    /* font-weight: bold; */
+}
