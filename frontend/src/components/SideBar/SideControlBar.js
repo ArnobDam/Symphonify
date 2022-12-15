@@ -25,7 +25,6 @@ const SideControlBar = () => {
                     <p className="search-text">Search</p>
                 </div>
             </div>
-            
         </nav>
     )
 }

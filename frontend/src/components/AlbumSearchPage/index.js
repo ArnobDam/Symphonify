@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAlbums } from "../../store/albums";
 import './AlbumSearchPage.css'
 
+let noSearchResults = false;
+
 function AlbumSearchPage() {
     const dispatch = useDispatch();
     // const history = useHistory(); 
@@ -15,16 +17,24 @@ function AlbumSearchPage() {
 
     // const
 
+    
+
     const renderedAlbums = () => {
-        if (JSON.stringify(searchedAlbums) === '{}' || searchedAlbums.length === 0) {
-            return albums;
+        if (searchedAlbums !== "empty") {
+            noSearchResults = false;
+            if (JSON.stringify(searchedAlbums) === '{}' || searchedAlbums.length === 0) {
+                return albums;
+            } else {
+                // console.log(searchedAlbums)
+                return searchedAlbums;
+            }
         } else {
-            // console.log(searchedAlbums)
-            return searchedAlbums;
+            noSearchResults = true;
+            return [];
         }
     }
 
-    console.log(renderedAlbums())
+    // console.log(renderedAlbums())
 
     const [highlightedAlbum, setHighlightedAlbum] = useState(null);
     
@@ -32,9 +42,26 @@ function AlbumSearchPage() {
         dispatch(fetchAlbums())
     }, [dispatch]);
 
+    const handleNoSearchResults = () => {
+        if (noSearchResults) {
+            return (
+
+                <div className="no-search-results">
+                    <p className="oops">Oops! Your search returned no results.</p>
+                    {/* <p className="try-searching-again">Try searching again for a different album or artist.</p> */}
+                </div>
+
+                
+            )
+        }
+    }
+
+    console.log(noSearchResults)
+
     return (
         <div className="albumIndexPage">
             {/* <p>Albums</p> */}
+            {handleNoSearchResults()}
             <AlbumList
                 albums={renderedAlbums()}
                 // albums={searchedAlbums}
@@ -42,6 +69,7 @@ function AlbumSearchPage() {
                 highlightedAlbum={highlightedAlbum}
                 setHighlightedAlbum={setHighlightedAlbum}
             />
+            
         </div>
     )
 
