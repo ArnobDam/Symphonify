@@ -11,6 +11,7 @@ I created Symphonify's frontend using React, and I created the backend via Ruby 
 
 - React
 - Redux
+- AWS
 - Javascript
 - Ruby on Rails
 - HTML
