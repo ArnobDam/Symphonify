@@ -8,7 +8,7 @@ Hi! Welcome to [Symphonify](https://symphonify.onrender.com/), my very own clone
 
 ## Overview & Functionalities:
 
-I created Symphonify's using React for the frontend and Ruby on Rails for the backend. Within the app, the user can view, play, and search for various albums and songs. Symphonify has an interactive playbar allowing the user to skip, rewind, play, pause and change the volume of tracks. The user is also able to create their very own custom playlists. Feel free to login via demo user to enjoy all of Symphonify's functionality and sleek styling. Thank you for checking out Symphonify!
+I created Symphonify using React for the frontend and Ruby on Rails for the backend. Within the app, the user can view, play, and search for various albums and songs. Symphonify has an interactive playbar allowing the user to skip, rewind, play, pause and change the volume of tracks. The user is also able to create their very own custom playlists. Feel free to login via demo user to enjoy all of Symphonify's functionality and sleek styling. Thank you for checking out Symphonify!
 
 
 ## Technologies & Libraries Used:
