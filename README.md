@@ -14,6 +14,7 @@ I created Symphonify's frontend using React, and I created the backend via Ruby 
 - AWS
 - Javascript
 - Ruby on Rails
+- PostgreSQL
 - JSON / Jbuilder
 - HTML
 - CSS
