@@ -47,7 +47,8 @@
 
     width: 180px;
 
-    padding: 20px;
+    padding: 20px; 
+    padding-right: 18px; /* added for downloads bar issue */
     padding-bottom: 40px;
 
     /* border: 1px solid greenyellow; */
