@@ -41,8 +41,10 @@ const SignupForm = () => {
     const handleDemoUserSignupForm = (e) => {
         e.preventDefault();
         setErrors([]);
-        // setCredential('guest@guest.com');
-        // setPassword('password');
+        setEmail('guest@guest.com');
+        setConfirmEmail('guest@guest.com');
+        setUsername('Guest');
+        setPassword('password');
         return dispatch(sessionActions.login({
             credential: 'guest@guest.com',
             password: 'password'
