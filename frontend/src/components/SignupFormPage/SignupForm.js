@@ -38,6 +38,17 @@ const SignupForm = () => {
         return setErrors([`The email addresses don't match.`]);
     };
 
+    const handleDemoUserSignupForm = (e) => {
+        e.preventDefault();
+        setErrors([]);
+        // setCredential('guest@guest.com');
+        // setPassword('password');
+        return dispatch(sessionActions.login({
+            credential: 'guest@guest.com',
+            password: 'password'
+        }))
+      }
+
     return (
         <form className="signupForm" onSubmit={handleSubmit}>
             <ul>
@@ -96,7 +107,7 @@ const SignupForm = () => {
             <p className="signupComment">This appears on your profile.</p>
             <div className='signupButtonsDiv'>
                 <button className="signupButton" type="submit">Sign Up</button>
-                <button className="demoUserSignUpForm" type="submit">Demo User</button>
+                <button onClick={handleDemoUserSignupForm} className="demoUserSignUpForm" type="submit">Demo User</button>
             </div>
         </form>
     )

@@ -33,7 +33,7 @@ const LoginForm = () => {
       });
   }
 
-  const handleDemoUser = (e) => {
+  const handleDemoUserLoginForm = (e) => {
     setCredential('guest@guest.com');
     setPassword('password');
   }
@@ -72,7 +72,7 @@ const LoginForm = () => {
             
             <div className='loginButtonsDiv'>
             <button className="loginButton" type="submit">Log In</button>
-            <button onClick={handleDemoUser} className="demoUserButton" type="submit">Demo User</button>
+            <button onClick={handleDemoUserLoginForm} className="demoUserButton" type="submit">Demo User</button>
               
             </div>
             
