@@ -2,9 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
+
+  const history = useHistory();
 
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
@@ -38,47 +40,49 @@ const LoginForm = () => {
     setPassword('password');
   }
 
-    return (
-        <form className='loginForm' onSubmit={handleSubmit}>
-            <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
+  return (
+    <div className='loginDiv'>
+    <form className='loginForm' onSubmit={handleSubmit}>
+      <ul>
+        {errors.map(error => <li key={error}>{error}</li>)}
+      </ul>
 
-            <h1 className="loginFormHeader">To continue, log in to Symphonify.</h1>
+      <h1 className="loginFormHeader">To continue, log in to Symphonify.</h1>
 
-            <label id="loginLabel">
-                Email Address or Username
-            </label>
-                <input
-                id ="loginInput"
-                type="text"
-                value={credential}
-                onChange={(e) => setCredential(e.target.value)}
-                required
-                placeholder='Email Address or Username'
-                />
-            
-            <label id="loginLabel">
-                Password
-            </label>
-                <input
-                id ="loginInput"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                placeholder='Password'
-                />
-            
-            <div className='loginButtonsDiv'>
-            <button className="loginButton" type="submit">Log In</button>
-            <button onClick={handleDemoUserLoginForm} className="demoUserButton" type="submit">Demo User</button>
-              
-            </div>
-            
-        </form>
-    )
-    
+      <label id="loginLabel">
+        Email Address or Username
+      </label>
+      <input
+        id="loginInput"
+        type="text"
+        value={credential}
+        onChange={(e) => setCredential(e.target.value)}
+        required
+        placeholder='Email Address or Username'
+      />
+
+      <label id="loginLabel">
+        Password
+      </label>
+      <input
+        id="loginInput"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+        placeholder='Password'
+      />
+
+      <div className='loginButtonsDiv'>
+        <button className="loginButton" type="submit">Log In</button>
+        <button onClick={handleDemoUserLoginForm} className="demoUserButton" type="submit">Demo User</button>
+      </div>
+    </form>
+    <p className='dontHaveAccount'>Don't have an account?</p>
+    <button onClick={() => history.push('/signup')} className='signupLinkButton'>SIGN UP FOR SYMPHONIFY</button>
+    </div>
+  )
+
 }
 
-  export default LoginForm;
+export default LoginForm;

@@ -59,7 +59,6 @@
     margin-top: -10px;
 }
 
-
 .loginButton {
     background-color: #1ed760;
     font-weight: bold;
@@ -118,4 +117,39 @@
 
     margin-top: 29px;
     margin-bottom: 19px;
+}
+
+.loginDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.dontHaveAccount {
+    margin: 0 auto;
+    margin-top: 35px;
+
+    font-weight: bolder;
+}
+
+.signupLinkButton {
+    margin-top: 25px;
+
+    border-radius: 40px;
+    padding: 15px 31px; /* real values 13px 31px */
+
+    background-color: transparent;
+    border: 1px solid #878787;
+
+    color: #6a6a6a;
+    font-weight: 700;
+
+    letter-spacing: 0.100em; /* real value 0.107em */
+
+    transition: .25s;
+}
+
+.signupLinkButton:hover {
+    border-color: black;
+
+    transition: .25s;
 }
