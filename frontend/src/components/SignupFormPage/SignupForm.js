@@ -111,6 +111,7 @@ const SignupForm = () => {
                 <button className="signupButton" type="submit">Sign Up</button>
                 <button onClick={handleDemoUserSignupForm} className="demoUserSignUpForm" type="submit">Demo User</button>
             </div>
+            <p className="haveAccount">Have an account? <a href="">Log in.</a></p>
         </form>
     )
 };
