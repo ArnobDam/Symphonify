@@ -136,5 +136,12 @@
     margin-bottom: 20px;
 
     font-size: 16px;
+}
 
+.loginLink {
+    color: rgb(29, 185, 84);
+}
+
+.loginLink:hover {
+    color: rgb(30, 215, 96);
 }
