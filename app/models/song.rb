@@ -16,6 +16,16 @@ class Song < ApplicationRecord
         primary_key: :id,
         foreign_key: :album_id,
         class_name: :Album
+    
+    has_many :playlist_songs,
+        primary_key: :id,
+        foreign_key: :song_id,
+        class_name: :PlaylistSong,
+        dependent: :destroy
+
+    has_one :artist,
+        through: :album,
+        source: :artist
 
     #belongs_to playlist, with playlist_id, optional
 end

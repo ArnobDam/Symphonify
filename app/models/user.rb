@@ -31,6 +31,12 @@ class User < ApplicationRecord
     foreign_key: :playlist_id,
     class_name: :Playlist,
     dependent: :destroy
+  
+  has_many :playlist_songs,
+      through: :playlists,
+      source: :songs,
+      dependent: :destroy
+
 
 
   def self.find_by_credentials(credential, password)
