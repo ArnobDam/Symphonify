@@ -26,6 +26,12 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
+  has_many :playlists,
+    primary_key: :id,
+    foreign_key: :playlist_id,
+    class_name: :Playlist,
+    dependent: :destroy
+
 
   def self.find_by_credentials(credential, password)
     # user = User.find_by(username: credential) #finds by username not email
