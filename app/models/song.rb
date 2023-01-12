@@ -23,6 +23,10 @@ class Song < ApplicationRecord
         class_name: :PlaylistSong,
         dependent: :destroy
 
+    has_many :playlists,
+        through: :playlist_songs,
+        source: :playlist
+
     has_one :artist,
         through: :album,
         source: :artist
