@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :albums, only: [:index, :show]
     resources :artists, only: [:show]
     resources :songs, only: [:show]
+    resources :playlists, only: [:index, :show]
     
     get '/albums/:search', to: 'albums#search', as: 'search'
   end

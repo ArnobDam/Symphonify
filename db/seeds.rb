@@ -12,6 +12,7 @@ ApplicationRecord.transaction do
     Artist.destroy_all
     Album.destroy_all
     Song.destroy_all
+    Playlist.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -359,6 +360,18 @@ ApplicationRecord.transaction do
       title: "Lost In Translation",
       album_id: 2,
       song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Lost+In+Translation+(Official+Audio).mp3"
+    )
+
+    puts "Creating playlists..."
+
+    Playlist.create!(
+      title: "Rap music",
+      creator_id: 2 #Guest / demo user
+    )
+
+    Playlist.create!(
+      title: "Jeanice's playlist",
+      creator_id: 3
     )
     
     puts "Done!"
