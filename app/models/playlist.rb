@@ -25,8 +25,7 @@ class Playlist < ApplicationRecord
 
     has_many :songs,
         through: :playlist_songs,
-        source: :song,
-        dependent: :destroy
+        source: :song
 
     has_many :albums,
         through: :songs,
