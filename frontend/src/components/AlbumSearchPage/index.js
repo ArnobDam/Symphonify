@@ -56,7 +56,7 @@ function AlbumSearchPage() {
         }
     }
 
-    console.log(noSearchResults)
+    // console.log(noSearchResults)
 
     return (
         <div className="albumIndexPage">
