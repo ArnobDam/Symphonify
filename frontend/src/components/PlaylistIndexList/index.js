@@ -11,7 +11,9 @@ function PlaylistIndexList() {
         dispatch(fetchPlaylists())
     }, [dispatch]);
 
-    
+    return (
+        <></>
+    )
 };
 
 export default PlaylistIndexList;

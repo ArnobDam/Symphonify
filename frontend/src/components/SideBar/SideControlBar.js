@@ -3,6 +3,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { FiSearch } from 'react-icons/fi';
 
 import { useHistory } from "react-router-dom";
+import PlaylistIndexList from '../PlaylistIndexList';
 import spotifyLogo from "./spotify_white.png"
 
 
@@ -12,7 +13,7 @@ const SideControlBar = () => {
     return (
         <nav className="sideBar">
             <div className="logoDiv" onClick={(e) => history.push(`/`)}>
-                <img className="logoIcon" src={spotifyLogo} />
+                <img className="logoIcon" src={spotifyLogo} alt='logo'/>
                 <p className="logoName">Symphonify</p>
             </div>
             <div className="sidebar-links">
@@ -25,6 +26,7 @@ const SideControlBar = () => {
                     <p className="search-text">Search</p>
                 </div>
             </div>
+            <PlaylistIndexList/>
         </nav>
     )
 }
