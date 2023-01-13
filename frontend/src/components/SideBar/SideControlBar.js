@@ -26,7 +26,7 @@ const SideControlBar = () => {
                     <p className="search-text">Search</p>
                 </div>
             </div>
-            <PlaylistIndexList/>
+            <PlaylistIndexList className='playlist-index-list'/>
         </nav>
     )
 }

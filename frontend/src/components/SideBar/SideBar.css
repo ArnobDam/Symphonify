@@ -110,3 +110,8 @@
     font-size: 14px;
     font-weight: bold;
 }
+
+.playlist-index-list {
+    color: white;
+    z-index: 5;
+}

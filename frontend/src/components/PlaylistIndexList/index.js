@@ -7,12 +7,26 @@ function PlaylistIndexList() {
     const dispatch = useDispatch();
     const playlists = useSelector(state => state.playlists ? Object.values(state.playlists) : []);
 
+    // console.log(playlists[0].title);
     useEffect(() => {
         dispatch(fetchPlaylists())
     }, [dispatch]);
 
+    const PlaylistTitles = () => {
+        return (
+            <ul className='playlist-index-list'>
+                {playlists.map((playlist) => {
+                    return (<li>{playlist.title}</li>)
+                })}
+            </ul>
+        )
+    }
+
     return (
-        <></>
+        <>
+            {/* {playlists[0].title} */}
+            <PlaylistTitles />
+        </>
     )
 };
 
