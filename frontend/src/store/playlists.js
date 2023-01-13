@@ -35,3 +35,19 @@ export const fetchPlaylist = (playlistId) => async dispatch => {
     const data = await response.json();
     return dispatch(receivePlaylist(data));
 }
+
+//reducer
+const playlistsReducer = (state = {}, action) => {
+    const nextState = { ...state };
+
+    switch (action.type) {
+        case RECEIVE_PLAYLISTS:
+            return { ...nextState, ...action.playlists };
+        case RECEIVE_PLAYLIST:
+            nextState[action.payload.playlist.id] = action.payload.playlist;
+        default:
+            return state;
+    }
+}
+
+export default playlistsReducer;

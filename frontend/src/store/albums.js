@@ -49,7 +49,7 @@ export const fetchAlbum = (albumId) => async dispatch => {
 //reducer
 
 const albumsReducer = (state = {}, action) => {
-    const nextState ={ ...state }
+    const nextState = { ...state };
 
     switch (action.type) {
         case RECEIVE_ALBUMS:

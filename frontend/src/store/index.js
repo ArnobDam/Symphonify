@@ -5,10 +5,12 @@ import sessionReducer from './session';
 import currentPlaylistReducer from './currentPlaylist';
 import currentTrackReducer from './currentTrack';
 import searchedAlbumsReducer from './searchedAlbums';
+import playlistsReducer from './playlists';
 
 export const rootReducer = combineReducers({
     session: sessionReducer,
     albums: albumsReducer,
+    playlists: playlistsReducer,
     currentPlaylist: currentPlaylistReducer,
     currentTrack: currentTrackReducer,
     searchedAlbums: searchedAlbumsReducer
