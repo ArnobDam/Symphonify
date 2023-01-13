@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 //action constants
 export const RECEIVE_PLAYLISTS = 'playlists/RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST = 'playlists/RECEIVE_PLAYLIST';
@@ -36,6 +38,37 @@ export const fetchPlaylist = (playlistId) => async dispatch => {
     return dispatch(receivePlaylist(data));
 }
 
+export const createPlaylist = (payload) => async dispatch => { //may need playlist not payload
+    const response = await csrfFetch(`/api/playlists`, {
+        method: 'POST',
+        body: JSON.stringify(payload.playlist),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await response.json();
+    return dispatch(receivePlaylist(data));
+}
+
+export const updatePlaylist = (payload) => async dispatch => { //may need playlist not payload
+    const response = await csrfFetch(`/api/playlists/${payload.playlist.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(payload.playlist),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await response.json();
+    return dispatch(receivePlaylist(data));
+}
+
+export const deletePlaylist = (playlistId) => async dispatch => {
+    await csrfFetch(`/api/playlists/${playlistId}`, { //maybe need const response = at start
+        method: 'DELETE'
+    })
+    return dispatch(removePlaylist(playlistId));
+}
+
 //reducer
 const playlistsReducer = (state = {}, action) => {
     const nextState = { ...state };
@@ -45,6 +78,10 @@ const playlistsReducer = (state = {}, action) => {
             return { ...nextState, ...action.playlists };
         case RECEIVE_PLAYLIST:
             nextState[action.payload.playlist.id] = action.payload.playlist;
+            return nextState;
+        case REMOVE_PLAYLIST:
+            delete nextState[action.playlistId]; //may need to change, maybe use payload or playlist.playlistId
+            return nextState;
         default:
             return state;
     }
