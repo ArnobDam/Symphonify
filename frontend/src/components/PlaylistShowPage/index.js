@@ -8,6 +8,11 @@ function PlaylistShowPage() {
 
     // const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : {})
 
+    return (
+        <div className='playlist-show-page'>
+
+        </div>
+    )
 };
 
 export default PlaylistShowPage;

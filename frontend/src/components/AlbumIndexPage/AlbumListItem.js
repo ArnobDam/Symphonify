@@ -17,7 +17,6 @@ function AlbumListItem({ album, isHighlighted, setHighlightedBench }) {
 
 
     return (
-        
         <div onClick={(e) => history.push(`/albums/${album.id}`)}>
             <div className="list-item-info">
                 <img className="albumPhoto" 
