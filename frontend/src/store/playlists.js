@@ -20,8 +20,18 @@ export const removePlaylist = (playlistId) => ({
 })
 
 //selectors
-
 export const getPlaylists = (state) => state.playlists ? Object.values(state.playlists) : [];
 export const getPlaylist = (playlistId) => (state) => state.playlists ? state.playlists[playlistId] : null;
 
+//thunk actions
+export const fetchPlaylists = () => async dispatch => {
+    const response = await fetch(`/api/playlists`);
+    const data = await response.json();
+    return dispatch(receivePlaylists(data));
+}
 
+export const fetchPlaylist = (playlistId) => async dispatch => {
+    const response = await fetch(`/api/playlists/${playlistId}`);
+    const data = await response.json();
+    return dispatch(receivePlaylist(data));
+}
