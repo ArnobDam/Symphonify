@@ -8,16 +8,30 @@ function PlaylistIndexList() {
     const dispatch = useDispatch();
     const history = useHistory();
     const playlists = useSelector(state => state.playlists ? Object.values(state.playlists) : []);
+    const session = useSelector(state => state.session ? state.session : {});
+    // console.log(session.user)
 
-    // console.log(playlists[0].title);
+    let usersPlaylists = [];
+    if (session.user) {
+        usersPlaylists = playlists.filter((playlist) =>
+            playlist.creatorId === session.user.id
+        )
+    }
+
+
+    console.log(usersPlaylists);
+
     useEffect(() => {
         dispatch(fetchPlaylists())
     }, [dispatch]);
 
+    if (session.user) {
+
+    }
     const PlaylistTitles = () => {
         return (
             <ul className='playlist-index-list'>
-                {playlists.map((playlist) => {
+                {usersPlaylists.map((playlist) => {
                     return (
                         <li onClick={(e) => history.push(`/playlists/${playlist.id}`)}>
                             {playlist.title}

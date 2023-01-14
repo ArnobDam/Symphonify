@@ -20,6 +20,7 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('artists')
     ApplicationRecord.connection.reset_pk_sequence!('albums')
     ApplicationRecord.connection.reset_pk_sequence!('songs')
+    ApplicationRecord.connection.reset_pk_sequence!('playlists')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -371,7 +372,7 @@ ApplicationRecord.transaction do
 
     Playlist.create!(
       title: "Jeanice's playlist",
-      creator_id: 3
+      creator_id: 1
     )
     
     puts "Done!"
