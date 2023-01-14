@@ -1,4 +1,5 @@
 .playlist-index-list {
     color: white;
     cursor: default;
+    border: 1px solid white;
 }

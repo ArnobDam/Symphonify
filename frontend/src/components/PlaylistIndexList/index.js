@@ -18,28 +18,26 @@ function PlaylistIndexList() {
         )
     }
 
-
-    console.log(usersPlaylists);
+    // console.log(usersPlaylists);
 
     useEffect(() => {
         dispatch(fetchPlaylists())
     }, [dispatch]);
 
-    if (session.user) {
-
-    }
     const PlaylistTitles = () => {
-        return (
-            <ul className='playlist-index-list'>
-                {usersPlaylists.map((playlist) => {
-                    return (
-                        <li onClick={(e) => history.push(`/playlists/${playlist.id}`)}>
-                            {playlist.title}
-                        </li>
-                    )
-                })}
-            </ul>
-        )
+        if (usersPlaylists.length > 0) {
+            return (
+                <ul className='playlist-index-list'>
+                    {usersPlaylists.map((playlist) => {
+                        return (
+                            <li onClick={(e) => history.push(`/playlists/${playlist.id}`)}>
+                                {playlist.title}
+                            </li>
+                        )
+                    })}
+                </ul>
+            )
+        }
     }
 
     return (
