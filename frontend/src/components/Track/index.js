@@ -15,8 +15,8 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
     // <AudioBar 
 
     const handleClick = (e) => {
-        console.log("track clicked")
-        console.log(id)
+        // console.log("track clicked")
+        // console.log(id)
         // console.log(songTitle);
         dispatch(setCurrentTrack(id))
         // debugger;
