@@ -1,5 +1,6 @@
 // export const RECEIVE_CURRENT_PLAYLIST = 'currentPlaylist/RECEIVE_CURRENT_PLAYLIST';
-export const CREATE_CURRENT_PLAYLIST = 'currentPlaylist/CREATE_CURRENT_PLAYLIST';
+export const CREATE_CURRENT_PLAYLIST_ALBUM = 'currentPlaylist/CREATE_CURRENT_PLAYLIST_ALBUM';
+export const CREATE_CURRENT_PLAYLIST_PLAYLIST = 'currentPlaylist/CREATE_CURRENT_PLAYLIST_PLAYLIST';
 // export const DESTROY_CURRENT_PLAYLIST = 'currentPlaylist/DESTROY_CURRENT_PLAYLIST';
 
 // export const receiveCurrentPlaylist = (currentPlaylist) => ({
@@ -7,9 +8,14 @@ export const CREATE_CURRENT_PLAYLIST = 'currentPlaylist/CREATE_CURRENT_PLAYLIST'
 //     currentPlaylist
 // })
 
-export const createCurrentPlaylist = (album) => ({
-    type: CREATE_CURRENT_PLAYLIST,
+export const createCurrentPlaylistAlbum = (album) => ({
+    type: CREATE_CURRENT_PLAYLIST_ALBUM,
     album
+})
+
+export const createCurrentPlaylistPlaylist = (playlist) => ({
+    type: CREATE_CURRENT_PLAYLIST_PLAYLIST,
+    playlist
 })
 
 // export const destroyCurrentPlaylist = ()
@@ -21,10 +27,16 @@ export const createCurrentPlaylist = (album) => ({
 //     return data;
 // }
 
-export const makeCurrentPlaylist = (albumId) => (dispatch, getState) => {
+export const makeCurrentPlaylistAlbum = (albumId) => (dispatch, getState) => {
     const { albums } = getState();
     const album = albums[albumId];
-    dispatch(createCurrentPlaylist(album));
+    dispatch(createCurrentPlaylistAlbum(album));
+};
+
+export const makeCurrentPlaylistPlaylist = (playlistId) => (dispatch, getState) => {
+    const { playlists } = getState();
+    const playlist = playlists[playlistId];
+    dispatch(createCurrentPlaylistPlaylist(playlist));
 };
 
 const currentPlaylistReducer = (state = {}, action) => {
@@ -34,11 +46,13 @@ const currentPlaylistReducer = (state = {}, action) => {
         // case RECEIVE_CURRENT_PLAYLIST:
         //     nextState[action.currentPlaylist.id] = action.currentPlaylist;
         //     return nextState;
-        case CREATE_CURRENT_PLAYLIST:
+        case CREATE_CURRENT_PLAYLIST_ALBUM:
             // delete nextState[action];
             // nextState[action.songsArr.album.id] = action.songsArr;
             // debugger;
             return action.album;
+        case CREATE_CURRENT_PLAYLIST_PLAYLIST:
+            return action.playlist;
         default:
             return state;
     }

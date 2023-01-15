@@ -1,12 +1,12 @@
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { makeCurrentPlaylist } from '../../store/currentPlaylist';
+import { makeCurrentPlaylist, makeCurrentPlaylistAlbum, makeCurrentPlaylistPlaylist } from '../../store/currentPlaylist';
 import { setTheCurrentTrack, setCurrentTrack } from '../../store/currentTrack';
 import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
-function Track({ id, songTitle, artistName, songUrl, albumId }) {
+function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
     const dispatch = useDispatch();
     // console.log(songUrl)
 
@@ -20,7 +20,12 @@ function Track({ id, songTitle, artistName, songUrl, albumId }) {
         // console.log(songTitle);
         dispatch(setCurrentTrack(id))
         // debugger;
-        return dispatch(makeCurrentPlaylist(albumId))
+        if (albumId) {
+            return dispatch(makeCurrentPlaylistAlbum(albumId));
+        } else {
+            return dispatch(makeCurrentPlaylistPlaylist(playlistId));
+        }
+        
     };
 
     return (

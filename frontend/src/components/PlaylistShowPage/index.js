@@ -85,7 +85,7 @@ function PlaylistShowPage() {
                         songTitle={song.title} 
                         artistName={song.name} 
                         songUrl={song.songUrl}
-                        albumId={playlistId} />) // THIS LINE SUPER IMPORTANT
+                        playlistId={playlistId} />) // THIS LINE SUPER IMPORTANT
                 })}
             </div>
 
