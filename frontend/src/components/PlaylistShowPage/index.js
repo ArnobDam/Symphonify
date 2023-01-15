@@ -63,8 +63,8 @@ function PlaylistShowPage() {
                     <p className='playlist-title'>{title}</p>
                     <div className='name-and-year'>
                         <p className='creator-name'>{username}</p>
-                        {/* <p className='bullet-point'>•</p> */}
-                        {/* <p className='year'>{year}</p> */}
+                        <p className='bullet-point'>•</p>
+                        <p className='num-songs'>{songsArr.length} songs</p>
                     </div>
                 </div>
 

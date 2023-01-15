@@ -85,11 +85,12 @@
 
 .bullet-point {
     margin: 0px 5px;
+    font-weight: normal;
 }
 
-/* .year {
+.num-songs { /* different from album show page css*/
     font-weight: normal;
-} */
+}
 
 .playlist-songs {
     /* border: 1px solid yellow; */
