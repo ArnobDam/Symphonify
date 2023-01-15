@@ -13,10 +13,18 @@ function SongDetails() {
     const firstSongId = useSelector((state) => state.currentPlaylist.songIds ? 
     state.currentPlaylist.songIds[0] :
     NaN)
-    // console.log(firstSongId)
+    // console.log(useSelector((state) => state.currentPlaylist.songs))
+
+    // const songTitle = useSelector((state) => state.currentPlaylist.songs ?
+    // state.currentPlaylist.songs[firstSongId + currentTrackId].title :
+    // "")
+
+    const songIdsArr = useSelector((state) => state.currentPlaylist.songIds ?
+    state.currentPlaylist.songIds :
+    []);
 
     const songTitle = useSelector((state) => state.currentPlaylist.songs ?
-    state.currentPlaylist.songs[firstSongId + currentTrackId].title :
+    state.currentPlaylist.songs[songIdsArr[currentTrackId]].title :
     "")
 
     const artistName = useSelector((state) => state.currentPlaylist.artist ?
