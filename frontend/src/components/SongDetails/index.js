@@ -27,10 +27,13 @@ function SongDetails() {
     state.currentPlaylist.songs[songIdsArr[currentTrackId]].title :
     "")
 
-    const artistName = useSelector((state) => state.currentPlaylist.artist ?
-    state.currentPlaylist.artist.name :
-    "")
+    // const artistName = useSelector((state) => state.currentPlaylist.artist ?
+    // state.currentPlaylist.artist.name :
+    // "")
 
+    const artistName = useSelector((state) => state.currentPlaylist.songs ?
+    state.currentPlaylist.songs[songIdsArr[currentTrackId]].name :
+    "")
 
 
 
