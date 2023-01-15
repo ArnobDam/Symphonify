@@ -6,22 +6,25 @@ function SongDetails() {
 
     const currentTrackId = useSelector((state) => state.currentTrack)
 
-    const albumPhotoUrl = useSelector((state) => state.currentPlaylist.albumPhotoUrl 
-    ? state.currentPlaylist.albumPhotoUrl :
+    const songIdsArr = useSelector((state) => state.currentPlaylist.songIds ?
+    state.currentPlaylist.songIds :
+    []);
+
+    // const albumPhotoUrl = useSelector((state) => state.currentPlaylist.albumPhotoUrl 
+    // ? state.currentPlaylist.albumPhotoUrl :
+    // "")
+
+    const albumPhotoUrl = useSelector((state) => state.currentPlaylist.songs ?
+    state.currentPlaylist.songs[songIdsArr[currentTrackId]].albumPhotoUrl :
     "")
 
     const firstSongId = useSelector((state) => state.currentPlaylist.songIds ? 
     state.currentPlaylist.songIds[0] :
     NaN)
-    // console.log(useSelector((state) => state.currentPlaylist.songs))
 
     // const songTitle = useSelector((state) => state.currentPlaylist.songs ?
     // state.currentPlaylist.songs[firstSongId + currentTrackId].title :
     // "")
-
-    const songIdsArr = useSelector((state) => state.currentPlaylist.songIds ?
-    state.currentPlaylist.songIds :
-    []);
 
     const songTitle = useSelector((state) => state.currentPlaylist.songs ?
     state.currentPlaylist.songs[songIdsArr[currentTrackId]].title :

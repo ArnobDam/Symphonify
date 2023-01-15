@@ -4,6 +4,7 @@ json.album do
             json.set! song.id do
                 json.extract! song, :title, :song_url
                 json.extract! song.artist, :name
+                json.extract! song.album, :album_photo_url
             end
         end
     end
