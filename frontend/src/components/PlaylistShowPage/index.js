@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchPlaylist } from '../../store/playlists';
 import Track from '../Track';
 import './PlaylistShowPage.css'
+import cover from './new_playlist_cover.PNG'
 
 function PlaylistShowPage() {
     const dispatch = useDispatch();
@@ -55,7 +56,7 @@ function PlaylistShowPage() {
         <div className='playlist-show-page'>
             <div className='playlist-details'>
                 <img className="playlist-photo"
-                    // src={albumPhotoUrl}
+                    src={cover}
                     alt='Playlist Cover' />
 
                 <div className='playlist-text'>
