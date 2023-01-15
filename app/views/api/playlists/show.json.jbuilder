@@ -7,6 +7,7 @@ json.playlist do
         @playlist.songs.each do |song|
             json.set! song.id do
                 json.extract! song, :title, :song_url
+                json.extract! song.artist, :name
             end
         end
     end

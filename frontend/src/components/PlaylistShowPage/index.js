@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchPlaylist } from '../../store/playlists';
+import Track from '../Track';
 import './PlaylistShowPage.css'
 
 function PlaylistShowPage() {
@@ -12,6 +13,8 @@ function PlaylistShowPage() {
     // const session = useSelector(state => state.session ? state.session : {});
 
     const [username, setUsername] = useState("");
+
+    const { title } = playlist;
 
     const [songsArr, setSongsArr] = useState([]);
     const [songTitlesArr, setSongTitlesArr] = useState([]);
@@ -50,6 +53,41 @@ function PlaylistShowPage() {
 
     return (
         <div className='playlist-show-page'>
+            <div className='playlist-details'>
+                <img className="playlist-photo"
+                    // src={albumPhotoUrl}
+                    alt='Playlist Cover' />
+
+                <div className='playlist-text'>
+                    <p className='playlist-title'>{title}</p>
+                    <div className='name-and-year'>
+                        <p className='creator-name'>{username}</p>
+                        {/* <p className='bullet-point'>•</p> */}
+                        {/* <p className='year'>{year}</p> */}
+                    </div>
+                </div>
+
+            </div>
+            <div className='playlist-songs'>
+                <div className='hashtag-and-title'>
+                    <p className='hashtag'>#</p>
+                    <p className='title-text'>TITLE</p>
+                </div>
+                {/* {console.log(songsArr)} */}
+                {songsArr.map((song, idx) => {
+                    // {console.log(song.title)}
+                    // return (<p>{song.title}</p>)
+                    // {console.log(idx)}
+                    return (<Track
+                        key={idx}
+                        id={idx} 
+                        songTitle={song.title} 
+                        artistName={song.name} 
+                        songUrl={song.songUrl}
+                        albumId={playlistId} />) // THIS LINE SUPER IMPORTANT
+                })}
+            </div>
+
 
         </div>
     )
