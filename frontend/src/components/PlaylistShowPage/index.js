@@ -12,6 +12,9 @@ function PlaylistShowPage() {
     // const session = useSelector(state => state.session ? state.session : {});
 
     const [username, setUsername] = useState("");
+
+    const [songsArr, setSongsArr] = useState([]);
+    const [songTitlesArr, setSongTitlesArr] = useState([]);
     
     useEffect(() => {
         dispatch(fetchPlaylist(playlistId)).then(res => {
@@ -21,16 +24,29 @@ function PlaylistShowPage() {
             if (data.creator.username) {
                 setUsername(data.creator.username);
             }
+
+            if (data.songs) {
+                for (const [key, value] of Object.entries(data.songs)) {
+
+                    if (!songTitlesArr.includes(value.title)) {
+                        
+                        setSongsArr((songsArr) => [...songsArr, value])
+                        setSongTitlesArr((songTitlesArr) => [...songTitlesArr, value.title])
+
+                    }
+
+                }
+            }
         });
 
     }, [playlistId, dispatch]);
 
     // console.log(username)
+    // console.log(songTitlesArr);
 
     if (!playlist) {
         return null;
     }
-
 
     return (
         <div className='playlist-show-page'>
