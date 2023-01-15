@@ -30,7 +30,7 @@ function PlaylistIndexList() {
                 <ul className='playlist-index-list'>
                     {usersPlaylists.map((playlist) => {
                         return (
-                            <li onClick={(e) => history.push(`/playlists/${playlist.id}`)}>
+                            <li key={playlist.id} onClick={(e) => history.push(`/playlists/${playlist.id}`)}>
                                 {playlist.title}
                             </li>
                         )
