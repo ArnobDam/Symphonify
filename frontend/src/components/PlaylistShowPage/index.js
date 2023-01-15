@@ -14,18 +14,23 @@ function PlaylistShowPage() {
     const [username, setUsername] = useState("");
     
     useEffect(() => {
-        dispatch(fetchPlaylist(playlistId));
+        dispatch(fetchPlaylist(playlistId)).then(res => {
+            // console.log(res)
+            let data = res.payload.playlist;
 
-        if (playlist.creator) {
-            setUsername(playlist.creator.username);
-        }
-        // if (session.user) {
-        //     setUsername(session.user.username)
-        // }
+            if (data.creator.username) {
+                setUsername(data.creator.username);
+            }
+        });
 
     }, [playlistId, dispatch]);
 
-    console.log(username)
+    // console.log(username)
+
+    if (!playlist) {
+        return null;
+    }
+
 
     return (
         <div className='playlist-show-page'>
