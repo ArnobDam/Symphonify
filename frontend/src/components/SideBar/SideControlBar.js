@@ -29,17 +29,15 @@ const SideControlBar = () => {
     // console.log(numPlaylistsCurrentUser);
 
     const handleCreatePlaylist = () => {
-        debugger
+        // debugger
         dispatch(createPlaylist({
             playlist: {
                 "title": `My Playlist #${numPlaylistsCurrentUser + 1}`,
-                "creatorId": session.user.id
+                "creator_id": session.user.id
             }
         }));
         history.push(`/playlists/${playlists.length + 1}`);
     };
-
-
 
     return (
         <nav className="sideBar">

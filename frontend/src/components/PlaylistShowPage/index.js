@@ -18,6 +18,7 @@ function PlaylistShowPage() {
     const { title } = playlist;
 
     const [songsArr, setSongsArr] = useState([]);
+    console.log(songsArr)
     const [songTitlesArr, setSongTitlesArr] = useState([]);
     
     useEffect(() => {
