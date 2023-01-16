@@ -1,6 +1,7 @@
 // import spotifyLogo from "../../../../app/assets/images/spotify_white.png"
 import { AiOutlineHome } from 'react-icons/ai';
 import { FiSearch } from 'react-icons/fi';
+import { BsPlusSquareFill } from 'react-icons/bs';
 
 import { useHistory } from "react-router-dom";
 import PlaylistIndexList from '../PlaylistIndexList';
@@ -24,6 +25,10 @@ const SideControlBar = () => {
                 <div className="search-div" onClick={(e) => history.push(`/search`)}>
                     <FiSearch className='search-icon'/>
                     <p className="search-text">Search</p>
+                </div>
+                <div className="create-playlist-div">
+                    <BsPlusSquareFill className='create-playlist-icon'/>
+                    <p className="create-playlist-text">Create Playlist</p>
                 </div>
             </div>
             <PlaylistIndexList/>

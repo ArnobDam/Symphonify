@@ -111,6 +111,40 @@
     font-weight: bold;
 }
 
+.create-playlist-div {
+    display: flex;
+    flex-direction: row;
+
+    transition: color .5s;
+
+    margin-left: 7px;
+
+    margin-top: 75px; /* Different from above divs*/
+    margin-right: -50px; /* Different from above divs*/
+}
+
+.create-playlist-div:hover {
+    color: white;
+    cursor: pointer;
+    
+    transition: color .5s;
+}
+
+.create-playlist-icon {
+    font-size: 25px;
+
+    /* fill: white; */
+    margin-top: 3px;
+}
+
+.create-playlist-text {
+    margin-left: 15px;
+    margin-top: 10px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
 .playlist-index-list {
     color: white;
     z-index: 5;
