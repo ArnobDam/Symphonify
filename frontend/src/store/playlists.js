@@ -39,6 +39,7 @@ export const fetchPlaylist = (playlistId) => async dispatch => {
 }
 
 export const createPlaylist = (payload) => async dispatch => { //may need playlist not payload
+    console.log(JSON.stringify(payload.playlist))
     const response = await csrfFetch(`/api/playlists`, {
         method: 'POST',
         body: JSON.stringify(payload.playlist),
@@ -51,15 +52,17 @@ export const createPlaylist = (payload) => async dispatch => { //may need playli
     return data.playlist;
 }
 
-export const updatePlaylist = (payload) => async dispatch => { //may need playlist not payload
-    const response = await csrfFetch(`/api/playlists/${payload.playlist.id}`, {
+export const updatePlaylist = (playlist) => async dispatch => { //may need playlist not payload
+    // console.log(JSON.stringify(playlist))
+    const response = await csrfFetch(`/api/playlists/${playlist.id}`, {
         method: 'PATCH',
-        body: JSON.stringify(payload.playlist),
+        body: JSON.stringify(playlist),
         headers: {
             'Content-Type': 'application/json'
         }
     })
     const data = await response.json();
+    // console.log(data)
     return dispatch(receivePlaylist(data));
 }
 

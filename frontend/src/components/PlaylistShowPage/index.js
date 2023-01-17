@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { fetchPlaylist, deletePlaylist } from '../../store/playlists';
+import { fetchPlaylist, deletePlaylist, updatePlaylist } from '../../store/playlists';
 import Track from '../Track';
 import './PlaylistShowPage.css'
 import cover from './new_playlist_cover.PNG'
@@ -12,13 +12,13 @@ function PlaylistShowPage() {
     const { playlistId } = useParams();
 
     const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : {})
-    // const session = useSelector(state => state.session ? state.session : {});
+    const session = useSelector(state => state.session ? state.session : {});
 
     const [username, setUsername] = useState("");
 
     const { title } = playlist;
-    const [ playlistTitle, setPlaylistTitle] = useState(title)
-    console.log(playlistTitle)
+    const [playlistTitle, setPlaylistTitle] = useState(title)
+    // console.log(playlistTitle)
 
     const [songsArr, setSongsArr] = useState([]);
     // console.log(songsArr)
@@ -85,6 +85,16 @@ function PlaylistShowPage() {
         history.push(`/`);
     }
 
+    const handleTitleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(updatePlaylist({
+            "id": playlist.id,
+            "title": playlistTitle,
+            "creator_id": session.user.id
+        }))
+        return (history.push(`/playlists/${playlist.id}`));
+    }
+
     return (
         <div className='playlist-show-page'>
             <div className='playlist-details'>
@@ -93,12 +103,18 @@ function PlaylistShowPage() {
                     alt='Playlist Cover' />
 
                 <div className='playlist-text'>
-                    <p className='playlist-title'>
-                        <input className='playlist-title-input' 
-                        type='text' 
-                        value={playlistTitle}
-                        onChange={(e) => setPlaylistTitle(e.target.value)}/>
-                    </p>
+
+                    <form onSubmit={handleTitleSubmit}>
+                        <p className='playlist-title'>
+                            <input
+                                className='playlist-title-input'
+                                type='text'
+                                value={playlistTitle}
+                                onChange={(e) => setPlaylistTitle(e.target.value)}
+                            />
+                        </p>
+                    </form>
+
                     <div className='name-and-year'>
                         <p className='creator-name'>{username}</p>
                         <p className='bullet-point'>•</p>
