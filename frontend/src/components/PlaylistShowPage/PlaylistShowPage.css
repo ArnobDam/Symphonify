@@ -75,7 +75,20 @@
 
     margin-bottom: 20px;    
     /* letter-spacing: -0.03em; */
-    
+}
+
+.playlist-title-input {
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    background-color: transparent;
+    border: 0px;
+
+    /* max-width: fit-content; */
+    margin-left: -5px;
 }
 
 .name-and-year {

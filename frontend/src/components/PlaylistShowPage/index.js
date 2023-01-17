@@ -90,7 +90,9 @@ function PlaylistShowPage() {
                     alt='Playlist Cover' />
 
                 <div className='playlist-text'>
-                    <p className='playlist-title'>{title}</p>
+                    <p className='playlist-title'>
+                        <input className='playlist-title-input' type='text' value={title}/>
+                    </p>
                     <div className='name-and-year'>
                         <p className='creator-name'>{username}</p>
                         <p className='bullet-point'>•</p>
