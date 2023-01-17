@@ -24,6 +24,7 @@ function PlaylistShowPage() {
     useEffect(() => {
         dispatch(fetchPlaylist(playlistId)).then(res => {
             // console.log(res)
+            // console.log("test")
             let data = res.payload.playlist;
 
             if (data.creator.username) {
@@ -31,6 +32,8 @@ function PlaylistShowPage() {
             }
 
             if (data.songs) {
+                setSongsArr([]);
+                setSongTitlesArr([]);
                 for (const [key, value] of Object.entries(data.songs)) {
 
                     if (!songTitlesArr.includes(value.title)) {
@@ -41,6 +44,9 @@ function PlaylistShowPage() {
                     }
 
                 }
+            } else {
+                setSongsArr([]);
+                setSongTitlesArr([]);
             }
         });
 
