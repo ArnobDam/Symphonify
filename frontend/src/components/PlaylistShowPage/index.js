@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { fetchPlaylist } from '../../store/playlists';
+import { useHistory, useParams } from 'react-router-dom';
+import { fetchPlaylist, removePlaylist } from '../../store/playlists';
 import Track from '../Track';
 import './PlaylistShowPage.css'
 import cover from './new_playlist_cover.PNG'
 
 function PlaylistShowPage() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { playlistId } = useParams();
 
     const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : {})
@@ -79,6 +80,8 @@ function PlaylistShowPage() {
 
     const deletePlaylist = (e) => {
         e.preventDefault();
+        dispatch(removePlaylist(playlistId));
+        history.push(`/`);
     }
 
     return (
