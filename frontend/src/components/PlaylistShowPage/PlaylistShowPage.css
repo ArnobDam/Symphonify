@@ -74,7 +74,7 @@
     white-space: nowrap;
 
     margin-bottom: 20px;    
-    letter-spacing: -0.03em;
+    /* letter-spacing: -0.03em; */
     
 }
 
@@ -120,4 +120,23 @@
 .title-text {
     margin-left: 20px;
     letter-spacing: 0.5px;
+}
+
+.playlist-options-button {
+    background-color: transparent;
+
+    color: #a7a7a7;
+    font-size: large;
+    letter-spacing: 5px;
+    /* text-align: center; */
+
+    /* border: 1px solid white; */
+
+    width: 35px;
+    margin-left: 30px;
+    
+}
+
+.playlist-options-button:hover {
+    color: white;
 }

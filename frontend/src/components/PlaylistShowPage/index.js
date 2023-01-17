@@ -26,30 +26,23 @@ function PlaylistShowPage() {
             // console.log(res)
             // console.log("test")
             let data = res.payload.playlist;
-
             if (data.creator.username) {
                 setUsername(data.creator.username);
             }
-
             if (data.songs) {
                 setSongsArr([]);
                 setSongTitlesArr([]);
                 for (const [key, value] of Object.entries(data.songs)) {
-
-                    if (!songTitlesArr.includes(value.title)) {
-                        
+                    if (!songTitlesArr.includes(value.title)) { 
                         setSongsArr((songsArr) => [...songsArr, value])
                         setSongTitlesArr((songTitlesArr) => [...songTitlesArr, value.title])
-
                     }
-
                 }
             } else {
                 setSongsArr([]);
                 setSongTitlesArr([]);
             }
         });
-
     }, [playlistId, dispatch]);
 
     // console.log(username)
@@ -76,6 +69,7 @@ function PlaylistShowPage() {
                 </div>
 
             </div>
+            <button className='playlist-options-button'>•••</button>
             <div className='playlist-songs'>
                 <div className='hashtag-and-title'>
                     <p className='hashtag'>#</p>

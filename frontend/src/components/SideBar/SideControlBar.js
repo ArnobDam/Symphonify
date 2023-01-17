@@ -14,7 +14,6 @@ const SideControlBar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     
-
     const playlists = useSelector((state) => state.playlists ? Object.values(state.playlists) : []);
     const session = useSelector(state => state.session ? state.session : {});
 
