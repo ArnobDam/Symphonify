@@ -54,36 +54,7 @@ function AlbumShowPage() {
 
             }
         })
-
-        // if (artistId) {
-        //     csrfFetch(`/api/artists/${artistId}`)
-        //         .then(res => res.json())
-        //         .then(data => setArtistName(data.name))
-        // }
-
-
-
-        // // console.log(songIds)
-        // if (songIds) {
-        //     songIds.forEach(songId => {
-        //         csrfFetch(`/api/songs/${songId}`)
-        //         .then(res => res.json())
-        //         .then(data => setSongsArr((songsArr) => [...songsArr, data]))
-        //     });
-        // }
-
     }, [albumId, dispatch])
-
-    // console.log(songsArr)
-    // console.log(songTitlesArr)
-
-    // console.log(album)
-    // if (album.songs) {
-    //     console.log("hi")
-    //     album.songs.forEach((song) => {
-    //         console.log(song)
-    //     })
-    // }
 
 
     if (!album) {

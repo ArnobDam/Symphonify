@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { fetchPlaylist, removePlaylist } from '../../store/playlists';
+import { fetchPlaylist, deletePlaylist } from '../../store/playlists';
 import Track from '../Track';
 import './PlaylistShowPage.css'
 import cover from './new_playlist_cover.PNG'
@@ -76,11 +76,9 @@ function PlaylistShowPage() {
         setShowOptionsMenu(true);
     };
 
-    
-
-    const deletePlaylist = (e) => {
+    const handleDeletePlaylist = (e) => {
         e.preventDefault();
-        dispatch(removePlaylist(playlistId));
+        dispatch(deletePlaylist(playlistId));
         history.push(`/`);
     }
 
@@ -105,7 +103,7 @@ function PlaylistShowPage() {
             {showOptionsMenu && (
                 <ul className="playlist-options-dropdown">
                     <li>
-                        <button className="delete-playlist-button" onClick={deletePlaylist}>Delete</button>
+                        <button className="delete-playlist-button" onClick={handleDeletePlaylist}>Delete</button>
                     </li>
                 </ul>
             )}

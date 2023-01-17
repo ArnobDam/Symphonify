@@ -6,17 +6,17 @@ export const RECEIVE_PLAYLIST = 'playlists/RECEIVE_PLAYLIST';
 export const REMOVE_PLAYLIST = 'playlists/REMOVE_PLAYLIST';
 
 //regular actions
-export const receivePlaylists = (playlists) => ({
+const receivePlaylists = (playlists) => ({
     type: RECEIVE_PLAYLISTS,
     playlists
 })
 
-export const receivePlaylist = (payload) => ({
+const receivePlaylist = (payload) => ({
     type: RECEIVE_PLAYLIST,
     payload
 })
 
-export const removePlaylist = (playlistId) => ({
+const removePlaylist = (playlistId) => ({
     type: REMOVE_PLAYLIST,
     playlistId
 })
@@ -47,7 +47,8 @@ export const createPlaylist = (payload) => async dispatch => { //may need playli
         }
     })
     const data = await response.json();
-    return dispatch(receivePlaylist(data));
+    dispatch(receivePlaylist(data));
+    return data.playlist;
 }
 
 export const updatePlaylist = (payload) => async dispatch => { //may need playlist not payload

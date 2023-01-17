@@ -19,22 +19,30 @@ const SideControlBar = () => {
 
     let numPlaylistsCurrentUser = 0;
 
-    playlists.forEach((playlist) => {
-        if (playlist.creatorId === session.user.id) {
-            numPlaylistsCurrentUser++;
-        }
-    })
+    if (session.user) {
+        playlists.forEach((playlist) => {
+            // console.log(playlist.creatorId, session.user.id)
+            if (playlist.creatorId === session.user.id) {
+                numPlaylistsCurrentUser++;
+            }
+        })
+    }
 
     // console.log(numPlaylistsCurrentUser);
 
     const handleCreatePlaylist = () => {
         // debugger
+        if (!session.user) {
+            history.push(`/login`);
+        };
+
         dispatch(createPlaylist({
             playlist: {
                 "title": `My Playlist #${numPlaylistsCurrentUser + 1}`,
                 "creator_id": session.user.id
             }
-        }));
+        })).then(res => history.push(`/playlists/${res.id}`));
+
         // history.push(`/playlists/${playlists.length + 1}`);
     };
 
