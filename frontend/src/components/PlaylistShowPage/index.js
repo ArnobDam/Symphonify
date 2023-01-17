@@ -18,9 +18,11 @@ function PlaylistShowPage() {
     const { title } = playlist;
 
     const [songsArr, setSongsArr] = useState([]);
-    console.log(songsArr)
+    // console.log(songsArr)
     const [songTitlesArr, setSongTitlesArr] = useState([]);
-    
+
+    const [showOptionsMenu, setShowOptionsMenu] = useState(false);
+
     useEffect(() => {
         dispatch(fetchPlaylist(playlistId)).then(res => {
             // console.log(res)
@@ -33,7 +35,7 @@ function PlaylistShowPage() {
                 setSongsArr([]);
                 setSongTitlesArr([]);
                 for (const [key, value] of Object.entries(data.songs)) {
-                    if (!songTitlesArr.includes(value.title)) { 
+                    if (!songTitlesArr.includes(value.title)) {
                         setSongsArr((songsArr) => [...songsArr, value])
                         setSongTitlesArr((songTitlesArr) => [...songTitlesArr, value.title])
                     }
@@ -45,11 +47,38 @@ function PlaylistShowPage() {
         });
     }, [playlistId, dispatch]);
 
+    useEffect(() => {
+        if (!showOptionsMenu) return;
+
+        const closeOptionsMenu = () => {
+            setShowOptionsMenu(false);
+        };
+
+        document.addEventListener('click', closeOptionsMenu);
+
+        return () => document.removeEventListener("click", closeOptionsMenu);
+    }, [showOptionsMenu]);
+
     // console.log(username)
     // console.log(songTitlesArr);
 
     if (!playlist) {
         return null;
+    }
+
+    const optionsButtonClick = (e) => {
+        openMenu();
+    }
+
+    const openMenu = () => {
+        if (showOptionsMenu) return;
+        setShowOptionsMenu(true);
+    };
+
+    
+
+    const deletePlaylist = (e) => {
+        e.preventDefault();
     }
 
     return (
@@ -69,7 +98,14 @@ function PlaylistShowPage() {
                 </div>
 
             </div>
-            <button className='playlist-options-button'>•••</button>
+            <button className='playlist-options-button' onClick={optionsButtonClick}>•••</button>
+            {showOptionsMenu && (
+                <ul className="playlist-options-dropdown">
+                    <li>
+                        <button className="delete-playlist-button" onClick={deletePlaylist}>Delete</button>
+                    </li>
+                </ul>
+            )}
             <div className='playlist-songs'>
                 <div className='hashtag-and-title'>
                     <p className='hashtag'>#</p>
@@ -82,9 +118,9 @@ function PlaylistShowPage() {
                     // {console.log(idx)}
                     return (<Track
                         key={idx}
-                        id={idx} 
-                        songTitle={song.title} 
-                        artistName={song.name} 
+                        id={idx}
+                        songTitle={song.title}
+                        artistName={song.name}
                         songUrl={song.songUrl}
                         playlistId={playlistId} />) // THIS LINE SUPER IMPORTANT
                 })}
