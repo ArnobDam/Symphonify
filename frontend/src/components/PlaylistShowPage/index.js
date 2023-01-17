@@ -11,13 +11,14 @@ function PlaylistShowPage() {
     const history = useHistory();
     const { playlistId } = useParams();
 
-    const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : {})
+    const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : null)
     const session = useSelector(state => state.session ? state.session : {});
 
     const [username, setUsername] = useState("");
 
-    const { title } = playlist;
-    const [playlistTitle, setPlaylistTitle] = useState(title)
+    // const { title } = playlist;
+    // console.log(title)
+    const [playlistTitle, setPlaylistTitle] = useState("")
     // console.log(playlistTitle)
 
     const [songsArr, setSongsArr] = useState([]);
@@ -27,12 +28,13 @@ function PlaylistShowPage() {
     const [showOptionsMenu, setShowOptionsMenu] = useState(false);
 
     useEffect(() => {
-        setPlaylistTitle(title)
+        // setPlaylistTitle(title)
         dispatch(fetchPlaylist(playlistId)).then(res => {
             // console.log(res)
             // console.log("test")
             let data = res.payload.playlist;
             if (data.creator.username) {
+                setPlaylistTitle(data.title);
                 setUsername(data.creator.username);
             }
             if (data.songs) {
@@ -49,7 +51,11 @@ function PlaylistShowPage() {
                 setSongTitlesArr([]);
             }
         });
-    }, [playlistId, dispatch, title]);
+    }, [playlistId, dispatch]);
+
+    // useEffect(() => {
+    //     setPlaylistTitle(playlist.title)
+    // }, [playlist.title])
 
     useEffect(() => {
         if (!showOptionsMenu) return;

@@ -24,6 +24,7 @@ class Api::PlaylistsController < ApplicationController
         @playlist = Playlist.find_by(id: params[:id])
         
         @playlist.update(playlist_params)
+        render :show
     end
 
     def destroy
@@ -40,7 +41,7 @@ class Api::PlaylistsController < ApplicationController
     private
 
     def playlist_params
-        params.require(:playlist).permit(:title, :creator_id)
+        params.require(:playlist).permit(:title, :creator_id, :id)
     end
 
 end
