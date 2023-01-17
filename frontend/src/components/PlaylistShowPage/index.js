@@ -17,6 +17,8 @@ function PlaylistShowPage() {
     const [username, setUsername] = useState("");
 
     const { title } = playlist;
+    const [ playlistTitle, setPlaylistTitle] = useState(title)
+    console.log(playlistTitle)
 
     const [songsArr, setSongsArr] = useState([]);
     // console.log(songsArr)
@@ -25,6 +27,7 @@ function PlaylistShowPage() {
     const [showOptionsMenu, setShowOptionsMenu] = useState(false);
 
     useEffect(() => {
+        setPlaylistTitle(title)
         dispatch(fetchPlaylist(playlistId)).then(res => {
             // console.log(res)
             // console.log("test")
@@ -46,7 +49,7 @@ function PlaylistShowPage() {
                 setSongTitlesArr([]);
             }
         });
-    }, [playlistId, dispatch]);
+    }, [playlistId, dispatch, title]);
 
     useEffect(() => {
         if (!showOptionsMenu) return;
@@ -91,7 +94,10 @@ function PlaylistShowPage() {
 
                 <div className='playlist-text'>
                     <p className='playlist-title'>
-                        <input className='playlist-title-input' type='text' value={title}/>
+                        <input className='playlist-title-input' 
+                        type='text' 
+                        value={playlistTitle}
+                        onChange={(e) => setPlaylistTitle(e.target.value)}/>
                     </p>
                     <div className='name-and-year'>
                         <p className='creator-name'>{username}</p>
