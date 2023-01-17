@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { fetchPlaylist, deletePlaylist, updatePlaylist } from '../../store/playlists';
@@ -10,6 +10,8 @@ function PlaylistShowPage() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { playlistId } = useParams();
+
+    const editInput = useRef(false);
 
     const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : null)
     const session = useSelector(state => state.session ? state.session : {});
@@ -98,6 +100,7 @@ function PlaylistShowPage() {
             "title": playlistTitle,
             "creator_id": session.user.id
         }))
+        editInput.current.blur();
         return (history.push(`/playlists/${playlist.id}`));
     }
 
@@ -117,6 +120,7 @@ function PlaylistShowPage() {
                                 type='text'
                                 value={playlistTitle}
                                 onChange={(e) => setPlaylistTitle(e.target.value)}
+                                ref={editInput}
                             />
                         </p>
                     </form>
