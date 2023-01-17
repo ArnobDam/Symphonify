@@ -35,7 +35,7 @@ const SideControlBar = () => {
                 "creator_id": session.user.id
             }
         }));
-        history.push(`/playlists/${playlists.length + 1}`);
+        // history.push(`/playlists/${playlists.length + 1}`);
     };
 
     return (
