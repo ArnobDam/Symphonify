@@ -83,6 +83,7 @@
     font-weight: bold;
 
     white-space: nowrap;
+    text-overflow: ellipsis;
 
     background-color: transparent;
     border: 0px;
@@ -92,7 +93,8 @@
 
     cursor: pointer;
 
-    width: auto;
+    width: 500px;
+
 }
 
 .playlist-title-input:focus {

@@ -16,8 +16,12 @@
     width: 80%;
     height: 102px;
 
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;
     /* box-shadow: inset 0px 15px 1px rgba(0, 0, 0, 1); */
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .playlist-index-list::before {
@@ -45,6 +49,7 @@
 .playlist-index-list>li {
     padding: 9px 0;
     transition: .1s;
+    
 }
 
 .playlist-index-list:first-child {
