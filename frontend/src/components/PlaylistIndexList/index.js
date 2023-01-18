@@ -43,10 +43,10 @@ function PlaylistIndexList() {
     }
 
     return (
-        <>
+        <div className='playlist-titles-container'>
             {/* {playlists[0].title} */}
             <PlaylistTitles />
-        </>
+        </div>
     )
 };
 

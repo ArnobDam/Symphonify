@@ -1,5 +1,24 @@
+.playlist-titles-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
 .playlist-index-list {
-    color: white;
+    color: #a7a7a7;
     cursor: default;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    border-top: 0.1px solid rgba(167,167,167,0.3);
+    font-size: 15px;
+    width: 80%;
+    height: 160px;
+    
+}
+
+.playlist-index-list>li {
+    padding: 9px 0;
+}
+
+.playlist-index-list:first-child {
+    padding: 10px 0;
 }
