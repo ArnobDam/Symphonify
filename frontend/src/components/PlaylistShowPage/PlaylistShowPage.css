@@ -89,6 +89,8 @@
 
     /* max-width: fit-content; */
     margin-left: -5px;
+
+    cursor: pointer;
 }
 
 .name-and-year {

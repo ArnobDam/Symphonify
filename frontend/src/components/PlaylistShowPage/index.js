@@ -24,6 +24,7 @@ function PlaylistShowPage() {
     // console.log(playlistTitle)
 
     const [songsArr, setSongsArr] = useState([]);
+    const [songsArrEmpty, setSongsArrEmpty] = useState(true);
     // console.log(songsArr)
     const [songTitlesArr, setSongTitlesArr] = useState([]);
 
@@ -40,6 +41,7 @@ function PlaylistShowPage() {
                 setUsername(data.creator.username);
             }
             if (data.songs) {
+                setSongsArrEmpty(false);
                 setSongsArr([]);
                 setSongTitlesArr([]);
                 for (const [key, value] of Object.entries(data.songs)) {
@@ -49,6 +51,7 @@ function PlaylistShowPage() {
                     }
                 }
             } else {
+                setSongsArrEmpty(true);
                 setSongsArr([]);
                 setSongTitlesArr([]);
             }
@@ -120,6 +123,7 @@ function PlaylistShowPage() {
                                 type='text'
                                 value={playlistTitle}
                                 onChange={(e) => setPlaylistTitle(e.target.value)}
+                                onClick={(e) => e.target.setSelectionRange(0, e.target.value.length)}
                                 ref={editInput}
                             />
                         </p>
@@ -127,8 +131,8 @@ function PlaylistShowPage() {
 
                     <div className='name-and-year'>
                         <p className='creator-name'>{username}</p>
-                        <p className='bullet-point'>•</p>
-                        <p className='num-songs'>{songsArr.length} songs</p>
+                        {!songsArrEmpty && <p className='bullet-point'>•</p>}
+                        {!songsArrEmpty && <p className='num-songs'>{songsArr.length} songs</p>}
                     </div>
                 </div>
 
