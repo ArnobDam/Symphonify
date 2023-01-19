@@ -13,6 +13,7 @@ ApplicationRecord.transaction do
     Album.destroy_all
     Song.destroy_all
     Playlist.destroy_all
+    PlaylistSong.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -21,6 +22,7 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('albums')
     ApplicationRecord.connection.reset_pk_sequence!('songs')
     ApplicationRecord.connection.reset_pk_sequence!('playlists')
+    ApplicationRecord.connection.reset_pk_sequence!('playlist_songs')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -952,85 +954,85 @@ ApplicationRecord.transaction do
     Song.create!(
       title: "Tides",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Tides.mp3"
     )
     
     Song.create!(
       title: "Shivers",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Shivers.mp3"
     )
     
     Song.create!(
       title: "First Times",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/First+Times.mp3"
     )
     
     Song.create!(
       title: "Bad Habits",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Bad+Habits.mp3"
     )
     
     Song.create!(
       title: "Overpass Graffiti",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Overpass+Graffiti.mp3"
     )
     
     Song.create!(
       title: "The Joker And The Queen",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/The+Joker+And+The+Queen.mp3"
     )
     
     Song.create!(
       title: "Leave Your Life",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Leave+Your+Life.mp3"
     )
     
     Song.create!(
       title: "Collide",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Collide.mp3"
     )
     
     Song.create!(
       title: "2step",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/2step.mp3"
     )
     
     Song.create!(
       title: "Stop The Rain",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Stop+The+Rain.mp3"
     )
     
     Song.create!(
       title: "Love In Slow Motion",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Love+In+Slow+Motion.mp3"
     )
     
     Song.create!(
       title: "Visiting Hours",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Visiting+Hours.mp3"
     )
     
     Song.create!(
       title: "Sandman",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Sandman.mp3"
     )
     
     Song.create!(
       title: "Be Right Now",
       album_id: 10,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Ed+Sheeran+album/Be+Right+Now.mp3"
     )
 
     puts "Creating playlists..."
