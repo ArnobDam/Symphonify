@@ -363,6 +363,86 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Logic+-+Lost+In+Translation+(Official+Audio).mp3"
     )
 
+    #NOT ALL HEROES WEAR CAPES
+
+    Song.create!(
+      title: "10AM/Save The World (feat. Gucci Mane)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/10AMSave+The+World.mp3"
+    )
+
+    Song.create!(
+      title: "Overdue (with Travis Scott)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Overdue.mp3"
+    )
+    
+    Song.create!(
+      title: "Don't Come Out The House (with 21 Savage)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Don't+Come+Out+The+House.mp3"
+    )
+    
+    Song.create!(
+      title: "Dreamcatcher (feat. Swae Lee & Travis Scott)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Dreamcatcher.mp3"
+    )
+    
+    Song.create!(
+      title: "Space Cadet (feat. Gunna)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Space+Cadet.mp3"
+    )
+    
+    Song.create!(
+      title: "10 Freaky Girls (with 21 Savage)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/10+Freaky+Girls.mp3"
+    )
+    
+    Song.create!(
+      title: "Up To Something (feat. Travis Scott & Young Thug)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Up+To+Something.mp3"
+    )
+    
+    Song.create!(
+      title: "Only 1 (Interlude) (with Travis Scott)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Only+1+(Interlude).mp3"
+    )
+    
+    Song.create!(
+      title: "Lesbian (feat. Gunna & Young Thug)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Lesbian.mp3"
+    )
+    
+    Song.create!(
+      title: "Borrowed Love (feat. Swae Lee & WizKid)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Borrowed+Love.mp3"
+    )
+    
+    Song.create!(
+      title: "Only You (feat. WizKid, Offset & J Balvin)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/Only+You.mp3"
+    )
+    
+    Song.create!(
+      title: "No More (feat. Travis Scott, Kodak Black & 21 Savage)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/No+More.mp3"
+    )
+    
+    Song.create!(
+      title: "No Complaints (feat. Offset & Drake) (Bonus)",
+      album_id: 3,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/No+Complaints+(Bonus).mp3"
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
@@ -373,6 +453,18 @@ ApplicationRecord.transaction do
     Playlist.create!(
       title: "Jeanice's playlist",
       creator_id: 1
+    )
+
+    Playlist.create!(
+      title: "My Workout Playlist",
+      creator_id: 2
+    )
+
+    puts "Creating playlist songs..."
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 14
     )
     
     puts "Done!"
