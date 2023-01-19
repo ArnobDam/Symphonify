@@ -792,97 +792,97 @@ ApplicationRecord.transaction do
     Song.create!(
       title: "AMERICAN MUSCLE",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_AMERICAN+MUSCLE_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "MYRTLE BEACH",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_MYRTLE+BEACH_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "TSUKUYOMI",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_TSUKUYOMI_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "DEJA VU",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_Deja+Vu_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "TOKYO DRIFT",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_TOKYO+DRIFT_+Ft.+Lil+Yachty+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "BLACK OUT BOYZ 4LIFE",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_BLACK+OUT+BOYZ+4LIFE_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "ENGAGE",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_ENGAGE_+Ft.+12TilDee+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "SOUPED UP!",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_SOUPED+UP!_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "STYRO STAINS",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_STRYO+STRAINS_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "BIG DAWG",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_BIG+DAWG_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "ULTRA VIOLET",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_ROTTWEILER_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "DOMINO",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_DOMINO_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "FULLY FLARED",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_FULLY+FLARED_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "FIRESTONE",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_FIRESTONE_+Ft.+Black+Kray+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "EUPHORIA IN GLORIA",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_EUPHORIA+IN+GLORIA_+(CLAIRVOYANCE).mp3"
     )
     
     Song.create!(
       title: "PARADOX",
       album_id: 8,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_PARADOX_+(CLAIRVOYANCE).mp3"
     )
 
     puts "Creating playlists..."
