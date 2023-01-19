@@ -443,6 +443,80 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Not+all+heroes+metro/No+Complaints+(Bonus).mp3"
     )
 
+    #Breakaway
+
+    Song.create!(
+      title: "Breakaway",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Kelly+Clarkson+-+Breakaway+(VIDEO).mp3"
+    )
+    
+    Song.create!(
+      title: "Since U Been Gone",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Kelly+Clarkson+-+Since+U+Been+Gone+(VIDEO).mp3"
+    )
+    
+    Song.create!(
+      title: "Behind These Hazel Eyes",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Kelly+Clarkson+-+Behind+These+Hazel+Eyes+(Official+Music+Video).mp3"
+    )
+    
+    Song.create!(
+      title: "Because of You",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Kelly+Clarkson+-+Because+Of+You+(VIDEO).mp3"
+    )
+    
+    Song.create!(
+      title: "Gone",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Gone.mp3"
+    )
+    
+    Song.create!(
+      title: "Addicted",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Addicted.mp3"
+    )
+    
+    Song.create!(
+      title: "Where Is Your Heart",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Where+Is+Your+Heart.mp3"
+    )
+    
+    Song.create!(
+      title: "Walk Away",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Walk+Away+-+Kelly+Clarkson.mp3"
+    )
+    
+    Song.create!(
+      title: "You Found Me",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/You+Found+Me.mp3"
+    )
+    
+    Song.create!(
+      title: "I Hate Myself For Losing You",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/I+Hate+Myself+For+Losing+You.mp3"
+    )
+    
+    Song.create!(
+      title: "Hear Me",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Hear+Me.mp3"
+    )
+    
+    Song.create!(
+      title: "Beautiful Disaster - Live",
+      album_id: 4,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Beautiful+Disaster+(Live).mp3"
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
