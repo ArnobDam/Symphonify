@@ -609,6 +609,110 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-++Disco+Heaven.mp3"
     )
 
+    #ASTROWORLD
+
+    Song.create!(
+      title: "STARGAZING",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+STARGAZING+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "CAROUSEL",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+CAROUSEL+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "SICKO MODE",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+SICKO+MODE+ft.+Drake.mp3"
+    )
+    
+    Song.create!(
+      title: "R.I.P. SCREW",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+R.I.P.+SCREW+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "STOP TRYING TO BE GOD",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+STOP+TRYING+TO+BE+GOD.mp3"
+    )
+    
+    Song.create!(
+      title: "NO BYSTANDERS",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+NO+BYSTANDERS+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "SKELETONS",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+SKELETONS+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "WAKE UP",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+WAKE+UP+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "5% TINT",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+5+TINT+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "NC-17",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+NC-17+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "ASTROTHUNDER",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+ASTROTHUNDER+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "YOSEMITE",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+YOSEMITE+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "CAN'T SAY",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+CAN'T+SAY.mp3"
+    )
+    
+    Song.create!(
+      title: "WHO? WHAT!",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+WHO_+WHAT!+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "BUTTERFLY EFFECT",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+Butterfly+Effect+(audio).mp3"
+    )
+    
+    Song.create!(
+      title: "HOUSTONFORNICATION",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+HOUSTONFORNICATION+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "COFFEE BEAN",
+      album_id: 6,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+COFFEE+BEAN+(Audio).mp3"
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
