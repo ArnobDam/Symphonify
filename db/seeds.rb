@@ -947,6 +947,92 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Epos.mp3"
     )
 
+    #=
+
+    Song.create!(
+      title: "Tides",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Shivers",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "First Times",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Bad Habits",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Overpass Graffiti",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "The Joker And The Queen",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Leave Your Life",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Collide",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "2step",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Stop The Rain",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Love In Slow Motion",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Visiting Hours",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Sandman",
+      album_id: 10,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Be Right Now",
+      album_id: 10,
+      song_url: ""
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
