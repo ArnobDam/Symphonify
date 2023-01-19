@@ -517,6 +517,98 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Beautiful+Disaster+(Live).mp3"
     )
 
+    #The Fame
+
+    Song.create!(
+      title: "Just Dance",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Just+Dance.mp3"
+    )
+    
+    Song.create!(
+      title: "LoveGame",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Lovegame.mp3"
+    )
+    
+    Song.create!(
+      title: "Paparazzi",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Paparazzi.mp3"
+    )
+    
+    Song.create!(
+      title: "Poker Face",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Poker+Face.mp3"
+    )
+    
+    Song.create!(
+      title: "Eh, Eh (Nothing Else I Can Say)",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-++Eh%2C+Eh+(Nothing+Else+I+Can+Say).mp3"
+    )
+    
+    Song.create!(
+      title: "Beautiful, Dirty, Rich",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Beautiful%2C+Dirty%2C+Rich.mp3"
+    )
+    
+    Song.create!(
+      title: "The Fame",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+The+Fame.mp3"
+    )
+    
+    Song.create!(
+      title: "Money Honey",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Money+Honey.mp3"
+    )
+    
+    Song.create!(
+      title: "Starstruck",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Starstruck.mp3"
+    )
+    
+    Song.create!(
+      title: "Boys Boys Boys",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Boys+Boys+Boys.mp3"
+    )
+    
+    Song.create!(
+      title: "Paper Gangsta",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Paper+Gangsta.mp3"
+    )
+    
+    Song.create!(
+      title: "Brown Eyes",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Brown+Eyes.mp3"
+    )
+    
+    Song.create!(
+      title: "I Like It Rough",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+I+Like+It+Rough.mp3"
+    )
+    
+    Song.create!(
+      title: "Summerboy",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-+Summerboy.mp3"
+    )
+    
+    Song.create!(
+      title: "Disco Heaven",
+      album_id: 5,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/The+Fame+LG+Album/Lady+Gaga+-+The+Fame+-++Disco+Heaven.mp3"
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
