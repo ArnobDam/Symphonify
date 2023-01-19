@@ -713,6 +713,80 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Astroworld+Album/Travis+Scott+-+COFFEE+BEAN+(Audio).mp3"
     )
 
+    #thank u, next
+
+    Song.create!(
+      title: "imagine",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+imagine+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "needy",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+needy+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "NASA",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+NASA+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "bloodline",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+bloodline+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "fake smile",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+fake+smile+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "bad idea",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+bad+idea+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "make up",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+make+up+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "ghostin",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+ghostin+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "in my head",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+in+my+head+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "7 rings",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+7+rings+(Audio).mp3"
+    )
+    
+    Song.create!(
+      title: "thank u, next",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+thank+u%2C+next+(audio).mp3"
+    )
+    
+    Song.create!(
+      title: "break up with your girlfriend, i'm bored",
+      album_id: 7,
+      song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+break+up+with+your+girlfriend%2C+im+bored+(Audio).mp3"
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
