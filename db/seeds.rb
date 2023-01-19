@@ -787,6 +787,104 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/thank+u+next+album/Ariana+Grande+-+break+up+with+your+girlfriend%2C+im+bored+(Audio).mp3"
     )
 
+    #CLAIRVOYANCE
+
+    Song.create!(
+      title: "AMERICAN MUSCLE",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "MYRTLE BEACH",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "TSUKUYOMI",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "DEJA VU",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "TOKYO DRIFT",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "BLACK OUT BOYZ 4LIFE",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "ENGAGE",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "SOUPED UP!",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "STYRO STAINS",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "BIG DAWG",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "ULTRA VIOLET",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "DOMINO",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "FULLY FLARED",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "FIRESTONE",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "EUPHORIA IN GLORIA",
+      album_id: 8,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "PARADOX",
+      album_id: 8,
+      song_url: ""
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
