@@ -1,7 +1,7 @@
 import './SearchBar.css'
 import { FiSearch } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { receiveSearchedAlbums } from '../../store/searchedAlbums';
 
 
@@ -15,7 +15,13 @@ function SearchBar() {
     const [searchValue, setSearchValue] = useState("")
 
     const [searchedAlbums, setSearchedAlbums] = useState([])
+
+    const mainSearchBarInput = useRef(false);
     // console.log(albums)
+
+    useEffect(() => {
+        mainSearchBarInput.current.focus();
+    }, [])
 
     const handleChange = (e) => {
         setSearchValue(e.target.value)
@@ -78,6 +84,7 @@ function SearchBar() {
                 name=""
                 onChange={handleChange}
                 value={searchValue}
+                ref={mainSearchBarInput}
             />
         </>
     )
