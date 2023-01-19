@@ -885,6 +885,68 @@ ApplicationRecord.transaction do
       song_url: "https://symphonify-dev.s3.amazonaws.com/Clairvoyance+album/Thouxanbanfauni+-+_PARADOX_+(CLAIRVOYANCE).mp3"
     )
 
+    #Clarity
+
+    Song.create!(
+      title: "Hourglass",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Shave It Up",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Spectrum",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Lost At Sea",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Clarity",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Codec",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Stache",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Fall Into The Sky",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Follow You Down",
+      album_id: 9,
+      song_url: ""
+    )
+    
+    Song.create!(
+      title: "Epos",
+      album_id: 9,
+      song_url: ""
+    )
+
     puts "Creating playlists..."
 
     Playlist.create!(
