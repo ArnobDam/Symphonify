@@ -890,61 +890,61 @@ ApplicationRecord.transaction do
     Song.create!(
       title: "Hourglass",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Hourglass.mp3"
     )
     
     Song.create!(
       title: "Shave It Up",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Shave+It+Up.mp3"
     )
     
     Song.create!(
       title: "Spectrum",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Spectrum.mp3"
     )
     
     Song.create!(
       title: "Lost At Sea",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Lost+At+Sea.mp3"
     )
     
     Song.create!(
       title: "Clarity",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Clarity.mp3"
     )
     
     Song.create!(
       title: "Codec",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Codec.mp3"
     )
     
     Song.create!(
       title: "Stache",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Stache.mp3"
     )
     
     Song.create!(
       title: "Fall Into The Sky",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Fall+Into+The+Sky.mp3"
     )
     
     Song.create!(
       title: "Follow You Down",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Follow+You+Down.mp3"
     )
     
     Song.create!(
       title: "Epos",
       album_id: 9,
-      song_url: ""
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Clarity+album/Epos.mp3"
     )
 
     puts "Creating playlists..."
