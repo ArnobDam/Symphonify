@@ -40,7 +40,8 @@
 .album-list {
     display: flex;
     flex-direction: row;
-    padding: 0px 22px; /* first value top bottom, second value left right*/
+    padding: 0px 0px; /* was 0px 22px, first value top bottom, second value left right*/
+    padding-left: 3px;
     flex-wrap: wrap;
 }
 
