@@ -1,12 +1,5 @@
-#body {
-    /* background-repeat: no-repeat; */
-    background-image: linear-gradient(rgb(35, 35, 35), black);
-    /* background-image: linear-gradient(#212121, #121212); */
-    max-width: 100%;
-}
-
 #topNavBar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 1);
     /* top: 0; */
     /* overflow: hidden; */
     /* position: fixed; */
@@ -24,6 +17,7 @@
 }
 
 #topNavBarLoggedIn {
+    background-color: rgba(0, 0, 0, 1);
     /* background-color: rgba(35, 35, 35, 0.5); */
     /* background-color: transparent; */
     /* top: 0; */

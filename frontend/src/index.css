@@ -9,6 +9,8 @@ html {
 
 #body {
     height: 100%;
+    max-width: 100%;
+    background-color: black;
 }
 
 .homeControls {
@@ -24,4 +26,15 @@ html {
     display: flex;
     flex-direction: row;
     z-index: 1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
