@@ -456,7 +456,7 @@ ApplicationRecord.transaction do
     Song.create!(
       title: "Since U Been Gone",
       album_id: 4,
-      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Kelly+Clarkson+-+Since+U+Been+Gone+(VIDEO).mp3"
+      song_url: "https://symphonify-dev.s3.amazonaws.com/Breakaway+Album+Kelly+Clarkson/Since+U+Been+Gone+v2.mp3"
     )
     
     Song.create!(
