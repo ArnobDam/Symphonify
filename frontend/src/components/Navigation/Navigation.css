@@ -18,6 +18,9 @@
     justify-content: flex-end;
     align-items: center;
     /* box-sizing: border-box; */
+
+    position: fixed;
+    top: 0;
 }
 
 #topNavBarLoggedIn {
@@ -36,6 +39,8 @@
 
     z-index: 0;
     
+    position: fixed;
+    top: 0;
 }
 
 #topNavBar li {

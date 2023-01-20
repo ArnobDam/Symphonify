@@ -1,5 +1,5 @@
 .sideBar {
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
     background-color: black;
     width: 250px;
@@ -7,6 +7,9 @@
     /* margin-top: -65px; */
     /* padding-top: 65px; */
     /* overflow: visible; */
+
+    position: fixed;
+    left: 0;
 }
 
 .logoDiv {

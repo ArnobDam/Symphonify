@@ -4,6 +4,9 @@
 
 .bar {
   z-index: 2;
+
+  position: fixed;
+  bottom: 0;
 }
 
 .rhap_container {
