@@ -1,6 +1,7 @@
 .song-details-container {
     z-index: 3;
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
 
     bottom: 0;
 
@@ -12,7 +13,7 @@
     width: 325px;
     height: 90px;
 
-    margin-left: 10px;
+    margin-left: 5px;
     
 
     /* border: 1px solid yellow; */
@@ -22,6 +23,7 @@
 
 .details-album-photo {
     padding: 12px;
+    border-radius: 14px;
 }
 
 .details-song-title-and-artist-name {
