@@ -10,6 +10,11 @@
     height: 460px;
 
     overflow: scroll;
+
+    height: 100%;
+    margin-top: 65px;
+    margin-bottom: 90px;
+    background-image: linear-gradient(rgb(35, 35, 35), black);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

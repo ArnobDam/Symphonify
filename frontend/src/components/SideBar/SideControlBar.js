@@ -46,6 +46,14 @@ const SideControlBar = () => {
         // history.push(`/playlists/${playlists.length + 1}`);
     };
 
+    const handleClickSearch = (e) => {
+        if (!session.user) {
+            history.push(`/login`);
+        } else {
+            history.push(`/search`);
+        }
+    }
+
     return (
         <nav className="sideBar">
             <div className="logoDiv" onClick={(e) => history.push(`/`)}>
@@ -57,7 +65,7 @@ const SideControlBar = () => {
                     <AiOutlineHome className='home-icon'/>
                     <p className="home-text">Home</p>
                 </div>
-                <div className="search-div" onClick={(e) => history.push(`/search`)}>
+                <div className="search-div" onClick={handleClickSearch}>
                     <FiSearch className='search-icon'/>
                     <p className="search-text">Search</p>
                 </div>
