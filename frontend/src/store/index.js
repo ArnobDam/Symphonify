@@ -7,6 +7,7 @@ import currentTrackReducer from './currentTrack';
 import searchedAlbumsReducer from './searchedAlbums';
 import playlistsReducer from './playlists';
 import songsReducer from './songs';
+import searchedSongsReducer from './searchedSongs';
 
 export const rootReducer = combineReducers({
     session: sessionReducer,
@@ -15,7 +16,8 @@ export const rootReducer = combineReducers({
     currentPlaylist: currentPlaylistReducer,
     currentTrack: currentTrackReducer,
     searchedAlbums: searchedAlbumsReducer,
-    songs: songsReducer
+    songs: songsReducer,
+    searchedSongs: searchedSongsReducer
 })
 
 let enhancer;
