@@ -217,3 +217,7 @@
     height: 100%;
     text-align: left;
 }
+
+.playlist-search-bar {
+    padding: 0px 35px;
+}
