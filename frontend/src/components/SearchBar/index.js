@@ -1,10 +1,8 @@
-import './SearchBar.css'
 import { FiSearch } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 import { receiveSearchedAlbums } from '../../store/searchedAlbums';
-
-
+import './SearchBar.css'
 
 function SearchBar() {
 
@@ -17,7 +15,6 @@ function SearchBar() {
     const [searchedAlbums, setSearchedAlbums] = useState([])
 
     const mainSearchBarInput = useRef(false);
-    // console.log(albums)
 
     useEffect(() => {
         mainSearchBarInput.current.focus();
@@ -28,10 +25,6 @@ function SearchBar() {
 
         setSearchedAlbums([])
         // console.log(e.target.value)
-
-        // if (e.target.value === "") {
-        //     setSearchedAlbums((searchedAlbums) => [...searchedAlbums, {title: 'none'}])
-        // } else {
 
         if (e.target.value !== "") {
             let counter = 0;
@@ -53,33 +46,16 @@ function SearchBar() {
         // }
     }
 
-    // console.log(searchedAlbums)
-
     // useEffect(() => {
     dispatch(receiveSearchedAlbums(searchedAlbums))
     // }, [dispatch])
-
-    // const dupAlbums = (searchedAlbums, album) => {
-    //     searchedAlbums.forEach((searchedAlbum) => {
-
-    //         if (JSON.stringify(searchedAlbum) === JSON.stringify(album)) {
-    //             return true;
-    //         }
-    //     })
-
-    //     return false;
-    // }
-
-    // console.log(searchedAlbums)
-
-    // console.log(searchValue)
 
     return (
         <>
             {/* <i class="fa-magnifying-glass"></i> */}
             <FiSearch className='magnifying-glass' />
-            <input type="text"
-                className='search'
+            <input className='search'
+                type="text"
                 placeholder='What do you want to listen to?'
                 name=""
                 onChange={handleChange}

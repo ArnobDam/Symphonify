@@ -5,6 +5,7 @@ import { fetchPlaylist, deletePlaylist, updatePlaylist } from '../../store/playl
 import Track from '../Track';
 import './PlaylistShowPage.css'
 import cover from './new_playlist_cover.PNG'
+import PlaylistSearchBar from '../PlaylistSearchBar';
 
 function PlaylistShowPage() {
     const dispatch = useDispatch();
@@ -164,7 +165,9 @@ function PlaylistShowPage() {
                         playlistId={playlistId} />) // THIS LINE SUPER IMPORTANT
                 })}
             </div>
-
+            <div className='playlist-search-bar'>
+                <PlaylistSearchBar/>
+            </div>
 
         </div>
     )
