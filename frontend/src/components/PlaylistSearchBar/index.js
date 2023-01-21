@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import { FiSearch } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
+import { fetchSongs } from '../../store/songs';
 import './PlaylistSearchBar.css'
 
 function PlaylistSearchBar() {
@@ -11,6 +12,10 @@ function PlaylistSearchBar() {
     const handleChange = (e) => {
         setSongSearchValue(e.target.value)
     }
+
+    useEffect(() => {
+        dispatch(fetchSongs());
+    }, [dispatch])
 
     // console.log(songSearchValue)
 
