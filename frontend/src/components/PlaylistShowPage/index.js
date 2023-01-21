@@ -6,6 +6,7 @@ import Track from '../Track';
 import './PlaylistShowPage.css'
 import cover from './new_playlist_cover.PNG'
 import PlaylistSearchBar from '../PlaylistSearchBar';
+// import { FiSearch } from 'react-icons/fi';
 
 function PlaylistShowPage() {
     const dispatch = useDispatch();
@@ -165,8 +166,12 @@ function PlaylistShowPage() {
                         playlistId={playlistId} />) // THIS LINE SUPER IMPORTANT
                 })}
             </div>
-            <div className='playlist-search-bar'>
-                <PlaylistSearchBar/>
+            <div className='playlist-search-container'>
+                <p className='playlist-search-header'>Let's find something for your playlist</p>
+                <div className='playlist-search-bar-container'>
+                    {/* <FiSearch className='playlist-search-magnifying-glass' /> */}
+                    <PlaylistSearchBar/>
+                </div>
             </div>
 
         </div>

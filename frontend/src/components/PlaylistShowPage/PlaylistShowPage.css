@@ -218,6 +218,19 @@
     text-align: left;
 }
 
-.playlist-search-bar {
+.playlist-search-container {
     padding: 0px 35px;
+    margin-top: 15px;
+}
+
+.playlist-search-header {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+
+    margin-bottom: 25px;
+}
+
+.playlist-search-bar-container {
+    margin-bottom: 90px;
 }

@@ -14,6 +14,10 @@
     color: hsla(0,0%,100%,.7);
     font-size: 15px;
 
+    background-image: url('./fisearch_react_icon.PNG');
+    background-repeat: no-repeat;
+    background-size: 21px;
+    background-position: 8px 10px;
 }
 
 .playlist-search:focus {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FiSearch } from 'react-icons/fi';
+// import { FiSearch } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
 import './PlaylistSearchBar.css'
 
@@ -16,7 +16,7 @@ function PlaylistSearchBar() {
 
     return (
         <>
-            <FiSearch className='playlist-search-magnifying-glass' />
+            {/* <FiSearch className='playlist-search-magnifying-glass' /> */}
             <input className='playlist-search'
                 type="text"
                 placeholder='Search for songs'
