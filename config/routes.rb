@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :show, :destroy]
     resources :albums, only: [:index, :show]
     resources :artists, only: [:show]
-    resources :songs, only: [:show]
+    resources :songs, only: [:index, :show]
     resources :playlists, only: [:index, :show, :create, :update, :destroy]
     
     get '/albums/:search', to: 'albums#search', as: 'search'
