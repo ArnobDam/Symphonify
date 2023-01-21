@@ -12,7 +12,7 @@ function PlaylistSearchBar() {
         setSongSearchValue(e.target.value)
     }
 
-    console.log(songSearchValue)
+    // console.log(songSearchValue)
 
     return (
         <>

@@ -20,6 +20,11 @@
     position: relative;
 }
 
+.search:focus {
+    /* border: 1px solid orange; */
+    outline: none;
+}
+
 .magnifying-glass {
     position: absolute;
     /* color: rgb(35,35,35); */
@@ -27,13 +32,3 @@
     transform: scale(1.1);
     padding-left: 10px;
 }
-
-
-.search:focus {
-    /* border: 1px solid orange; */
-    outline: none;
-}
-
-/* .search::placeholder {
-    
-} */
