@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :artists, only: [:show]
     resources :songs, only: [:index, :show]
     resources :playlists, only: [:index, :show, :create, :update, :destroy]
+    resources :playlist_songs, only: [:index, :show, :create, :destroy]
     
     get '/albums/:search', to: 'albums#search', as: 'search'
   end
