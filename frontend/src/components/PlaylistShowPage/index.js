@@ -6,6 +6,7 @@ import Track from '../Track';
 import './PlaylistShowPage.css'
 import cover from './new_playlist_cover.PNG'
 import PlaylistSearchBar from '../PlaylistSearchBar';
+import SearchedTrack from '../SearchedTrack';
 // import { FiSearch } from 'react-icons/fi';
 
 function PlaylistShowPage() {
@@ -115,7 +116,12 @@ function PlaylistShowPage() {
         if (Array.isArray(searchedSongs)) {
             searchedSongTitles = searchedSongs.map((song) => {
                 // console.log("test")
-                return (song.title);
+                return (<SearchedTrack
+                songTitle={song.title}
+                artistName={song.artist.name}
+                playlistId={playlistId}
+                />)
+                // return (song.title);
             })
         }
         return searchedSongTitles;
