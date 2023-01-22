@@ -10,9 +10,9 @@ function SearchBar() {
 
     const albums = useSelector(state => state.albums ? Object.values(state.albums) : []);
 
-    const [searchValue, setSearchValue] = useState("")
+    const [searchValue, setSearchValue] = useState("");
 
-    const [searchedAlbums, setSearchedAlbums] = useState([])
+    const [searchedAlbums, setSearchedAlbums] = useState([]);
 
     const mainSearchBarInput = useRef(false);
 

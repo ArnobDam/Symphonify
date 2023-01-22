@@ -1,6 +1,6 @@
 const RECEIVE_SEARCHED_SONGS = 'songs/RECEIVE_SEARCHED_SONGS';
 
-const receiveSearchedSongs = (songs) => ({
+export const receiveSearchedSongs = (songs) => ({
     type: RECEIVE_SEARCHED_SONGS,
     songs
 })
