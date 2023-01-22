@@ -17,6 +17,7 @@ function PlaylistShowPage() {
 
     const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : null)
     const session = useSelector(state => state.session ? state.session : {});
+    const searchedSongs = useSelector(state => state.searchedSongs ? state.searchedSongs : []);
 
     const [username, setUsername] = useState("");
 
@@ -172,6 +173,9 @@ function PlaylistShowPage() {
                     {/* <FiSearch className='playlist-search-magnifying-glass' /> */}
                     <PlaylistSearchBar/>
                 </div>
+                {searchedSongs.map((song) => {
+                    return (song.title);
+                })}
             </div>
 
         </div>
