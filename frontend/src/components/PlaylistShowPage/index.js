@@ -110,6 +110,17 @@ function PlaylistShowPage() {
         return (history.push(`/playlists/${playlist.id}`));
     }
 
+    const SearchedSongsMapping = () => {
+        let searchedSongTitles = [];
+        if (Array.isArray(searchedSongs)) {
+            searchedSongTitles = searchedSongs.map((song) => {
+                // console.log("test")
+                return (song.title);
+            })
+        }
+        return searchedSongTitles;
+    }
+
     return (
         <div className='playlist-show-page'>
             <div className='playlist-details'>
@@ -173,9 +184,10 @@ function PlaylistShowPage() {
                     {/* <FiSearch className='playlist-search-magnifying-glass' /> */}
                     <PlaylistSearchBar/>
                 </div>
-                {searchedSongs.map((song) => {
+                {/* {searchedSongs.map((song) => {
                     return (song.title);
-                })}
+                })} */}
+                <SearchedSongsMapping/>
             </div>
 
         </div>
