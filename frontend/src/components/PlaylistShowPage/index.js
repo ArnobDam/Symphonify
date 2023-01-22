@@ -193,7 +193,10 @@ function PlaylistShowPage() {
                 {/* {searchedSongs.map((song) => {
                     return (song.title);
                 })} */}
-                <SearchedSongsMapping/>
+                <div className='searched-songs-container'>
+                    <SearchedSongsMapping/>
+                </div>
+                
             </div>
 
         </div>

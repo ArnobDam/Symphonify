@@ -28,3 +28,23 @@
     font-size: 14px;
     color: #a7a7a7;
 }
+
+.add-song-button {
+    color: white;
+    font-weight: bold;
+
+    background-color: transparent;
+    border: 1px solid #878787;
+    border-radius: 20px;
+
+    height: 32.5px;
+    width: 57.5px;
+    margin: auto 0;
+
+    margin-right: 15px;
+}
+
+.add-song-button:hover {
+    border: 1px solid white;
+    transform: scale(1.025);
+}
