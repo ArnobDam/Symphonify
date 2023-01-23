@@ -46,5 +46,5 @@
 
 .add-song-button:hover {
     border: 1px solid white;
-    transform: scale(1.025);
+    transform: scale(1.05);
 }
