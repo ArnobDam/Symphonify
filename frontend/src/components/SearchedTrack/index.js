@@ -20,9 +20,9 @@ function SearchedTrack({ id, songTitle, artistName, playlistId }) {
                 alreadyAdded = true
             }
         })
-        if (!alreadyAdded) {
-            console.log("test")
-            debugger
+        if (!alreadyAdded) { //cannot add duplicates
+            // console.log("test")
+            // debugger
             dispatch(createPlaylistSong({
                 "playlist_id": playlistId,
                 "song_id": id
