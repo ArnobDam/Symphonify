@@ -114,9 +114,11 @@ function PlaylistShowPage() {
     const SearchedSongsMapping = () => {
         let searchedSongTitles = [];
         if (Array.isArray(searchedSongs)) {
-            searchedSongTitles = searchedSongs.map((song) => {
+            searchedSongTitles = searchedSongs.map((song, idx) => {
                 // console.log("test")
                 return (<SearchedTrack
+                key={idx}
+                id={song.id}
                 songTitle={song.title}
                 artistName={song.artist.name}
                 playlistId={playlistId}
