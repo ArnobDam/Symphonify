@@ -7,7 +7,7 @@ import { deletePlaylistSong } from '../../store/playlistSongs';
 import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
-function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
+function Track({ id, songId, songTitle, artistName, songUrl, albumId, playlistId }) {
     const dispatch = useDispatch();
     // console.log(songUrl)
 
@@ -56,6 +56,7 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
         // dispatch(deletePlaylistSong())
         e.stopPropagation();
         setShowTrackMenu(false);
+        // console.log(songId)
     }
 
     return (

@@ -191,6 +191,7 @@ function PlaylistShowPage() {
                     return (<Track
                         key={idx}
                         id={idx}
+                        songId={song.id}
                         songTitle={song.title}
                         artistName={song.name}
                         songUrl={song.songUrl}
