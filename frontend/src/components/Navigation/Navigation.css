@@ -10,7 +10,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* box-sizing: border-box; */
+    
+    z-index: 1;
 
     position: fixed;
     top: 0;
@@ -31,7 +32,7 @@
     justify-content: flex-end;
     align-items: center;
 
-    z-index: 0;
+    z-index: 1;
     
     position: fixed;
     top: 0;
@@ -93,7 +94,7 @@
     margin-left: 12.5px; */
 }
 
-.nav-item-demo-user button {
+.demo-user-nav-button {
     /* background-color: #1ed760; */
     background-color: white;
     font-weight: bold;
@@ -108,7 +109,7 @@
     /* box-sizing: content-box; */
 }
 
-.nav-item-demo-user button:hover {
+.demo-user-nav-button:hover {
    /* background-color: #1fdf64; */
     transform: scale(1.05);
 }
@@ -179,8 +180,8 @@
     margin-top: 100px;
     margin-right: 30px;
     padding: 4px;
-
-    font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
+    
+    
 }
 
 .profile-dropdown li {
@@ -188,6 +189,9 @@
     display: flex;
     align-items: center;
     width: 175px;
+    
+    /* position: relative; */
+    /* z-index: 10; */
 }
 
 .profile-dropdown li:hover {

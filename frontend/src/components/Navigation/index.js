@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import SearchBar from '../SearchBar';
 
 function Navigation() {
-
+  const dispatch = useDispatch();
   const location = useLocation();
 
 
@@ -20,11 +21,12 @@ function Navigation() {
     sessionUser ? setNavClass('topNavBarLoggedIn') : setNavClass('topNavBar')
   }, [sessionUser])
   
-  // function showSearchBar () {
-  //   if (location.pathname === '/') {
-  //     return <SearchBar />
-  //   }
-  // }
+  const handleDemoLogin = (e) => {
+    return dispatch(sessionActions.login({
+      credential: 'guest@guest.com',
+      password: 'password'
+    }))
+  }
 
   let sessionLinks;
   if (sessionUser) {
@@ -55,7 +57,8 @@ function Navigation() {
       <>
         <NavLink className="nav-item" to="/signup">Sign up</NavLink>
         <NavLink className="nav-item" to="/login"><button>Log In</button></NavLink>
-        <NavLink className="nav-item-demo-user" to="/login"><button>Demo User</button></NavLink>
+        {/* <NavLink className="nav-item-demo-user" to="/" onClick={handleDemoLogin}><button>Demo User</button></NavLink> */}
+        <button className="demo-user-nav-button" onClick={handleDemoLogin}>Demo User</button>
       </>
     );
   }
