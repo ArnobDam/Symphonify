@@ -54,7 +54,8 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
 
     const handleRemoveTrack = (e) => {
         // dispatch(deletePlaylistSong())
-
+        e.stopPropagation();
+        setShowTrackMenu(false);
     }
 
     return (
