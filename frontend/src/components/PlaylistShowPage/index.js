@@ -133,7 +133,7 @@ function PlaylistShowPage() {
         return searchedSongTitles;
     }
 
-    console.log(songsArr);
+    // console.log(songsArr);
 
     return (
         <div className='playlist-show-page'>
