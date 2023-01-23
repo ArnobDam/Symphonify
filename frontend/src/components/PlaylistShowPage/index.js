@@ -55,8 +55,8 @@ function PlaylistShowPage() {
                 // console.log(songTitlesArr)
                 for (const [key, value] of Object.entries(data.songs)) {
                     // if (!songTitlesArr.includes(value.title)) {
-                        setSongsArr((songsArr) => [...songsArr, value])
-                        setSongTitlesArr((songTitlesArr) => [...songTitlesArr, value.title])
+                    setSongsArr((songsArr) => [...songsArr, value])
+                    setSongTitlesArr((songTitlesArr) => [...songTitlesArr, value.title])
                     // }
                 }
             } else {
@@ -73,7 +73,7 @@ function PlaylistShowPage() {
 
     useEffect(() => {
         dispatch(fetchPlaylistSongs());
-    },[]);
+    }, []);
 
     useEffect(() => {
         if (!showOptionsMenu) return;
@@ -126,11 +126,11 @@ function PlaylistShowPage() {
             searchedSongTitles = searchedSongs.map((song, idx) => {
                 // console.log("test")
                 return (<SearchedTrack
-                key={idx}
-                id={song.id}
-                songTitle={song.title}
-                artistName={song.artist.name}
-                playlistId={playlistId}
+                    key={idx}
+                    id={song.id}
+                    songTitle={song.title}
+                    artistName={song.artist.name}
+                    playlistId={playlistId}
                 />)
                 // return (song.title);
             })
@@ -202,15 +202,15 @@ function PlaylistShowPage() {
                 <p className='playlist-search-header'>Let's find something for your playlist</p>
                 <div className='playlist-search-bar-container'>
                     {/* <FiSearch className='playlist-search-magnifying-glass' /> */}
-                    <PlaylistSearchBar/>
+                    <PlaylistSearchBar />
                 </div>
                 {/* {searchedSongs.map((song) => {
                     return (song.title);
                 })} */}
                 <div className='searched-songs-container'>
-                    <SearchedSongsMapping/>
+                    <SearchedSongsMapping />
                 </div>
-                
+
             </div>
 
         </div>
