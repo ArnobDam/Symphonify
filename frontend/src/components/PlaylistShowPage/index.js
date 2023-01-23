@@ -7,6 +7,7 @@ import './PlaylistShowPage.css'
 import cover from './new_playlist_cover.PNG'
 import PlaylistSearchBar from '../PlaylistSearchBar';
 import SearchedTrack from '../SearchedTrack';
+import { fetchPlaylistSongs } from '../../store/playlistSongs';
 // import { FiSearch } from 'react-icons/fi';
 
 function PlaylistShowPage() {
@@ -69,6 +70,10 @@ function PlaylistShowPage() {
     // useEffect(() => {
     //     setPlaylistTitle(playlist.title)
     // }, [playlist.title])
+
+    useEffect(() => {
+        dispatch(fetchPlaylistSongs());
+    },[]);
 
     useEffect(() => {
         if (!showOptionsMenu) return;

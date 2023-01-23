@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { makeCurrentPlaylist, makeCurrentPlaylistAlbum, makeCurrentPlaylistPlaylist } from '../../store/currentPlaylist';
 import { setTheCurrentTrack, setCurrentTrack } from '../../store/currentTrack';
+import { deletePlaylistSong } from '../../store/playlistSongs';
 import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
@@ -51,6 +52,11 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
         setShowTrackMenu(true);
     };
 
+    const handleRemoveTrack = (e) => {
+        // dispatch(deletePlaylistSong())
+
+    }
+
     return (
         <div id={id} className='track' onClick={handleClick}>
             <div className='play-pause-and-text'>
@@ -65,7 +71,7 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
             {playlistId && showTrackMenu && ( //playlistId so only works on playlists 
                 <ul className='track-options-dropdown'>
                     <li>
-                        <button className='remove-track-button'>Remove</button>
+                        <button className='remove-track-button' onClick={handleRemoveTrack}>Remove</button>
                     </li>
                 </ul>
             )}
