@@ -3,7 +3,7 @@
 Hi! Welcome to [Symphonify](https://symphonify.onrender.com/), my very own clone of Spotify. 
 
 
-![App](./app/assets/images/symphonify_screenshot.png)
+![App](./app/assets/images/symphonify_screenshot_2.png)
 
 
 ## Overview & Functionalities:
