@@ -1,15 +1,18 @@
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { createPlaylistSong } from '../../store/playlistSongs';
 import './SearchedTrack.css';
 
 function SearchedTrack({ id, songTitle, artistName, playlistId }) {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleAddSongClick = () => {
         dispatch(createPlaylistSong({
             "playlist_id": playlistId,
             "song_id": id
-        }))
+        }));
+        // return (history.push(`/playlists/${playlistId}`));
     }
 
     return (

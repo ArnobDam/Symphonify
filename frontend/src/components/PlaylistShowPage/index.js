@@ -19,6 +19,7 @@ function PlaylistShowPage() {
     const playlist = useSelector(state => state.playlists[playlistId] ? state.playlists[playlistId] : null)
     const session = useSelector(state => state.session ? state.session : {});
     const searchedSongs = useSelector(state => state.searchedSongs ? state.searchedSongs : []);
+    const playlistSongs = useSelector(state => state.playlistSongs ? state.playlistSongs : {});
 
     const [username, setUsername] = useState("");
 
@@ -45,14 +46,17 @@ function PlaylistShowPage() {
                 setUsername(data.creator.username);
             }
             if (data.songs) {
+                // console.log(data.songs)
+                // debugger
                 setSongsArrEmpty(false);
                 setSongsArr([]);
                 setSongTitlesArr([]);
+                // console.log(songTitlesArr)
                 for (const [key, value] of Object.entries(data.songs)) {
-                    if (!songTitlesArr.includes(value.title)) {
+                    // if (!songTitlesArr.includes(value.title)) {
                         setSongsArr((songsArr) => [...songsArr, value])
                         setSongTitlesArr((songTitlesArr) => [...songTitlesArr, value.title])
-                    }
+                    // }
                 }
             } else {
                 setSongsArrEmpty(true);
@@ -60,7 +64,7 @@ function PlaylistShowPage() {
                 setSongTitlesArr([]);
             }
         });
-    }, [playlistId, dispatch]);
+    }, [playlistId, dispatch, playlistSongs]);
 
     // useEffect(() => {
     //     setPlaylistTitle(playlist.title)
@@ -128,6 +132,8 @@ function PlaylistShowPage() {
         }
         return searchedSongTitles;
     }
+
+    console.log(songsArr);
 
     return (
         <div className='playlist-show-page'>
