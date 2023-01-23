@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { makeCurrentPlaylist, makeCurrentPlaylistAlbum, makeCurrentPlaylistPlaylist } from '../../store/currentPlaylist';
 import { setTheCurrentTrack, setCurrentTrack } from '../../store/currentTrack';
@@ -12,6 +12,7 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
 
     const [playPauseSymbol, setPlayPauseSymbol] = useState("⏵︎"); // pause symbol: "⏸︎"
 
+    const [showTrackMenu, setShowTrackMenu] = useState(false);
     // <AudioBar 
 
     const handleClick = (e) => {
@@ -28,6 +29,28 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
         
     };
 
+    useEffect(() => {
+        if (!showTrackMenu) return;
+
+        const closeTrackMenu = () => {
+            setShowTrackMenu(false)
+        }
+
+        document.addEventListener('click', closeTrackMenu);
+
+        return (() => document.removeEventListener('click', closeTrackMenu));
+    }, [showTrackMenu]);
+
+    const trackOptionsButtonClick = (e) => {
+        e.stopPropagation();
+        openTrackMenu();
+    }
+
+    const openTrackMenu = () => {
+        if (showTrackMenu) return;
+        setShowTrackMenu(true);
+    };
+
     return (
         <div id={id} className='track' onClick={handleClick}>
             <div className='play-pause-and-text'>
@@ -38,7 +61,8 @@ function Track({ id, songTitle, artistName, songUrl, albumId, playlistId }) {
                 </div>
             </div>
 
-            <button className='options-button'>•••</button>
+            <button className='options-button' onClick={trackOptionsButtonClick}>•••</button>
+            {showTrackMenu && (<p>open</p>)}
         </div>
     )
 };
