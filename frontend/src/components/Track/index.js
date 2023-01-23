@@ -79,7 +79,7 @@ function Track({ id, songId, songTitle, artistName, songUrl, albumId, playlistId
                 </div>
             </div>
 
-            <button className='options-button' onClick={trackOptionsButtonClick}>•••</button>
+            {playlistId && <button className='options-button' onClick={trackOptionsButtonClick}>•••</button>}
             {playlistId && showTrackMenu && ( //playlistId so only works on playlists 
                 <ul className='track-options-dropdown'>
                     <li>
