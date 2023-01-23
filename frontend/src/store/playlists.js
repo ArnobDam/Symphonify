@@ -39,7 +39,7 @@ export const fetchPlaylist = (playlistId) => async dispatch => {
 }
 
 export const createPlaylist = (payload) => async dispatch => { //may need playlist not payload
-    console.log(JSON.stringify(payload.playlist))
+    // console.log(JSON.stringify(payload.playlist))
     const response = await csrfFetch(`/api/playlists`, {
         method: 'POST',
         body: JSON.stringify(payload.playlist),
