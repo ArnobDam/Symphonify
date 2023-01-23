@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { makeCurrentPlaylist, makeCurrentPlaylistAlbum, makeCurrentPlaylistPlaylist } from '../../store/currentPlaylist';
 import { setTheCurrentTrack, setCurrentTrack } from '../../store/currentTrack';
 import { deletePlaylistSong } from '../../store/playlistSongs';
@@ -8,13 +7,16 @@ import AudioBar from '../PlayBar/AudioBar';
 import './Track.css'
 
 function Track({ id, songId, songTitle, artistName, songUrl, albumId, playlistId }) {
+    //playlistId is a string
     const dispatch = useDispatch();
     // console.log(songUrl)
 
     const [playPauseSymbol, setPlayPauseSymbol] = useState("⏵︎"); // pause symbol: "⏸︎"
 
     const [showTrackMenu, setShowTrackMenu] = useState(false);
-    // <AudioBar 
+
+    const playlistSongs = useSelector(state => state.playlistSongs ? state.playlistSongs : {});
+    const playlistSongsArr = Object.values(playlistSongs)
 
     const handleClick = (e) => {
         // console.log("track clicked")
@@ -53,10 +55,18 @@ function Track({ id, songId, songTitle, artistName, songUrl, albumId, playlistId
     };
 
     const handleRemoveTrack = (e) => {
-        // dispatch(deletePlaylistSong())
         e.stopPropagation();
         setShowTrackMenu(false);
-        // console.log(songId)
+        // console.log(playlistId, songId)
+        // console.log(playlistSongsArr[0])
+        let playlistSongId;
+        playlistSongsArr.forEach((playlistSong) => {
+            // console.log(playlistSong.playlistId, playlistSong.songId)
+            if (playlistSong.playlistId === parseInt(playlistId) && playlistSong.songId === songId) {
+                playlistSongId = playlistSong.id;
+            }
+        })
+        dispatch(deletePlaylistSong(playlistSongId));
     }
 
     return (

@@ -28,6 +28,8 @@ class Api::PlaylistSongsController < ApplicationController
         else
             render json: { errors: @playlist_song.errors.full_messages }, status: 422
         end
+        # @playlist_song = PlaylistSong.find_by(playlist_id: params[:playlist_id, song_id: params[:song_id]]);
+        # @playlist_song.destroy
     end
 
     private

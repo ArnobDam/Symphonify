@@ -42,11 +42,20 @@ export const createPlaylistSong = (playlistSong) => async dispatch => {
 }
 
 export const deletePlaylistSong = (playlistSongId) => async dispatch => {
+    // console.log(playlistSongId)
+    // debugger
     const response = await csrfFetch(`/api/playlist_songs/${playlistSongId}`, {
         method: 'DELETE'
     })
     return dispatch(removePlaylistSong(playlistSongId));
 }
+
+// export const deletePlaylistSong = (playlistId, songId) => async dispatch => {
+//     const response = await csrfFetch(`/api/playlist_songs?playlist_id=${playlistId}&song_id=${songId}`, {
+//         method: 'DELETE'
+//     })
+// }
+
 
 const playlistSongsReducer = (state = {}, action) => {
     const nextState = { ...state };
