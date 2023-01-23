@@ -1037,7 +1037,7 @@ ApplicationRecord.transaction do
 
     puts "Creating playlists..."
 
-    Playlist.create!(
+    Playlist.create!( #id 1
       title: "Rap music",
       creator_id: 2 #Guest / demo user
     )
@@ -1047,16 +1047,142 @@ ApplicationRecord.transaction do
       creator_id: 1
     )
 
-    Playlist.create!(
+    Playlist.create!( #id 3
       title: "My Workout Playlist",
+      creator_id: 2
+    )
+
+    Playlist.create!( #id 4
+      title: "Pop Favorites",
       creator_id: 2
     )
 
     puts "Creating playlist songs..."
 
+    #Rap Music
+
     PlaylistSong.create!(
       playlist_id: 1,
       song_id: 14
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 15
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 29
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 34
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 45
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 87
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 88
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 112
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 1,
+      song_id: 85
+    )
+
+    #My Workout Playlist
+
+    PlaylistSong.create!(
+      playlist_id: 3,
+      song_id: 58
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 3,
+      song_id: 75
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 3,
+      song_id: 84
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 3,
+      song_id: 99
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 3,
+      song_id: 112
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 3,
+      song_id: 120
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 3,
+      song_id: 122
+    )
+
+    #Pop Favorites
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 47
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 60
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 61
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 99
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 129
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 131
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 136
+    )
+
+    PlaylistSong.create!(
+      playlist_id: 4,
+      song_id: 48
     )
     
     puts "Done!"
