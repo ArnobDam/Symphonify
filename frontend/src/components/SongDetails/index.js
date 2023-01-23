@@ -10,32 +10,37 @@ function SongDetails() {
     state.currentPlaylist.songIds :
     []);
 
+    const noDupsSongIdsArr = [...new Set(songIdsArr)];
+    // console.log(noDupsSongIdsArr)
+
     // const albumPhotoUrl = useSelector((state) => state.currentPlaylist.albumPhotoUrl 
     // ? state.currentPlaylist.albumPhotoUrl :
     // "")
 
     const albumPhotoUrl = useSelector((state) => state.currentPlaylist.songs ?
-    state.currentPlaylist.songs[songIdsArr[currentTrackId]].albumPhotoUrl :
+    state.currentPlaylist.songs[noDupsSongIdsArr[currentTrackId]].albumPhotoUrl :
     "")
 
-    const firstSongId = useSelector((state) => state.currentPlaylist.songIds ? 
-    state.currentPlaylist.songIds[0] :
-    NaN)
+    // const firstSongId = useSelector((state) => state.currentPlaylist.songIds ? 
+    // state.currentPlaylist.songIds[0] :
+    // NaN)
 
     // const songTitle = useSelector((state) => state.currentPlaylist.songs ?
     // state.currentPlaylist.songs[firstSongId + currentTrackId].title :
     // "")
 
     const songTitle = useSelector((state) => state.currentPlaylist.songs ?
-    state.currentPlaylist.songs[songIdsArr[currentTrackId]].title :
+    state.currentPlaylist.songs[noDupsSongIdsArr[currentTrackId]].title :
     "")
+
+    // console.log(songIdsArr[currentTrackId])
 
     // const artistName = useSelector((state) => state.currentPlaylist.artist ?
     // state.currentPlaylist.artist.name :
     // "")
 
     const artistName = useSelector((state) => state.currentPlaylist.songs ?
-    state.currentPlaylist.songs[songIdsArr[currentTrackId]].name :
+    state.currentPlaylist.songs[noDupsSongIdsArr[currentTrackId]].name :
     "")
 
 
