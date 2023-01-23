@@ -55,6 +55,7 @@ function Navigation() {
       <>
         <NavLink className="nav-item" to="/signup">Sign up</NavLink>
         <NavLink className="nav-item" to="/login"><button>Log In</button></NavLink>
+        <NavLink className="nav-item-demo-user" to="/login"><button>Demo User</button></NavLink>
       </>
     );
   }
