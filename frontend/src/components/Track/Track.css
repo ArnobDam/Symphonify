@@ -59,6 +59,51 @@
     margin-right: 8px;
 
     visibility: hidden;
+}
 
-    z-index: 3;
+.track-options-dropdown {
+    /* display: flex; */
+    position: absolute;
+    right: 0;
+    
+
+    /* flex-direction: column; */
+
+    text-indent: 5px;
+
+    padding: 4px;
+    
+    /* margin-left: 30px;
+    margin-top: 265px; */
+    margin-right: 35px;
+
+    background-color: #282828;
+    border-radius: 4px;
+    box-shadow: 0 16px 24px rgb(0 0 0 / 30%);
+
+    font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
+}
+
+.track-options-dropdown li {
+    height: 40px;
+    /* display: flex;
+    align-items: center; */
+    width: 75px;
+}
+
+.track-options-dropdown li:hover {
+    background-color: #404040;
+}
+
+.remove-track-button {
+    background-color: transparent;
+    border: 0px;
+    color: rgb(255, 255, 255, 0.8);
+
+    font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
+    font-weight: bold;
+
+    width: 100%;
+    height: 100%;
+    text-align: left;
 }
