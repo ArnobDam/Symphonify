@@ -61,7 +61,7 @@ function AlbumSearchPage() {
     return (
         <div className="albumIndexPage">
             {/* <p>Albums</p> */}
-            {handleNoSearchResults()}
+            {/* {handleNoSearchResults()} */}
             <AlbumList
                 albums={renderedAlbums()}
                 // albums={searchedAlbums}
