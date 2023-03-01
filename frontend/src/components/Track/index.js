@@ -9,21 +9,34 @@ import './Track.css'
 function Track({ id, songId, songTitle, artistName, songUrl, albumId, playlistId }) {
     //playlistId is a string
     const dispatch = useDispatch();
-    // console.log(songUrl)
 
     const [playPauseSymbol, setPlayPauseSymbol] = useState("⏵︎"); // pause symbol: "⏸︎"
 
     const [showTrackMenu, setShowTrackMenu] = useState(false);
 
     const playlistSongs = useSelector(state => state.playlistSongs ? state.playlistSongs : {});
-    const playlistSongsArr = Object.values(playlistSongs)
+    const playlistSongsArr = Object.values(playlistSongs);
+
+    // const currentPlaylistSongIds = useSelector(state => state.currentPlaylist.songIds ? state.currentPlaylist.songIds : []);
+    // const currentTrack = useSelector(state => state.currentTrack ? state.currentTrack : {});
+
+    // useEffect(() => {
+
+    //     if (currentTrack && currentPlaylistSongIds) {
+    //         if (songId === currentPlaylistSongIds[currentTrack]) {
+    //             setPlayPauseSymbol("⏸︎");
+    //         } else {
+    //             setPlayPauseSymbol("⏵︎");
+    //         }
+    //     }
+
+    // }, [songId, currentTrack, currentPlaylistSongIds])
 
     const handleClick = (e) => {
         // console.log("track clicked")
-        // console.log(id)
-        // console.log(songTitle);
+
         dispatch(setCurrentTrack(id))
-        // debugger;
+
         if (albumId) {
             return dispatch(makeCurrentPlaylistAlbum(albumId));
         } else {

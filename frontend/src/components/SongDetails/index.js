@@ -14,7 +14,7 @@ function SongDetails() {
     noDupsSongIdsArr.sort(function(a,b) {
         return (a-b);
     })
-    console.log(noDupsSongIdsArr)
+    // console.log(noDupsSongIdsArr)
 
     // const albumPhotoUrl = useSelector((state) => state.currentPlaylist.albumPhotoUrl 
     // ? state.currentPlaylist.albumPhotoUrl :
